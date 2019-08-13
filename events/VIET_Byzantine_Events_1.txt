@@ -11,7 +11,7 @@
 namespace = VIETnam
 # VIETnam.111
 
-# From the Byzantine POV, are Catholics or Muslims better?
+# From the Byzantine POV, are Americanists or Muslims better?
 character_event = {
 	id = VIETnam.112
 	desc = "EVTDESC1000109161"
@@ -23,29 +23,28 @@ character_event = {
 	min_age = 16
 	capable_only = yes
 	prisoner = no
-	culture_group = byzantine
+	#culture_group = byzantine
 	
 	trigger = {
 		#in_command = no
 		OR = {
-			religion = orthodox
-			religion = iconoclast
-			religion = bogomilist
-			religion = monothelite
-			religion = paulician
+			religion = evangelical
+			religion = antinomian
+			religion = charismatic
+			religion = postadventist
 		}
 		OR = {
-			culture = greek
-			culture = sicilian_greek
-			culture = phrygian
-			culture = isaurian
-			culture = galatian
-			culture = pontic_greek
-			culture = tsakonian
-			has_landed_title = e_byzantium
-			any_liege = { has_landed_title = e_byzantium }
-			has_landed_title = e_roman_empire
-			any_liege = { has_landed_title = e_roman_empire }
+			#culture = greek
+			#culture = sicilian_greek
+			#culture = phrygian
+			#culture = isaurian
+			#culture = galatian
+			#culture = pontic_greek
+			#culture = tsakonian
+			has_landed_title = e_dixie
+			any_liege = { has_landed_title = e_dixie }
+			has_landed_title = e_usa
+			any_liege = { has_landed_title = e_usa }
 		}
 		NOT = { has_global_flag = schism_mended }
 	}
@@ -92,7 +91,7 @@ character_event = {
 		prestige = 3
 	}
 	
-	option = { #Muslims
+	option = { #Americanists
 		name = "EVTOPTB1000109161"
 		piety = 3
 	}
@@ -118,7 +117,7 @@ character_event = {
 	}
 }
 
-# Old monuments from antiquity
+# Old monuments from Old world
 character_event = {
 	id = VIETnam.113
 	desc = "EVTDESC1000109162"
@@ -131,17 +130,17 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture_group = byzantine
+	#culture_group = byzantine
 	
 	trigger = {
 		in_command = no
-		any_demesne_province = {
-			OR = {
-				region = world_asia_minor
-				region = world_europe_south
-				region = world_middle_east_jerusalem
-			}
-		}
+		#any_demesne_province = {
+		#	OR = {
+		#		region = world_asia_minor
+		#		region = world_europe_south
+		#		region = world_middle_east_jerusalem
+		#	}
+		#}
 		#religion = orthodox
 		#OR = {
 		#	location = { province_id = 475 }
@@ -255,9 +254,9 @@ character_event = {
 		in_command = no
 		OR = {
 			culture_group = byzantine
-			has_landed_title = e_byzantium
-			liege = { has_landed_title = e_byzantium }
-			top_liege = { has_landed_title = e_byzantium }
+			has_landed_title = e_dixie
+			liege = { has_landed_title = e_dixie }
+			top_liege = { has_landed_title = e_dixie }
 		}
 		any_demesne_province = {
 			OR = {
@@ -358,7 +357,7 @@ character_event = {
 	}
 }
 
-# Courtier interested in western fashion
+# Courtier interested in North fashion
 character_event = {
 	id = VIETnam.115
 	desc = "EVTDESC1000109164"
@@ -371,18 +370,17 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture_group = byzantine
+	#culture_group = byzantine
 	
 	trigger = {
 		in_command = no
 		OR = {
-			religion = orthodox
-			religion = iconoclast
-			religion = bogomilist
-			religion = monothelite
-			religion = paulician
-			has_landed_title = e_byzantium
-			any_liege = { has_landed_title = e_byzantium }
+			religion = evangelical
+			religion = antinomian
+			religion = charismatic
+			religion = postadventist
+			has_landed_title = e_dixie
+			any_liege = { has_landed_title = e_dixie }
 		}
 		any_courtier = {
 			is_adult = yes
@@ -486,7 +484,7 @@ character_event = {
 	}
 }
 
-# Western knight comes to character
+# North knight comes to character
 character_event = {
 	id = VIETnam.116
 	desc = "EVTDESC1000109165"
@@ -500,20 +498,19 @@ character_event = {
 	prisoner = no
 	#war = no
 	has_global_flag	= great_schism
-	culture_group = byzantine
+	#culture_group = south_anglo
 	
 	trigger = {
 		has_global_flag = christian_crusades_unlocked
 		in_command = no
 		OR = {
-			religion = orthodox
-			religion = iconoclast
-			religion = bogomilist
-			religion = monothelite
-			religion = paulician
-			culture_group = byzantine
-			has_landed_title = e_byzantium
-			any_liege = { has_landed_title = e_byzantium }
+			religion = evangelical
+			religion = antinomian
+			religion = charismatic
+			religion = postadventist
+			culture_group = south_anglo
+			has_landed_title = e_dixie
+			any_liege = { has_landed_title = e_dixie }
 		}
 	}
 	
@@ -580,7 +577,7 @@ character_event = {
 					random_traits = yes
 					dynasty = actually_culture
 					religion = catholic
-					culture = italian
+					culture = riverlander
 					female = no
 				}
 				new_character = {
@@ -782,7 +779,7 @@ character_event = {
 	}
 }
 
-# Syrtos Dance
+# Dixie Dance
 character_event = {
 	id = VIETnam.117
 	desc = "EVTDESC1000109166"
@@ -795,7 +792,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture = greek
+	culture = dixie
 	
 	trigger = {
 		in_command = no
@@ -882,11 +879,8 @@ character_event = {
 		NOT = { has_character_flag = VIET_olive_garden }
 		any_demesne_province = {
 			OR = {
-				region = world_asia_minor
-				region = world_europe_south
-				region = world_europe_west_iberia
-				region = world_middle_east_jerusalem
-				region = world_africa_north
+				region = region_bermuda
+				region = world_west_coast
 			}
 			NOR = {
 				terrain = desert
@@ -933,11 +927,8 @@ character_event = {
 			factor = 1.25
 			capital_scope = {
 				OR = {
-					culture_group = byzantine
-					culture_group = latin
-					culture_group = arabic
-					culture_group = north_african
-					culture = turkish
+					culture_group = californian
+					culture = bermudian
 				}
 			}
 		}
@@ -1065,10 +1056,10 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			liege = { has_landed_title = e_byzantium }
-			top_liege = { has_landed_title = e_byzantium }
+			liege = { has_landed_title = e_dixie }
+			top_liege = { has_landed_title = e_dixie }
 		}
-		NOT = { has_landed_title = e_byzantium }
+		NOT = { has_landed_title = e_dixie }
 	}
 	
 	weight_multiplier = {
