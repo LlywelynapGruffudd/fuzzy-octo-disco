@@ -11,7 +11,7 @@
 
 namespace = VIETnam
 
-# Lazy Byzantine Cook
+# Lazy Byzantine Cook nc
 character_event = {
 	id = VIETnam.191
 	desc = "EVTDESC1000109364"
@@ -200,22 +200,22 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			culture_group = west_germanic
-			culture_group = south_slavic
-			culture_group = central_germanic
-			culture_group = north_germanic
-			culture_group = celtic
-			culture_group = iberian
-			culture_group = latin
-			culture_group = west_slavic
-			culture_group = east_slavic
+			culture_group = malay
+			culture_group = canton
+			culture_group = nihonjin
+			culture_group = viet
+			#culture_group = celtic
+			#culture_group = iberian
+			#culture_group = latin
+			#culture_group = west_slavic
+			#culture_group = east_slavic
 		}
-		capital_scope = {
-			OR = {
-				region = world_europe_north			
-				region = world_europe_west		
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe_north			
+		#		region = world_europe_west		
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}

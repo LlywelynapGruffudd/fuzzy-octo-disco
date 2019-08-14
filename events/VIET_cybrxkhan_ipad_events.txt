@@ -159,14 +159,14 @@ character_event = {
 	
 	weight_multiplier = {
 		days = 1
-		modifier = { #less likely as more red and yellow carrots appear
-			factor = 0.5
-			year = 1200
-		}
-		modifier = { #less likely as more red and yellow carrots appear
-			factor = 0.3
-			year = 1350
-		}
+		#modifier = { #less likely as more red and yellow carrots appear
+		#	factor = 0.5
+		#	year = 1200
+		#}
+		#modifier = { #less likely as more red and yellow carrots appear
+		#	factor = 0.3
+		#	year = 1350
+		#}
 		modifier = {
 			factor = 1.2
 			trait = gregarious
@@ -481,13 +481,13 @@ character_event = {
 		trigger = {		
 			in_command = no
 			OR = {
-					culture_group = central_germanic
-					culture_group = west_slavic
-					culture_group = south_slavic
-					culture_group = baltic
-					culture_group = east_slavic
-					culture_group = magyar
-					culture_group = latin
+					culture_group = north_atlantic
+					culture_group = south_anglo
+					culture_group = west_anglo
+					#culture_group = baltic
+					#culture_group = east_slavic
+					#culture_group = magyar
+					#culture_group = latin
 			}
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -583,8 +583,8 @@ character_event = {
 		trigger = {
 			in_command = no
 			OR = {
-				culture_group = west_african
-				culture_group = central_african
+				culture_group = caribbanglo
+				culture_group = caribeno
 			}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -1256,13 +1256,8 @@ character_event = {
 		trigger = {
 			in_command = no
 			OR = {
-				culture_group = byzantine
-				#culture_group = central_semitic
-				culture_group = latin
-				culture_group = iberian
-				#culture_group = central_african
-				culture_group = north_african
-				culture_group = arabic
+				culture_group = californian
+				culture = bermudian
 			}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -2134,8 +2129,8 @@ character_event = {
 		in_command = no
 		OR = {
 			religion_group = christian
-			religion_group = muslim
-			religion_group = zoroastrian_group
+			#religion_group = muslim
+			#religion_group = zoroastrian_group
 			religion_group = jewish_group
 			AND = {
 				religion_group = indian_group
@@ -2148,7 +2143,10 @@ character_event = {
 				}
 			}
 			AND = {
-				religion_group = pagan_group
+				OR ={
+					religion_group = pagan_group
+					religion = espiritista
+				}
 				OR = {
 					trait = zealous
 					AND  = {
@@ -3662,7 +3660,7 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		has_global_flag = aztec_food
+		#has_global_flag = aztec_food
 	}
 	
 	weight_multiplier = {
@@ -5369,10 +5367,10 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOR = {
-			religion_group = zoroastrian_group
-			religion = messalian
+			#religion_group = zoroastrian_group
+			#religion = messalian
 			has_religion_feature = religion_holy_family 
-			has_religion_feature = religion_feature_zun
+			#has_religion_feature = religion_feature_zun
 		}
 		#NOT = { religion = manichean }
 		NOT = {
@@ -7245,7 +7243,7 @@ character_event = {
 	trigger = {
 		in_command = no
 		any_demesne_province = {
-			culture_group = central_germanic
+			culture_group = amerodeutsch
 			NOT = { has_province_modifier = VIET_kobold_infestation }
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -7284,7 +7282,7 @@ character_event = {
 		name = VIETmisc.2276.a
 		random_demesne_province = {
 			limit = {
-				culture_group = central_germanic
+				culture_group = amerodeutsch
 			}
 			add_province_modifier = {
 				name = VIET_kobold_infestation
@@ -8036,7 +8034,7 @@ character_event = {
 			culture_group = indo_aryan_group
 			culture_group = dravidian_group
 		}
-		year = 900
+		#year = 900
 		capital_scope = {
 			region = world_india
 			#OR = {
@@ -8087,15 +8085,15 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.2
-			NOT = { year = 900 }
+			NOT = { year = 2600 }
 		}
 		modifier = {
 			factor = 0.5
-			NOT = { year = 1000 }
+			NOT = { year = 2700 }
 		}
 		modifier = {
 			factor = 0.9
-			NOT = { year = 1100 }
+			NOT = { year = 2800 }
 		}
 	}
 	
@@ -8745,15 +8743,15 @@ character_event = {
 				chance = 30
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 		add_character_modifier = {
 			name = VIET_good_exercise
 			duration = 456
@@ -8800,10 +8798,11 @@ character_event = {
 			}
 		}
 		OR = {
-			culture_group = finno_ugric
-			culture_group = north_germanic
-			culture_group = east_slavic
-			culture_group = siberian_group #used in WtWSMS
+			culture_group = subarctic
+			culture_group = north_pacific
+			culture_group = north_atlantic
+			culture_group = northwest_coast
+			culture_group = sibir
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -10363,9 +10362,9 @@ character_event = {
 		name = VIETmisc.2307.b
 		trigger = {
 			OR = {
-				culture_group = chinese_group
-				culture = khitan
-				culture = jurchen
+				culture_group = canton
+				culture_group = nihonjin
+				#culture = jurchen
 			}
 			OR = {
 				AND = {
@@ -10701,15 +10700,15 @@ character_event = {
 				duration = 365
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 		set_character_flag = VIET_ear_christian_sailor
 	}
 	option = { #yes

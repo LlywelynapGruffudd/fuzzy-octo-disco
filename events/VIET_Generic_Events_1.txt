@@ -85,15 +85,15 @@ character_event = {
 	option = { #Go Sleep
 		name = "EVTOPTA1000109101"
 		prestige = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	
 	option = { #EAT!
@@ -103,15 +103,15 @@ character_event = {
 			75 = { }
 			25 = { add_trait = gluttonous }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	
 	option = { #Good enough
@@ -120,15 +120,15 @@ character_event = {
 		trigger = {
 			trait = content
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	
 	option = { #Don't want to deal with people
@@ -138,15 +138,15 @@ character_event = {
 			75 = { }
 			25 = { add_trait = shy }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 }
 
@@ -228,15 +228,15 @@ character_event = {
 			80 = { }
 			20 = { remove_trait = diligent }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 33
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 33
+		#	}
+		#}
 	}
 	
 	option = { #WORK HARDER
@@ -255,15 +255,15 @@ character_event = {
 				25 = { add_trait = stressed }
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 		if = {
 			limit = {
 				is_ill = no
@@ -312,15 +312,15 @@ character_event = {
 				15 = { add_trait = stressed }
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 50
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 50
+		#	}
+		#}
 		if = {
 			limit = {
 				is_ill = no
@@ -349,15 +349,15 @@ character_event = {
 			is_ill = no
 		}
 		prestige = 10
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 50
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 50
+		#	}
+		#}
 	}
 }
 
@@ -842,12 +842,12 @@ character_event = {
 	option = { #What?
 		name = "EVTOPTA1000109107"
 		prestige = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 	
 	option = { #Remains silent with everybody
@@ -863,12 +863,12 @@ character_event = {
 			name = VIET_awkward_encounter_public
 			duration = 365
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 }
 
@@ -931,12 +931,12 @@ character_event = {
 	option = { #Justice prevails!
 		name = "EVTOPTA1000109108"
 		prestige = 10
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -3
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -3
+		#}
 	}
 		
 	option = { #Justice is blind (thanks richvh)
@@ -949,12 +949,12 @@ character_event = {
 			trait = blinded
 		}
 		prestige = 10
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -3
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -3
+		3}
 		add_character_modifier = {
 			name = VIET_justice_is_blind
 			duration = 365
@@ -2039,7 +2039,7 @@ character_event = {
 	option = { #Fermented mare's milk
 		name = "EVTOPTB1000109119"
 		trigger = {
-			culture_group = altaic
+			culture_group = plains
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2061,7 +2061,7 @@ character_event = {
 	option = { #Fish and chips
 		name = "EVTOPTD1000109119"
 		trigger = {
-			culture_group = west_germanic
+			culture_group = south_anglo
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2073,8 +2073,8 @@ character_event = {
 		name = "EVTOPTE1000109119"
 		trigger = {
 			OR = {
-				culture_group = latin
-				culture_group = iberian
+				culture_group = mexicano
+				culture_group = colombiano
 			}
 		}
 		add_character_modifier = {
@@ -2097,7 +2097,7 @@ character_event = {
 	option = { #Pretzels
 		name = "EVTOPTG1000109119"
 		trigger = {
-			culture_group = central_germanic
+			culture_group = amerodeutsch
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2119,7 +2119,10 @@ character_event = {
 	option = { # Rice and tofu
 		name = "EVTOPTI1000109119"
 		trigger = {
-			culture_group = chinese_group
+			OR = {
+				culture_group = canton
+				culture_group = nihonjin
+			}
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2130,7 +2133,7 @@ character_event = {
 	option = { # Inerja Bread
 		name = "EVTOPTJ1000109119"
 		trigger = {
-			culture_group = east_african
+			culture_group = afroanglo
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2142,8 +2145,8 @@ character_event = {
 		name = "EVTOPTK1000109119"
 		trigger = {
 			OR = {
-				culture_group = west_african
-				culture_group = central_african
+				culture_group = caribbanglo
+				culture_group = caribeno
 			}
 		}
 		add_character_modifier = {
@@ -2155,7 +2158,7 @@ character_event = {
 	option = { # Kouign-amann
 		name = "EVTOPTL1000109119"
 		trigger = {
-			culture = breton
+			culture = pictish
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2166,7 +2169,7 @@ character_event = {
 	option = { # Bacon and cabbage
 		name = "EVTOPTM1000109119"
 		trigger = {
-			culture = irish
+			culture = pictish
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2191,7 +2194,7 @@ character_event = {
 	option = { # Cawl soup
 		name = "EVTOPTO1000109119"
 		trigger = {
-			culture = welsh
+			culture = wladfaeg
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -2877,7 +2880,7 @@ character_event = {
 
 
 ##########################################################################
-# Generic Muslim Events
+# Generic Muslim Events nc
 ##########################################################################
 
 # Wash face - Wudu
@@ -4901,7 +4904,7 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = { religion_group = muslim }
+		#NOT = { religion_group = muslim }
 		capital_scope = {
 			NOR = {
 				region = world_africa_west
@@ -5372,13 +5375,13 @@ character_event = {
 		in_command = no
 		#Middle Eastern cultures and religions
 		NOR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			culture_group = arabic
-			culture_group = iranian
-			culture_group = serindian # exists in WtWSMS
-			culture_group = north_african
-			culture = andalusian_arabic
+			#religion_group = muslim
+			#religion_group = zoroastrian_group
+			culture_group = maghreb
+			#culture_group = iranian
+			#culture_group = serindian # exists in WtWSMS
+			#culture_group = north_african
+			#culture = andalusian_arabic
 		}
 		has_game_rule = {
 			name = VIET_events_rules
@@ -7016,14 +7019,25 @@ character_event = {
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		OR = {
-			has_landed_title = e_byzantium
+			has_landed_title = e_dixie
 			top_liege = {
-				has_landed_title = e_byzantium
+				has_landed_title = e_dixie
 			}
-			culture_group = byzantine
-			culture = roman
-			religion = hellenic_pagan 
-			religion = hellenic_pagan_reformed
+			culture_group = afroanglo
+			AND = {
+				culture_group = north_atlantic
+				NOT = { culture = maritimer }
+				NOT = { culture = newfie }
+			}
+			culture_group = south_anglo
+			culture_group = amerodeutsch
+			religion_group = christian
+			religion_group = oldworld
+			AND = {
+				religion_group = pagan_group
+				is_reformed_religion = yes
+			}
+			religion_group = jewish_group
 		}
 	}
 	
@@ -7056,36 +7070,36 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.2
-			has_landed_title = e_byzantium
+			has_landed_title = e_dixie
 		}
-		modifier = {
-			factor = 0.8
-			NOT = { has_landed_title = e_byzantium }
-		}
-		modifier = {
-			factor = 1.2
-			culture = greek
-		}
-		modifier = {
-			factor = 0.8
-			NOT = { culture = greek }
-		}
-		modifier = {
-			factor = 1.2
-			culture = roman
-		}
-		modifier = {
-			factor = 0.8
-			NOT = { culture = roman }
-		}
-		modifier = {
-			factor = 1.2
-			religion = orthodox
-		}
-		modifier = {
-			factor = 0.8
-			NOT = { religion = orthodox }
-		}
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { has_landed_title = e_dixie }
+		#}
+		#modifier = {
+		#	factor = 1.2
+		#	culture = greek
+		#}
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { culture = greek }
+		#}
+		#modifier = {
+		#	factor = 1.2
+		#	culture = roman
+		#}
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { culture = roman }
+		#}
+		#modifier = {
+		#	factor = 1.2
+		#	religion = orthodox
+		#}
+		#modifier = {
+		#	factor = 0.8
+		#	NOT = { religion = orthodox }
+		#}
 	}
 	
 	option = {
@@ -7113,7 +7127,7 @@ character_event = {
 		#in_command = no
 		OR = {
 			religion_group = christian
-			religion_group = muslim
+			religion_group = oldworld
 			religion_group = jewish_group
 			religion_group = indian_group
 		}
@@ -7322,14 +7336,14 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			has_landed_title = c_gizeh
+			has_landed_title = c_cario
 			AND = {
-				liege = { has_landed_title = c_gizeh }
-				culture = egyptian_arabic
+				liege = { has_landed_title = c_cario }
+				#culture = egyptian_arabic
 			}
 			AND = {
-				top_liege = { has_landed_title = c_gizeh }
-				culture = egyptian_arabic
+				top_liege = { has_landed_title = c_cario }
+				#culture = egyptian_arabic
 			}
 		}
 		NOT = { has_character_flag = thestormweaver_stargate_reference }
@@ -7548,15 +7562,15 @@ character_event = {
 				chance = 45
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 50
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 50
+		#	}
+		#}
 	}
 }
 
@@ -7579,17 +7593,17 @@ character_event = {
 	trigger = {
 		in_command = no
 		#NOT = { religion_group = pagan_group }
-		capital_scope = {
-			OR = {
-				region = world_europe_west
-				region = world_europe_south
-				region = world_asia_minor
-				region = world_persia
-				region = world_africa_north
-				region = world_middle_east
-				region = world_india_rajastan
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe_west
+		#		region = world_europe_south
+		#		region = world_asia_minor
+		#		region = world_persia
+		#		region = world_africa_north
+		#		region = world_middle_east
+		#		region = world_india_rajastan
+		#	}
+		#}
 		NOT = { has_artifact = VIET_hellenic_statue_female }
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -7724,7 +7738,7 @@ character_event = {
 		trigger = {
 			OR = {
 				religion_group = christian
-				religion_group = muslim
+				#religion_group = muslim
 				religion_group = jewish_group
 			}
 		}
@@ -7968,23 +7982,23 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		any_demesne_province = {
-			OR = {
-				region = world_persia
-				region = world_middle_east_jerusalem
-				region = world_asia_minor
-				duchy = { title = d_damascus }
-				duchy = { title = d_palmyra }
-				duchy = { title = d_mudar }
-				duchy = { title = d_kermanshah }
-				duchy = { title = d_tigris }
-				duchy = { title = d_basra }
-				duchy = { title = d_baghdad }
-				duchy = { title = d_mosul }
-				duchy = { title = d_samarra }
-				duchy = { title = d_jazira }
-			}
-		}
+		#any_demesne_province = {
+		#	OR = {
+		#		region = world_persia
+		#		region = world_middle_east_jerusalem
+		#		region = world_asia_minor
+		#		duchy = { title = d_damascus }
+		#		duchy = { title = d_palmyra }
+		#		duchy = { title = d_mudar }
+		#		duchy = { title = d_kermanshah }
+		#		duchy = { title = d_tigris }
+		#		duchy = { title = d_basra }
+		#		duchy = { title = d_baghdad }
+		#		duchy = { title = d_mosul }
+		#		duchy = { title = d_samarra }
+		3		duchy = { title = d_jazira }
+		#	}
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -8628,7 +8642,7 @@ character_event = {
 ##########################################################################
 
 
-# Muslim Call to Prayer
+# Muslim Call to Prayer nc
 character_event = {
 	id = VIETnam.266
 	desc = "EVTDESC1000109439"
