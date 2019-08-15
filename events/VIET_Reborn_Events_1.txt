@@ -1919,7 +1919,7 @@ character_event = {
 	}	
 }
 
-# Rumors of a Chinese women playing polo
+# Rumors of a brazilian women playing polo
 character_event = {
 	id = VIETmisc.8018
 	desc = VIETmisc.8018.desc
@@ -1937,36 +1937,30 @@ character_event = {
 		in_command = no
 		#Where people play polo
 		OR = {
-			culture_group = serindian # exists in WtWSMS
-			culture_group = altaic
-			culture_group = iranian
-			culture_group = arabic
-			culture_group = byzantine
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			culture_group = north_atlantic
+			culture_group = laurentian
+			culture_group = west_anglo
+			culture_group = south_anglo
+			culture_group = rockland
+			culture_group = californian
+			culture_group = north_pacific
 			any_demesne_province = {
 				OR = {
-					region = custom_eastern_edge_of_map
-					region = world_himalayas
-					region = world_steppe
-					region = world_india
-					region = world_persia
-					region = world_middle_east
-					region = world_asia_minor				
+					region = custom_usa
 				}
 			}		
 		}
-		NOT = { culture_group = chinese_group } #doesn't make sense for Chinese to think about Chinese culture from a foreigner's perspective
+		NOT = { culture_group = portuguese } #doesn't make sense for brazilian to think about it
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
 	
 	weight_multiplier = {
 		days = 1
-		modifier = { #collapse of Tang
-			factor = 0.05
-			year = 900
-		}
+		#modifier = { #collapse of Tang
+		#	factor = 0.05
+		#	year = 900
+		#}
 		modifier = {
 			factor = 1.2
 			trait = gregarious
@@ -2615,15 +2609,15 @@ character_event = {
 	trigger = {
 		#in_command = no
 		NOT = { religion_group = indian_group }
-		NOT = { culture_group = indo_aryan_group }
-		NOT = { culture_group = dravidian_group }
-		capital_scope = {
-			NOR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim				
-			}
-		}
+		#NOT = { culture_group = indo_aryan_group }
+		#NOT = { culture_group = dravidian_group }
+		#capital_scope = {
+		#	NOR = {
+		#		region = custom_eastern_edge_of_map
+		#		region = world_himalayas
+		#		region = world_steppe_tarim			
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }		
 	}
@@ -4246,12 +4240,12 @@ character_event = {
 		OR = {
 			capital_scope = {
 				OR = {
-					region = world_asia_minor
-					region = world_europe_south_east					
+					region = world_rockies
+					#region = world_europe_south_east
 				}
 			}
-			culture_group = south_slavic
-			culture_group = byzantine
+			culture_group = plateau
+			culture_group = rockland
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -12896,7 +12890,7 @@ character_event = {
 		in_command = no
 		capital_scope = {
 			NOR = {
-				culture_group = latin
+				culture_group = californian
 				culture_group = byzantine
 			}
 			OR = {
@@ -13738,13 +13732,13 @@ character_event = {
 		#in_command = no
 		#NOT = { has_character_flag = VIET_what_do_when_grown_up }
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			#culture_group = indo_aryan_group
+			religion_group = indian_group
 			capital_scope = {
 				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
+					religion_group = indian_group
+					#culture_group = dravidian_group
+					region = world_south_america_caribbean
 				}
 			}
 		}
@@ -16187,7 +16181,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	#war = no
-	culture_group = latin
+	#culture_group = latin
 	
 	trigger = {
 		#in_command = no
@@ -16796,15 +16790,15 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			religion_group = indian_group
+			#culture_group = dravidian_group
 			capital_scope = {
 				OR = {
-					region = world_india
-					region = world_persia
-					region = world_himalayas
-					region = world_middle_east_arabia
-					region = world_africa_east				
+					region = world_south_america_caribbean
+					#region = world_persia
+					#region = world_himalayas
+					#region = world_middle_east_arabia
+					#region = world_africa_east
 				}
 			}
 		}
@@ -16911,10 +16905,10 @@ character_event = {
 	trigger = {
 		#in_command = no
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			religion_group = indian_group
+			#culture_group = dravidian_group
 			capital_scope = {
-				region = world_india
+				region = world_south_america_caribbean
 			}
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -17798,7 +17792,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture_group = north_germanic
+	culture_group = centrolatino
 	
 	trigger = {
 		in_command = no
@@ -20047,28 +20041,28 @@ character_event = {
 		in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			culture_group = iberian
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = west_slavic
-			culture_group = east_slavic
-			culture_group = south_slavic
-			culture_group = latin
-			culture_group = celtic
-			culture_group = north_germanic
-			culture_group = byzantine
-			culture_group = baltic
-			culture_group = magyar
-			culture_group = arabic
-			culture_group = north_african
-			culture_group = iranian
-			culture_group = israelite
-			religion_group = christian
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			religion_group = jewish_group
-		}
+		#OR = {
+		#	culture_group = iberian
+		#	culture_group = west_germanic
+		#	culture_group = central_germanic
+		#	culture_group = west_slavic
+		#	culture_group = east_slavic
+		#	culture_group = south_slavic
+		#	culture_group = latin
+		#	culture_group = celtic
+		#	culture_group = north_germanic
+		#	culture_group = byzantine
+		#	culture_group = baltic
+		#	culture_group = magyar
+		#	culture_group = arabic
+		#	culture_group = north_african
+		#	culture_group = iranian
+		#	culture_group = israelite
+		#	religion_group = christian
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	religion_group = jewish_group
+		#}
 	}
 	
 	weight_multiplier = {
@@ -25509,7 +25503,7 @@ character_event = {
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		OR = {
 			top_liege = {
-				has_landed_title = e_byzantium
+				has_landed_title = e_dixie
 			}
 			AND = {
 				culture_group = byzantine
@@ -25669,31 +25663,31 @@ character_event = {
 		NOR = {
 			top_liege = {
 				OR = {
-					has_landed_title = e_byzantium
-					has_landed_title = e_roman_empire
-					has_landed_title = c_byzantion
+					has_landed_title = e_california
+					#has_landed_title = e_roman_empire
+					has_landed_title = c_sacramento
 				}
 			}
 			AND = {
-				culture_group = byzantine
+				culture_group = californian
 				capital_scope = {
 					OR = {
-						region = world_asia_minor
-						region = world_europe_south_east
+						region = world_west_coast
+						#region = world_europe_south_east
 					}
 				}			
 			}
-			has_landed_title = c_byzantion
+			has_landed_title = c_sacramento
 		}
-		capital_scope = {
-			NOR = {
-				region = world_steppe_east
+		#capital_scope = {
+		#	NOR = {
+				#region = world_steppe_east
 				#region = world_steppe_tarim
-				region = world_africa_central
-				region = world_himalayas
+		#		region = world_africa_central
+		#		region = world_himalayas
 				#region = world_india
-			}
-		}
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -25703,9 +25697,9 @@ character_event = {
 			factor = 0.1
 			capital_scope = {
 				OR = {
-					region = world_steppe_tarim
-					region = world_india
-					region = world_africa_east
+					region = world_south_america
+					region = custom_central_america
+					#region = world_africa_east
 				}
 			}
 		}		
@@ -25870,13 +25864,13 @@ character_event = {
 		name = VIETmisc.8252.a
 		trigger = {
 			NOR = {
-				AND = {
-					religion_group = zoroastrian_group
-					NOT = { religion = manichean }	
-				}
-				religion = messalian
+				#AND = {
+				#	religion_group = zoroastrian_group
+				#	NOT = { religion = manichean }	
+				#}
+				#religion = messalian
 				has_religion_feature = religion_holy_family 
-				has_religion_feature = religion_feature_zun
+				#has_religion_feature = religion_feature_zun
 			}	
 		}
 		piety = 3
@@ -26648,7 +26642,7 @@ character_event = {
 			factor = 0.5
 			NOR = {
 				is_nomadic = yes
-				culture_group = altaic
+				culture_group = plains
 				culture_group = magyar
 				culture_group = finno_ugric
 				culture_group = chinese_group

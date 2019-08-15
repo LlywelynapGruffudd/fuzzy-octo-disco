@@ -1741,12 +1741,12 @@ character_event = {
 			name = VIET_leader_angered_peasants
 			duration = 911
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 }
 
@@ -1900,15 +1900,15 @@ character_event = {
 			20 = { add_trait = diligent }
 			40 = { }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.24.b
@@ -1921,15 +1921,15 @@ character_event = {
 			30 = { add_trait = proud }
 			50 = { }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 }
 
@@ -2870,15 +2870,15 @@ character_event = {
 			name = VIET_new_expensive_cosmetics
 			duration = 777
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.40.b
@@ -2886,15 +2886,15 @@ character_event = {
 			name = the_prude
 			duration = 365
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.40.c
@@ -3279,12 +3279,12 @@ character_event = {
 			name = VIET_good_exercise
 			duration = 365
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 2
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 2
+		#}
 	}
 }
 
