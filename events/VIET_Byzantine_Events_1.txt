@@ -141,7 +141,7 @@ character_event = {
 		#		region = world_middle_east_jerusalem
 		#	}
 		#}
-		#religion = orthodox
+		religion_group = christian
 		#OR = {
 		#	location = { province_id = 475 }
 		#	location = { province_id = 476 }
@@ -252,20 +252,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = byzantine
-			has_landed_title = e_dixie
-			liege = { has_landed_title = e_dixie }
-			top_liege = { has_landed_title = e_dixie }
-		}
-		any_demesne_province = {
-			OR = {
-				region = world_asia_minor
-				region = world_europe_south
-				region = world_middle_east_jerusalem
-				is_baklava_culture_trigger = yes
-			}
-		}
+		#OR = {
+		#	culture_group = byzantine
+		#	has_landed_title = e_dixie
+		#	liege = { has_landed_title = e_dixie }
+		#	top_liege = { has_landed_title = e_dixie }
+		#}
+		#any_demesne_province = {
+		#	OR = {
+		#		region = world_asia_minor
+		#		region = world_europe_south
+		#		region = world_middle_east_jerusalem
+		#		is_baklava_culture_trigger = yes
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -508,7 +508,7 @@ character_event = {
 			religion = antinomian
 			religion = charismatic
 			religion = postadventist
-			culture_group = south_anglo
+			#culture_group = south_anglo
 			has_landed_title = e_dixie
 			any_liege = { has_landed_title = e_dixie }
 		}
@@ -879,7 +879,7 @@ character_event = {
 		NOT = { has_character_flag = VIET_olive_garden }
 		any_demesne_province = {
 			OR = {
-				region = region_bermuda
+				duchy = { title = d_bermuda }
 				region = world_west_coast
 			}
 			NOR = {

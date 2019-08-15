@@ -50,25 +50,25 @@ character_event = {
 		is_abroad = no
 		NOT = { has_global_flag =  VIET_minotaur }
 		NOT = { has_character_flag =  VIET_minotaur_failure }
-		OR = {
-			capital_scope = {
-				OR = {
-					province_id = 479
-					province_id = 480
-				}
-			}
-			AND = {
-				primary_title = {
-					title = d_krete
-				}
-				any_realm_province = {
-					OR = {
-						province_id = 479
-						province_id = 480
-					}
-				}
-			}
-		}
+		#OR = {
+		#	capital_scope = {
+		#		OR = {
+		#			province_id = 479
+		#			province_id = 480
+		#		}
+		#	}
+		#	AND = {
+		#		primary_title = {
+		#			title = d_krete
+		#		}
+		#		any_realm_province = {
+		#			OR = {
+		#				province_id = 479
+		#				province_id = 480
+		#			}
+		#		}
+		#	}
+		#}
 	}
 
 	weight_multiplier = {
