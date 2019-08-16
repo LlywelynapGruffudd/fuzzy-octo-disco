@@ -299,9 +299,9 @@ character_event = {
 		capital_scope = {
 			OR = {
 				region = world_south_america
-				duchy = { title = d_khuttal }
-				duchy = { title = d_ferghana }
-				duchy = { title = d_gandhara }
+				#duchy = { title = d_khuttal }
+				#duchy = { title = d_ferghana }
+				#duchy = { title = d_gandhara }
 			}
 		}
 		OR = {
@@ -559,7 +559,7 @@ narrative_event = {
 	option = {
 		name = VIETmisc.5026.c
 		trigger = {
-			religion = buddhist
+			religion = cetic
 		}
 		piety = 4
 	}
@@ -1103,7 +1103,7 @@ character_event = {
 			factor = 1.5
 			OR = {
 				culture = british
-				#culture = english
+				culture = yankee #new england
 				#culture = norman
 			}
 		}

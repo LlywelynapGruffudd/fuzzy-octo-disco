@@ -43,8 +43,8 @@ character_event = {
 		capital_scope = {
 			OR = {
 				region = world_south_america
-				region = custom_atlantic
-				region = custom_pacific			
+				#region = custom_atlantic
+				#region = custom_pacific			
 			}				
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }

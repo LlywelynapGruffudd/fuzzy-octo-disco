@@ -484,7 +484,7 @@ character_event = {
 					culture_group = north_atlantic
 					culture_group = south_anglo
 					culture_group = west_anglo
-					#culture_group = baltic
+					culture_group = afroanglo
 					#culture_group = east_slavic
 					#culture_group = magyar
 					#culture_group = latin
@@ -585,6 +585,7 @@ character_event = {
 			OR = {
 				culture_group = caribbanglo
 				culture_group = caribeno
+				culture_group = guinean
 			}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -652,12 +653,12 @@ character_event = {
 		trigger = {
 			in_command = no
 			is_abroad = no
-			OR = {
-				culture_group = byzantine
-				capital_scope = {
-					culture_group = byzantine
-				}
-			}
+			#OR = {
+			#	culture_group = byzantine
+			#	capital_scope = {
+			#		culture_group = byzantine
+			#	}
+			#}
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		}
@@ -1058,12 +1059,12 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = {
-			culture_group = byzantine
-		}
-		any_demesne_province = {
-			culture_group = byzantine
-		}
+		#NOT = {
+		#	culture_group = byzantine
+		#}
+		#any_demesne_province = {
+		#	culture_group = byzantine
+		#}
 		NOT = { has_character_flag = VIET_learning_bitter_greek_greens }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -1157,27 +1158,27 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		OR = {
+		#OR = {
 			#culture_group = south_semitic
-			culture_group = east_african
+		#	culture_group = east_african
 			#culture_group = central_semitic
-			culture_group = arabic
-			culture_group = north_african
-			AND = {
-				OR = {
-					is_patrician = yes
-					is_merchant_republic = yes
-					capital_scope = {
-						port = yes
-					}
-				}
-				OR = {
-					religion_group = muslim
-					religion_group = zoroastrian_group
-				}
-			}
-		}
-		year = 1000
+		#	culture_group = arabic
+		#	culture_group = north_african
+		#	AND = {
+		#		OR = {
+		#			is_patrician = yes
+		#			is_merchant_republic = yes
+		#			capital_scope = {
+		#				port = yes
+		#			}
+		3		}
+				#OR = {
+				#	religion_group = muslim
+				#	religion_group = zoroastrian_group
+				#}
+		#	}
+		#}
+		#year = 1000
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1224,10 +1225,10 @@ character_event = {
 						factor = 0.8
 						trait = hedonist
 				}
-				modifier = {
-						factor = 0.25
-						NOT = { year = 1285 }
-				}
+				#modifier = {
+				#		factor = 0.25
+				#		NOT = { year = 1285 }
+				#}
 		}
 		
 		option = {
@@ -1255,10 +1256,10 @@ character_event = {
 		
 		trigger = {
 			in_command = no
-			OR = {
-				culture_group = californian
-				culture = bermudian
-			}
+			#OR = {
+			#	culture_group = californian
+			#	culture = bermudian
+			#}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		}
@@ -1321,16 +1322,16 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		capital_scope = {
-			OR = {
-				region = world_europe_south
-				region = world_europe_west_iberia
-				region = world_europe_west_francia
-				region = world_asia_minor
-				region = world_middle_east
-				region = world_africa_north
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe_south
+		#		region = world_europe_west_iberia
+		#		region = world_europe_west_francia
+		#		region = world_asia_minor
+		#		region = world_middle_east
+		#		region = world_africa_north
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1512,21 +1513,21 @@ character_event = {
 	trigger = {
 		in_command = no
 		is_abroad = no
-		OR = {
+		#OR = {
 			#culture = hebrew
 			#culture = berber
 			#culture_group = south_semitic
 			#culture_group = east_semitic
 			#culture_group = northwest_semitic
 			#culture_group = central_semitic
-			culture_group = byzantine
-			culture_group = latin
-			culture_group = iberian
-			culture_group = arabic
-			culture_group = north_african
-			culture_group = israelite
-			culture_group = iranian
-		}
+			#culture_group = byzantine
+			#culture_group = latin
+			#culture_group = iberian
+			#culture_group = arabic
+			#culture_group = north_african
+			#culture_group = israelite
+			#culture_group = iranian
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1732,16 +1733,16 @@ character_event = {
 		in_command = no
 		is_abroad = no
 		location = {
-			OR = {
-				region = world_europe
-				region = world_africa_north
-				region = world_middle_east
-				region = world_steppe_west				
-			}
-		}
+		#	OR = {
+		#		region = world_europe
+		#		region = world_africa_north
+		#		region = world_middle_east
+		#		region = world_steppe_west			
+		#	}
+		#}
 		is_nomadic = no
 		OR = {
-			NOT = { religion_group = muslim }
+			NOT = { religion_group = latter_day_saints }
 			AND = {
 				OR = {
 					trait = drunkard
@@ -2129,8 +2130,8 @@ character_event = {
 		in_command = no
 		OR = {
 			religion_group = christian
-			#religion_group = muslim
-			#religion_group = zoroastrian_group
+			religion_group = latter_day_saints
+			religion_group = cult_of_saints
 			religion_group = jewish_group
 			AND = {
 				religion_group = indian_group
@@ -2143,10 +2144,10 @@ character_event = {
 				}
 			}
 			AND = {
-				OR ={
-					religion_group = pagan_group
-					religion = espiritista
-				}
+				#OR ={
+				religion_group = pagan_group
+				#religion = espiritista
+				#}
 				OR = {
 					trait = zealous
 					AND  = {
@@ -2400,13 +2401,13 @@ character_event = {
 		is_abroad = no
 		OR = {
 			#religion = antinomianism
-			religion = bogomilist
-			religion = cathar
-			religion = fraticelli
-			religion = kharijite
-			religion = mazdaki
+			religion = antinomian
+			religion = jeffersonian
+			#religion = fraticelli
+			#religion = kharijite
+			#religion = mazdaki
 			#religion = taoist
-			religion = waldensian
+			#religion = waldensian
 		}
 		any_vassal = {
 			is_adult = yes
@@ -2642,24 +2643,24 @@ character_event = {
 		is_abroad = no
 		OR = {
 			#religion = antinomianism
-			religion = bogomilist
-			religion = cathar
-			religion = fraticelli
-			religion = kharijite
-			religion = mazdaki
+			religion = antinomian
+			religion = jeffersonian
+			#religion = fraticelli
+			#religion = kharijite
+			#religion = mazdaki
 			#religion = taoist
-			religion = waldensian
+			#religion = waldensian
 		}
 		any_demesne_province = {
 			OR = {
 				#religion = antinomianism
-				religion = bogomilist
-				religion = cathar
-				religion = fraticelli
-				religion = kharijite
-				religion = mazdaki
+				religion = antinomian
+				religion = jeffersonian
+				#religion = fraticelli
+				#religion = kharijite
+				#religion = mazdaki
 				#religion = taoist
-				religion = waldensian
+				#religion = waldensian
 			}
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -2760,21 +2761,21 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			religion_group = christian
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture_group = west_germanic
-			culture_group = west_slavic
-			culture_group = south_slavic
-			culture_group = baltic
-			culture_group = east_slavic
-			culture_group = magyar
-			culture_group = latin
-			culture_group = celtic
-			culture_group = iberian
-			culture_group = byzantine
-		}
+		#OR = {
+		#	religion_group = christian
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture_group = west_germanic
+		#	culture_group = west_slavic
+		#	culture_group = south_slavic
+		#	culture_group = baltic
+		#	culture_group = east_slavic
+		#	culture_group = magyar
+		#	culture_group = latin
+		#	culture_group = celtic
+		#	culture_group = iberian
+		#	culture_group = byzantine
+		#}
 	}
 	
 	weight_multiplier = {
@@ -3136,16 +3137,16 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			culture_group = iranian
-			culture_group = serindian
-			capital_scope = {
-				OR = {
-					culture_group = iranian
-					culture_group = serindian
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = iranian
+		#	culture_group = serindian
+		#	capital_scope = {
+		#		OR = {
+		#			culture_group = iranian
+		#			culture_group = serindian
+		#		}
+		#	}
+		#}
 		OR = {
 			trait = misguided_warrior
 			trait = tough_soldier
@@ -3729,7 +3730,8 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		has_global_flag = aztec_food
+		in_command = no
+		#has_global_flag = aztec_food
 	}
 	
 	weight_multiplier = {
@@ -4453,8 +4455,8 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		religion_group = zoroastrian_group
-		NOT = { has_global_flag = saoshyant_appears }
+		religion = gracia_divina
+		NOT = { has_global_flag = libertador_descendant }
 		NOT = {
 			has_game_rule = {
 				name = VIET_events_rules
@@ -7308,13 +7310,13 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		any_demesne_province = {
-			NOR = {
-				culture_group = iranian
-				region = world_persia
-			}
-		}
-		NOT = { culture_group = iranian }
+		#any_demesne_province = {
+		#	NOR = {
+		#		culture_group = iranian
+		#		region = world_persia
+		#	}
+		#}
+		#NOT = { culture_group = iranian }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7489,17 +7491,17 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	capital_scope = {
+		#		OR = {
+		#			culture_group = indo_aryan_group
+		#			culture_group = dravidian_group
+		#			region = world_india
+		#		}
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7589,17 +7591,17 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
-				}
-			}
-		}		
+	#	OR = {
+	#		culture_group = indo_aryan_group
+	#		culture_group = dravidian_group
+	#		capital_scope = {
+	#			OR = {
+	#				culture_group = indo_aryan_group
+	#				culture_group = dravidian_group
+	#				region = world_india
+	#			}
+	#		}
+	#	}		
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7681,17 +7683,17 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
-				}
-			}
-		}
+	#	OR = {
+	#		culture_group = indo_aryan_group
+	#		culture_group = dravidian_group
+	#		capital_scope = {
+	#			OR = {
+	#				culture_group = indo_aryan_group
+	#				culture_group = dravidian_group
+	#				region = world_india
+	#			}
+	#		}
+	#	}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7779,19 +7781,19 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-		}
+	#	OR = {
+	#		culture_group = indo_aryan_group
+	#		culture_group = dravidian_group
+	#	}
 		any_courtier = {
 			is_adult = yes
 			NOT = { trait = incapable }
 			NOT = { trait = craven }
 			NOT = { trait = temperate }
-			OR = {
-				culture_group = indo_aryan_group
-				culture_group = dravidian_group
-			}
+	#		OR = {
+	#			culture_group = indo_aryan_group
+	#			culture_group = dravidian_group
+	#		}
 			OR = {
 				trait = brave
 				trait = gregarious
@@ -8030,10 +8032,10 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-		}
+		#OR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#}
 		#year = 900
 		capital_scope = {
 			region = world_india
@@ -8986,13 +8988,13 @@ character_event = {
 		in_command = no
 		location = { #partly based on WtWSMS, excluding region where turtles don't live
 			NOR = {
-				region = world_steppe
-				region = world_europe_north
-				region = world_europe_east
+				region = custom_mountain_zone
+				region = world_great_plains
+				region = world_appalachia
 				#region = world_europe_west_brittania
 				#region = custom_diocese_gallia
 				#region = custom_diocese_germania_magna
-				region = world_middle_east_arabia
+				#region = world_middle_east_arabia
 			}
 		}
 	}
@@ -9503,16 +9505,16 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		NOR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			any_realm_province = {
-				OR = {
-					region = world_india
-					region = world_himalayas
-				}
-			}		
-		}
+		#NOR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	any_realm_province = {
+		#		OR = {
+		#			region = world_india
+		#			region = world_himalayas
+		#		}
+		#	}		
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -9586,16 +9588,16 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		capital_scope = {
-			OR = {
-				region = world_europe_south
-				region = world_europe_west_iberia
-				region = world_asia_minor
-				region = world_persia
-				region = world_africa
-				region = world_middle_east
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe_south
+		#		region = world_europe_west_iberia
+		#		region = world_asia_minor
+		#		region = world_persia
+		#		region = world_africa
+		#		region = world_middle_east
+		#	}
+		#}
 		NOT = { has_character_flag = VIET_geckos_removed }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
