@@ -42,9 +42,13 @@ character_event = {
 		NOT = { has_character_flag =  VIET_chinese_traveler_tells_stories }
 		capital_scope = {
 			OR = {
-				region = world_south_america
-				#region = custom_atlantic
-				#region = custom_pacific			
+				region = custom_eastern_edge_of_map
+				region = world_himalayas
+				region = world_steppe
+				region = world_india
+				region = world_persia
+				region = world_middle_east
+				region = world_asia_minor				
 			}				
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
