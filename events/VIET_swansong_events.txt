@@ -2319,10 +2319,10 @@ province_event = {
 		months = 6000
 		modifier = {
 			OR = {
-				culture_group = serindian # exists in WtWSMS
-				culture = tocharian
-				culture = sogdian
-				culture = saka
+			#	culture_group = serindian # exists in WtWSMS
+			#	culture = tocharian
+			#	culture = sogdian
+			#	culture = saka
 				port = yes
 			}
 			factor = 0.95
@@ -3137,16 +3137,16 @@ character_event = {
 
 	trigger = {
 		in_command = no
-		NOT = { culture_group = indo_aryan_group }
-		NOT = { culture_group = dravidian_group }
-		NOT = {
-			capital_scope = {
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
-				}
-			}
+		#NOT = { culture_group = indo_aryan_group }
+		#NOT = { culture_group = dravidian_group }
+		#NOT = {
+		#	capital_scope = {
+		#		OR = {
+		#			culture_group = indo_aryan_group
+		#			culture_group = dravidian_group
+		#			region = world_india
+		#		}
+		#	}
 		}
 	}
 
@@ -3434,9 +3434,11 @@ character_event = {
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		#Doesn't make sense for Africans
-		NOT = { culture_group = west_african }
-		NOT = { culture_group = east_african }
-		NOT = { culture_group = central_african }
+		NOT = { culture_group = 
+caribbanglo }
+		NOT = { culture_group = caribeno }
+		NOT = { culture_group = antillais }
+		NOT = { culture_group = antilliaanse }
 	}
 
 	weight_multiplier = {
@@ -3616,25 +3618,25 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			culture_group = west_germanic
+		#	culture_group = west_germanic
 			#culture_group = gallic
-			culture_group = latin
-			culture_group = celtic
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture = norman
-			any_realm_province = {
-				OR = {
-					culture_group = west_germanic
-					#culture_group = gallic
-					culture_group = latin
-					culture_group = celtic
-					culture_group = north_germanic
-					culture_group = central_germanic
-					culture = norman
-					province_id = 57				
-				}
-			}
+		#	culture_group = latin
+		#	culture_group = celtic
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture = norman
+		#	any_realm_province = {
+		#		OR = {
+		#			culture_group = west_germanic
+		#			#culture_group = gallic
+		#			culture_group = latin
+		#			culture_group = celtic
+		#			culture_group = north_germanic
+		#			culture_group = central_germanic
+		#			culture = norman
+		#			province_id = 57				
+		#		}
+		#	}
 			has_alternate_start_parameter = { key = culture_names value = random }	
 		}
 		NOT = { has_global_flag = VIET_Scarborough_Fair_blessing_given }
@@ -3667,20 +3669,20 @@ character_event = {
 			factor = 2
 			trait = poet
 		}
-		modifier = {
-			factor = 0.5
-			NOT = {
-				OR = {
-					culture_group = west_germanic
-					culture = norman
-					culture = scottish
-					culture = welsh
-					any_realm_province = {
-						province_id = 57
-					}
-				}
-			}
-		}
+		#modifier = {
+		#	factor = 0.5
+		#	NOT = {
+		#		OR = {
+		#			culture_group = west_germanic
+		#			culture = norman
+		#			culture = scottish
+		#			culture = welsh
+		#			any_realm_province = {
+		#				province_id = 57
+		#			}
+		#		}
+		#	}
+		#}
 		modifier = {
 			factor = 1.2
 			year = 1300
@@ -3725,12 +3727,12 @@ narrative_event = {
 	option = {#yes
 		name = VIETScarboroughFair.49.b
 		set_global_flag = VIET_Scarborough_Fair_blessing_given
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -8
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -8
+		#}
 		add_character_modifier = {
 			name = VIET_going_to_Scarborough_Fair
 			duration = -1
