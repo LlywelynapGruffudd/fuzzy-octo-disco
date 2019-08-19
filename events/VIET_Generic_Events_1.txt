@@ -2122,6 +2122,8 @@ character_event = {
 			OR = {
 				culture_group = canton
 				culture_group = nihonjin
+				culture_group = malay
+				culture_group = viet
 			}
 		}
 		add_character_modifier = {
@@ -2880,397 +2882,14 @@ character_event = {
 
 
 ##########################################################################
-# Generic Muslim Events nc
+# Generic Muslim Events
 ##########################################################################
 
-# Wash face - Wudu
-character_event = {
-	id = VIETnam.175
-	desc = "EVTDESC1000109348"
-	picture = GFX_evt_moorish_decor
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	#war = no
-	
-	trigger = {
-		#is_ruler = yes
-		#in_command = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = zealous
-		}
-		modifier = {
-			factor = 0.8
-			trait = cynical
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = patient
-		}
-		modifier = {
-			factor = 0.8
-			trait = wroth
-		}
-		modifier = {
-			factor = 1.5
-			trait = depressed
-		}
-		modifier = {
-			factor = 1.5
-			trait = stressed
-		}
-		#modifier = {
-		#	factor = 3
-		#	has_ambition = obj_have_no_worries
-		#}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109348" #healing
-		ai_chance = {
-			factor = 1
-		}
-		piety = 5
-		if = {
-			limit = {
-				trait = stressed
-			}
-			remove_trait = stressed
-		}
-		if = {
-			limit = {
-				trait = depressed
-			}
-			remove_trait = depressed
-		}
-	}
-	option = {
-		name = "EVTOPTB1000109348" #Hygene
-		tooltip_info = learning
-		trigger = {
-			learning = 11
-		}
-		ai_chance = {
-			factor = 100
-		}
-		piety = 5
-		prestige = 5
-		if = {
-			limit = {
-				trait = stressed
-			}
-			remove_trait = stressed
-		}
-		if = {
-			limit = {
-				trait = depressed
-			}
-			remove_trait = depressed
-		}
-	}
-}
+# Wash face - Wudu remove
 
 
 
-# Critical Sufi Master
-character_event = {
-	id = VIETnam.176
-	desc = "EVTDESC1000109349"
-	picture = GFX_evt_emissary
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	war = no
-	
-	trigger = {
-		in_command = no
-		decadence = 50
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = zealous
-		}
-		modifier = {
-			factor = 0.8
-			trait = cynical
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = charitable
-		}
-		modifier = {
-			factor = 0.8
-			trait = greedy
-		}
-		modifier = {
-			factor = 1.25
-			decadence = 60
-		}
-		modifier = {
-			factor = 1.5
-			decadence = 70
-		}
-		modifier = {
-			factor = 1.75
-			decadence = 80
-		}
-		modifier = {
-			factor = 2
-			decadence = 90
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109349" #Get out!
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0.8
-				trait = trusting
-			}
-			modifier = {
-				factor = 1.2
-				trait = paranoid
-			}
-			modifier = {
-				factor = 0.8
-				trait = wroth
-			}
-			modifier = {
-				factor = 1.2
-				trait = patient
-			}
-			modifier = {
-				factor = 1.2
-				trait = proud
-			}
-			modifier = {
-				factor = 0.8
-				trait = humble
-			}
-			modifier = {
-				factor = 1.2
-				trait = arbitrary
-			}
-			modifier = {
-				factor = 0.8
-				trait = just
-			}
-		}
-		if = {
-			limit = {
-				trait = patient
-			}
-			random = {
-				remove_trait = patient
-				chance = 60
-			}
-		}
-		else = {
-			random = {
-				add_trait = wroth
-				chance = 40
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTB1000109349" #Heed warnings
-		ai_chance = {
-			factor = 1.2
-			modifier = {
-				factor = 1.2
-				trait = trusting
-			}
-			modifier = {
-				factor = 0.8
-				trait = paranoid
-			}
-			modifier = {
-				factor = 1.2
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = patient
-			}
-			modifier = {
-				factor = 0.8
-				trait = proud
-			}
-			modifier = {
-				factor = 1.2
-				trait = humble
-			}
-			modifier = {
-				factor = 0.8
-				trait = arbitrary
-			}
-			modifier = {
-				factor = 1.2
-				trait = just
-			}
-			modifier = {
-				factor = 0.8
-				trait = cynical
-			}
-			modifier = {
-				factor = 1.2
-				trait = zealous
-			}
-		}
-		decadence = -3
-		piety = 10
-		if = {
-			limit = {
-				trait = proud
-			}
-			random = {
-				remove_trait = proud
-				chance = 30
-			}
-		}
-		if = {
-			limit = {
-				NOT = { trait = charitable }
-			}
-			random = {
-				add_trait = charitable
-				chance = 30
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTC1000109349" #Live a bit frugally
-		ai_chance = {
-			factor = 3
-			modifier = {
-				factor = 1.2
-				trait = trusting
-			}
-			modifier = {
-				factor = 0.8
-				trait = paranoid
-			}
-			modifier = {
-				factor = 1.2
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = patient
-			}
-			modifier = {
-				factor = 0.8
-				trait = proud
-			}
-			modifier = {
-				factor = 1.2
-				trait = humble
-			}
-			modifier = {
-				factor = 0.8
-				trait = arbitrary
-			}
-			modifier = {
-				factor = 1.2
-				trait = just
-			}
-			modifier = {
-				factor = 0.8
-				trait = cynical
-			}
-			modifier = {
-				factor = 1.2
-				trait = zealous
-			}
-		}
-		decadence = -1
-		piety = 5
-		prestige = 5
-		if = {
-			limit = {
-				trait = greedy
-			}
-			random = {
-				remove_trait = greedy
-				chance = 50
-			}
-		}
-		if = {
-			limit = {
-				NOT = { trait = temperate }
-			}
-			random = {
-				add_trait = temperate
-				chance = 50
-			}
-		}
-	}
-}
+# Critical Sufi Master remove
 
 
 
@@ -3286,7 +2905,7 @@ character_event = {
 	only_rulers = yes
 	capable_only = yes
 	prisoner = no
-	religion_group = muslim
+	#religion_group = muslim
 	war = no
 	
 	trigger = {
@@ -3387,7 +3006,7 @@ character_event = {
 		economy_techpoints = 50
 		military_techpoints = 50
 		set_character_flag = house_of_wisdom_scholar
-		decadence = -1
+		#decadence = -1
 	}
 }
 
@@ -3399,7 +3018,7 @@ province_event = {
 	picture = GFX_evt_moorish_decor
 	
 	trigger = {
-		religion_group = muslim
+		#religion_group = muslim
 		NOT = { has_province_modifier = muslim_paper_makers }
 		owner = {
 			any_realm_province = {
@@ -3418,13 +3037,13 @@ province_event = {
 			factor = 1.2
 			NOT = { num_of_max_settlements = 3 }
 		}
-		modifier = {
-			factor = 1.3
-			NOR = {
-				region = world_middle_east
-				region = world_persia
-			}
-		}
+		#modifier = {
+		#	factor = 1.3
+		#	NOR = {
+		#		region = world_middle_east
+		#		region = world_persia
+		#	}
+		#}
 		modifier = {
 			factor = 0.9
 			owner = {
@@ -3819,542 +3438,18 @@ character_event = {
 }
 
 
-# Fame Throughout Muslim World
-character_event = {
-	id = VIETnam.180
-	desc = "EVTDESC1000109353"
-	picture = GFX_evt_hagia_sofia
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	#war = no
-	
-	trigger = {
-		#in_command = no
-		prestige = 2000
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = just
-		}
-		modifier = {
-			factor = 0.8
-			trait = arbitrary
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = poet
-		}
-		modifier = {
-			factor = 0.8
-			trait = slow
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109353" #ok
-		decadence = -3
-	}
-}
+# Fame Throughout Muslim World remove
 
 
 
 
-# Piety Throughout Muslim World
-character_event = {
-	id = VIETnam.181
-	desc = "EVTDESC1000109354"
-	picture = GFX_evt_hagia_sofia
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	#war = no
-	
-	trigger = {
-		#in_command = no
-		piety = 2000
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = zealous
-		}
-		modifier = {
-			factor = 0.8
-			trait = cynical
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = charitable
-		}
-		modifier = {
-			factor = 0.8
-			trait = greedy
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109354" #ok
-		decadence = -3
-	}
-}
+# Piety Throughout Muslim World remove
 
 
-# Hafiz Forgets Lines
-character_event = {
-	id = VIETnam.182
-	desc = "EVTDESC1000109355"
-	picture = GFX_evt_monk
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	war = no
-	
-	trigger = {
-		in_command = no
-		trait = hafiz
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		#modifier = {
-		#	factor = 3
-		#	trait = absentminded
-		#}
-		modifier = {
-			factor = 3
-			is_dumb_trigger = yes
-		}
-		modifier = {
-			factor = 0.8
-			is_smart_trigger = yes
-		}
-		modifier = {
-			factor = 1.2
-			trait = cynical
-		}
-		modifier = {
-			factor = 0.8
-			trait = zealous
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109355" #Everyone makes mistakes
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = slothful
-			}
-			modifier = {
-				factor = 0.8
-				trait = diligent
-			}
-			modifier = {
-				factor = 1.2
-				trait = patient
-			}
-			modifier = {
-				factor = 0.8
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = proud
-			}
-			modifier = {
-				factor = 1.2
-				trait = humble
-			}
-		}
-		piety = 5
-		prestige = -5
-		if = {
-			limit = {
-				trait = diligent
-			}
-			random = {
-				remove_trait = diligent
-				chance = 50
-			}
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB1000109355" #Re-memorize
-		tooltip_info = diligent
-		trigger = {
-			trait = diligent
-		}
-		ai_chance = {
-			factor = 1.2
-			modifier = {
-				factor = 1.2
-				trait = patient
-			}
-			modifier = {
-				factor = 0.8
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = humble
-			}
-			modifier = {
-				factor = 1.2
-				trait = proud
-			}
-			modifier = {
-				factor = 0.8
-				trait = content
-			}
-			modifier = {
-				factor = 1.2
-				trait = ambitious
-			}
-		}
-		random_list = {
-			50 = { prestige = 10 }
-			50 = { piety = 5 }
-		}
-		decadence = -3
-		if = {
-			limit = {
-				trait = content
-			}
-			random = {
-				remove_trait = content
-				chance = 50
-			}
-		}
-	}
-}
+# Hafiz Forgets Lines remove
 
 
-
-# Annoying Beggar
-character_event = {
-	id = VIETnam.183
-	desc = "EVTDESC1000109356"
-	picture = GFX_evt_small_town
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	religion_group = muslim
-	war = no
-	
-	trigger = {
-		in_command = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = charitable
-		}
-		modifier = {
-			factor = 0.8
-			trait = greedy
-		}
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = just
-		}
-		modifier = {
-			factor = 0.8
-			trait = arbitrary
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109356" #Give coin and then run away
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = slothful
-			}
-			modifier = {
-				factor = 0.8
-				trait = diligent
-			}
-			modifier = {
-				factor = 1.2
-				trait = greedy
-			}
-			modifier = {
-				factor = 0.8
-				trait = charitable
-			}
-		}
-		wealth = -1
-		random_list = {
-			50 = { }
-			50 = { decadence = -1 }
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB1000109356" #Have everything I'm carrying
-		tooltip_info = charitable
-		trigger = {
-			trait = charitable
-		}
-		ai_chance = {
-			factor = 5
-			modifier = {
-				factor = 1.2
-				trait = patient
-			}
-			modifier = {
-				factor = 0.8
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = cruel
-			}
-			modifier = {
-				factor = 1.2
-				trait = kind
-			}
-			modifier = {
-				factor = 0.8
-				trait = gluttonous
-			}
-			modifier = {
-				factor = 1.2
-				trait = temperate
-			}
-		}
-		wealth = -10
-		piety = 5
-		decadence = -3
-		if = {
-			limit = {
-				NOT = { trait = charitable }
-			}
-			random = {
-				add_trait = charitable
-				chance = 50
-			}
-		}
-	}
-		
-	option = {
-		name = "EVTOPTC1000109356" #GET OUT
-		trigger = {
-			NOT = { trait = patient }
-			NOT = { trait = kind }
-		}
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = wroth
-			}
-			modifier = {
-				factor = 0.8
-				trait = content
-			}
-			modifier = {
-				factor = 1.2
-				trait = cruel
-			}
-			modifier = {
-				factor = 0.1
-				trait = charitable
-			}
-		}
-		if = {
-			limit = {
-				trait = charitable
-			}
-			remove_trait = charitable
-		}
-		if = {
-			limit = {
-				trait = humble
-			}
-			remove_trait = humble
-		}
-		if = {
-			limit = {
-				NOT = { trait = wroth }
-			}
-			random = {
-				add_trait = wroth
-				chance = 25
-			}
-		}
-		if = {
-			limit = {
-				NOT = { trait = proud }
-			}
-			random = {
-				add_trait = proud
-				chance = 25
-			}
-		}
-	}
-
-	option = {
-		name = "EVTOPTD1000109356" #Give me something in return
-		tooltip_info = lustful
-		trigger = {
-			trait = lustful
-			OR = {
-				is_female = no
-				AND = {
-					is_female = yes
-					trait = homosexual
-				}
-			}
-		}
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = cruel
-			}
-			modifier = {
-				factor = 0.8
-				trait = kind
-			}
-			modifier = {
-				factor = 1.2
-				trait = gregarious
-			}
-			modifier = {
-				factor = 0.8
-				trait = shy
-			}
-			modifier = {
-				factor = 1.2
-				trait = arbitrary
-			}
-			modifier = {
-				factor = 0.8
-				trait = just
-			}
-			modifier = {
-				factor = 1.2
-				trait = zealous
-			}
-			modifier = {
-				factor = 0
-				trait = celibate
-			}
-		}
-		decadence = 1
-		add_character_modifier = {
-			name = VIET_one_time_lovemaking
-			duration = 888
-		}
-	}
-}
+# Annoying Beggar remove
 
 
 
@@ -7594,7 +6689,7 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = { religion_group = pagan_group }
+		#NOT = { religion_group = pagan_group }
 		#capital_scope = {
 		#	OR = {
 		#		region = world_europe_west
@@ -7724,12 +6819,12 @@ character_event = {
 				chance = 50
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 		add_artifact = VIET_hellenic_statue_female
 		new_artifact = {
 			set_creation_date = 1.1.1
@@ -7968,7 +7063,7 @@ character_event = {
 
 
 
-# Achaemenid Monument
+# Old California Monument
 character_event = {
 	id = VIETnam.261
 	desc = "EVTDESC1000109434"
@@ -7986,9 +7081,9 @@ character_event = {
 		in_command = no
 		any_demesne_province = {
 			OR = {
-				region = world_persia
-				region = world_middle_east_jerusalem
-				region = world_asia_minor
+				region = world_west_coast
+		#		region = world_middle_east_jerusalem
+		#		region = world_asia_minor
 		#		duchy = { title = d_damascus }
 		#		duchy = { title = d_palmyra }
 		#		duchy = { title = d_mudar }
@@ -7998,7 +7093,7 @@ character_event = {
 		#		duchy = { title = d_baghdad }
 		#		duchy = { title = d_mosul }
 		#		duchy = { title = d_samarra }
-				duchy = { title = d_jazira }
+		#		duchy = { title = d_jazira }
 			}
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -8051,11 +7146,11 @@ character_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA1000109434" #Sassanid forebears
+		name = "EVTOPTA1000109434" #Californian forebears
 		trigger = {
 			OR = {
-				culture_group = iranian
-				religion_group = zoroastrian_group
+				culture_group = california
+				religion = cetic
 			}
 		}
 		ai_chance = {
@@ -8079,11 +7174,11 @@ character_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTB1000109434" #Not Persian
+		name = "EVTOPTB1000109434" #Not Californian
 		trigger = {
 			NOR = {
-				culture_group = iranian
-				religion_group = zoroastrian_group
+				culture_group = california
+				religion = cetic
 			}
 		}
 		ai_chance = {
@@ -8648,135 +7743,7 @@ character_event = {
 ##########################################################################
 
 
-# Muslim Call to Prayer nc
-character_event = {
-	id = VIETnam.266
-	desc = "EVTDESC1000109439"
-	picture = GFX_evt_moorish_decor
-	
-	is_triggered_only = yes
-	
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	religion_group = muslim
-	
-	trigger = {
-		in_command = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = just
-		}
-		modifier = {
-			factor = 0.8
-			trait = arbitrary
-		}
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = cynical
-		}
-		modifier = {
-			factor = 0.8
-			trait = zealous
-		}
-	}
-	
-	option = {
-		name = "EVTOPTA1000109439" #Must pray
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = zealous
-			}
-			modifier = {
-				factor = 0.8
-				trait = cynical
-			}
-			modifier = {
-				factor = 1.2
-				trait = slothful
-			}
-			modifier = {
-				factor = 0.8
-				trait = diligent
-			}
-		}
-		piety = 5
-		prestige = -5
-		add_character_modifier = {
-			name = VIET_unfinished_work
-			duration = 365
-		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 50
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTB1000109439" #Must work
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 1.2
-				trait = diligent
-			}
-			modifier = {
-				factor = 0.8
-				trait = slothful
-			}
-			modifier = {
-				factor = 1.2
-				trait = cynical
-			}
-			modifier = {
-				factor = 0.8
-				trait = zealous
-			}
-		}
-		prestige = 5
-		piety = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 50
-			}
-		}
-	}
-}
+# Muslim Call to Prayer remove
 
 # Can't Fall Asleep Quickly
 character_event = {
