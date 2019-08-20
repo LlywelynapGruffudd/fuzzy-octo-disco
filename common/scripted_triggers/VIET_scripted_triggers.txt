@@ -52,7 +52,7 @@ is_baklava_culture_trigger = {
 		text = is_baklava_culture_desc
 		hidden_tooltip = {
 			OR = {
-				#culture_group = south_semitic
+				culture_group = south_semitic
 				#culture_group = east_semitic
 				#culture_group = northwest_semitic
 				#culture_group = central_semitic
@@ -75,7 +75,7 @@ is_hummus_culture_trigger = {
 		hidden_tooltip = {
 			OR = { 
 				#might need to change this at some point
-				#culture_group = south_semitic
+				culture_group = south_semitic
 				#culture_group = east_semitic
 				#culture_group = northwest_semitic
 				#culture_group = central_semitic
