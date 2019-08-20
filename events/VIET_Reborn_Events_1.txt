@@ -28083,7 +28083,7 @@ character_event = {
 }
 
 
-# Is China the greatest?
+# Is Bazilia the greatest?
 character_event = {
 	id = VIETmisc.8285
 	desc = VIETmisc.8285.desc
@@ -28098,8 +28098,9 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		NOT = {
-			culture_group = chinese_group
+		NOR = {
+			culture_group = portuguese
+			culture_group = portunhol
 		}
 		#in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -28109,23 +28110,23 @@ character_event = {
 	weight_multiplier = {
 		days = 1				
 	
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = muslim #historically the Muslims thought China was super cool, which is why they didn't mind the Khitan so much
-				culture_group = altaic
-				culture_group = tibetan_group
-			}
-		}
+		#modifier = {
+		#	factor = 2
+		#	OR = {
+		#		religion_group = muslim #historically the Muslims thought China was super cool, which is why they didn't mind the Khitan so much
+		#		culture_group = altaic
+		#		culture_group = tibetan_group
+		#	}
+		#}
 		modifier = {
 			factor = 0.5
 			OR = {
 				capital_scope = {
-					region = world_africa_west
-					region = world_africa_north
-					region = world_europe_east
-					region = world_europe_north
-					region = world_europe_west
+					region = custom_canada
+					region = custom_usa
+					region = custom_central_america
+					#region = world_europe_north
+					#region = world_europe_west
 				}
 			}
 		}	
@@ -28900,120 +28901,7 @@ character_event = {
 
 
 # Hearing about the barbarian invasions of Rome
-character_event = {
-	id = VIETmisc.8294
-	desc = VIETmisc.8294.desc
-	picture = GFX_evt_rome_falls
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			capital_scope = {
-				OR = {
-					region = world_europe
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_africa_north
-					#region = world_persia
-					#region = world_steppe_west
-				}
-			}
-			culture_group = byzantine
-			culture_group = latin
-			culture_group = iberian
-			culture_group = north_african
-			culture_group = arabic
-			culture_group = celtic
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = south_slavic
-		}
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = scholar
-		}
-		modifier = {
-			factor = 0.8
-			trait = hedonist
-		}
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = cruel
-		}
-		modifier = {
-			factor = 0.8
-			trait = kind
-		}
-	}
-
-	option = { # Attila
-		name = VIETmisc.8294.a		
-		random = {
-			change_martial = 1
-			chance = 20
-		}
-	}
-	option = { # Alaric
-		name = VIETmisc.8294.b		
-		random = {
-			change_stewardship = 1
-			chance = 20
-		}
-	}
-	option = { # Genseric
-		name = VIETmisc.8294.c
-		random = {
-			change_diplomacy = 1
-			chance = 20
-		}
-	}
-	option = { # Odoacer
-		name = VIETmisc.8294.d
-		random = {
-			change_intrigue = 1
-			chance = 20
-		}
-	}
-}
+remove
 
 
 # Could there be even wealthier kingdoms south of West Africa?
@@ -29037,25 +28925,25 @@ character_event = {
 		OR = {
 			capital_scope = {
 				OR = {
-					region = world_africa
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_africa_north
-					region = world_africa_central
-					region = world_persia
-					region = world_europe_south
-					region = world_europe_south_east
+					region = world_south_america
+					#region = world_asia_minor
+					#region = world_middle_east
+					#region = world_africa_north
+					#region = world_africa_central
+					#region = world_persia
+					#region = world_europe_south
+					#region = world_europe_south_east
 				}
 			}
-			culture_group = byzantine
-			culture_group = latin
-			culture_group = iberian
-			culture_group = north_african
-			culture_group = east_african
-			culture_group = west_african
-			culture_group = central_african
-			culture_group = arabic
-			culture_group = iranian
+			culture_group = portuguese
+			culture_group = portunhol
+			culture_group = venezolano
+			culture_group = andean
+			culture_group = arawak
+			culture_group = colombiano
+			#culture_group = central_african
+			#culture_group = arabic
+			#culture_group = iranian
 		}
 	}
 	
@@ -29701,11 +29589,11 @@ character_event = {
 		capital_scope = {
 			OR = {
 				terrain = desert
-				region = world_middle_east
-				region = world_persia
-				region = world_africa
-				region = world_india_rajastan
-				region = world_steppe_tarim
+				#region = world_middle_east
+				#region = world_persia
+				#region = world_africa
+				#region = world_india_rajastan
+				#region = world_steppe_tarim
 			}
 			NOT = { terrain = mountain }
 		}
@@ -29814,13 +29702,13 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOT = { has_artifact = VIET_celtic_stone_head }
-		capital_scope = {
-			OR = {
-				region = world_europe
-				region = world_asia_minor
-				region = world_steppe_west
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_eastern_canada
+				#region = world_asia_minor
+				#region = world_steppe_west
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -29839,7 +29727,7 @@ character_event = {
 		modifier = {
 			factor = 1.2
 			capital_scope = {
-				region = world_europe_west
+				region = world_eastern_canada
 			}
 		}
 		modifier = {
@@ -29849,8 +29737,8 @@ character_event = {
 				is_nomadic = yes
 				capital_scope = {
 					OR = {
-						region = world_europe_west_brittania
-						region = world_europe_west_francia
+						region = world_eastern_canada
+						#region = world_europe_west_francia
 					}
 				}
 			}
