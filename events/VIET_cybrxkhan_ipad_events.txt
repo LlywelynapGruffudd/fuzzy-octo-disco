@@ -159,14 +159,6 @@ character_event = {
 	
 	weight_multiplier = {
 		days = 1
-		#modifier = { #less likely as more red and yellow carrots appear
-		#	factor = 0.5
-		#	year = 1200
-		#}
-		#modifier = { #less likely as more red and yellow carrots appear
-		#	factor = 0.3
-		#	year = 1350
-		#}
 		modifier = {
 			factor = 1.2
 			trait = gregarious
@@ -209,11 +201,11 @@ character_event = {
 		}
 	}
 	option = {
-			name = VIETmisc.2001.a
-			add_character_modifier = {
-					name = highly_amused_ruler
-					duration = 365
-			}
+		name = VIETmisc.2001.a
+		add_character_modifier = {
+				name = highly_amused_ruler
+				duration = 365
+		}
 	}
 }
 
@@ -1157,28 +1149,6 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		#in_command = no
-		#OR = {
-			#culture_group = south_semitic
-		#	culture_group = east_african
-			#culture_group = central_semitic
-		#	culture_group = arabic
-		#	culture_group = north_african
-		#	AND = {
-		#		OR = {
-		#			is_patrician = yes
-		#			is_merchant_republic = yes
-		#			capital_scope = {
-		#				port = yes
-		#			}
-		3		}
-				#OR = {
-				#	religion_group = muslim
-				#	religion_group = zoroastrian_group
-				#}
-		#	}
-		#}
-		#year = 1000
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}

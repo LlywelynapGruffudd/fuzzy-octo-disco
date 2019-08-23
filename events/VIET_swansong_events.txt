@@ -3147,7 +3147,7 @@ character_event = {
 		#			region = world_india
 		#		}
 		#	}
-		}
+		#}
 	}
 
 	weight_multiplier = {

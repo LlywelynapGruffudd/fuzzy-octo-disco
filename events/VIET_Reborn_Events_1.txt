@@ -7288,7 +7288,7 @@ province_event = {
 			#		has_status = china_unrest
 			#	}			
 			#}
-		}
+		#}
 		#modifier = {
 		#	factor = 1.5
 		#	NOT = { num_of_max_settlements = 5 }
@@ -24753,8 +24753,7 @@ character_event = {
 
 
 
-# Who is your favorite Three Kingdoms character?
-remove
+# Who is your favorite Three Kingdoms character?remove
 
 
 # Three Kingdoms - warlord remove

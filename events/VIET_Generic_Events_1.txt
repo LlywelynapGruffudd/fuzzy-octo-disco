@@ -954,7 +954,7 @@ character_event = {
 		#		religion_group = muslim
 		#	}
 		#	decadence = -3
-		3}
+		#}
 		add_character_modifier = {
 			name = VIET_justice_is_blind
 			duration = 365
