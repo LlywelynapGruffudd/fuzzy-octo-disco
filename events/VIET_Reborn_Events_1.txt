@@ -28899,8 +28899,7 @@ character_event = {
 }
 
 
-# Hearing about the barbarian invasions of Rome
-remove
+# Hearing about the barbarian invasions of Rome remove
 
 
 # Could there be even wealthier kingdoms south of West Africa?
