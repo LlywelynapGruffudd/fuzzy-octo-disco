@@ -836,3 +836,11 @@ on_yearly_childhood_pulse = {
 		}
 	}
 }
+
+on_loot_settlement = {
+	random_events = {
+		delay = 8
+		250 = 0
+		10 = VIETeu.1
+	}
+}
