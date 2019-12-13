@@ -50,25 +50,25 @@ character_event = {
 		is_abroad = no
 		NOT = { has_global_flag =  VIET_minotaur }
 		NOT = { has_character_flag =  VIET_minotaur_failure }
-		OR = {
-			capital_scope = {
-				OR = {
-					province_id = 479
-					province_id = 480
-				}
-			}
-			AND = {
-				primary_title = {
-					title = d_krete
-				}
-				any_realm_province = {
-					OR = {
-						province_id = 479
-						province_id = 480
-					}
-				}
-			}
-		}
+		#OR = {
+		#	capital_scope = {
+		#		OR = {
+		#			province_id = 479
+		#			province_id = 480
+		#		}
+		#	}
+		#	AND = {
+		#		primary_title = {
+		#			title = d_krete
+		#		}
+		#		any_realm_province = {
+		#			OR = {
+		#				province_id = 479
+		#				province_id = 480
+		#			}
+		#		}
+		#	}
+		#}
 	}
 
 	weight_multiplier = {
@@ -298,14 +298,14 @@ character_event = {
 		NOT = { has_character_flag =  VIET_serindian_document }
 		capital_scope = {
 			OR = {
-				region = world_steppe_tarim
-				duchy = { title = d_khuttal }
-				duchy = { title = d_ferghana }
-				duchy = { title = d_gandhara }
+				region = world_south_america
+				#duchy = { title = d_khuttal }
+				#duchy = { title = d_ferghana }
+				#duchy = { title = d_gandhara }
 			}
 		}
 		OR = {
-			culture_group = iranian
+			culture_group = venezolano
 			culture_group = serindian # exists in WtWSMS
 		}
 		OR = {
@@ -559,21 +559,21 @@ narrative_event = {
 	option = {
 		name = VIETmisc.5026.c
 		trigger = {
-			religion = buddhist
+			religion = cetic
 		}
 		piety = 4
 	}
 	option = {
 		name = VIETmisc.5026.d
 		trigger = {
-			NOT = { religion = buddhist }
+			NOT = { religion = cetic }
 		}
 		prestige = 4
 	}
 	option = {
 		name = VIETmisc.5026.e
 		trigger = {
-			NOT = { religion = buddhist }
+			NOT = { religion = cetic }
 		}
 		prestige = 2
 		piety = 2
@@ -618,7 +618,7 @@ narrative_event = {
 		trigger = {
 			trait = gluttonous
 			NOT = { religion = hindu }
-			NOT = { religion = jain }
+			#NOT = { religion = jain }
 		}
 		add_character_modifier = {
 			name = best_meal_in_ages
@@ -656,12 +656,12 @@ character_event = {
 		NOT = { has_global_flag = VIET_nisemonogatari }
 		NOT = { has_character_flag = VIET_koyomi }
 		OR = {
-			religion_group = zoroastrian_group
-			religion = messalian
+			#religion_group = zoroastrian_group
+			#religion = messalian
 			has_religion_feature = religion_holy_family 
-			has_religion_feature = religion_feature_zun
+			#has_religion_feature = religion_feature_zun
 		}
-		NOT = { religion = manichean }
+		#NOT = { religion = manichean }
 		OR = {
 			trait = gregarious
 			trait = lustful
@@ -1030,10 +1030,10 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					religion_group = zoroastrian_group
-					religion = messalian
+					#religion_group = zoroastrian_group
+					#religion = messalian
 					has_religion_feature = religion_holy_family 
-					has_religion_feature = religion_feature_zun
+					#has_religion_feature = religion_feature_zun
 				}
 			}
 			add_lover = FROM
@@ -1042,10 +1042,10 @@ character_event = {
 		if = {
 			limit = {
 				NOR = {
-					religion_group = zoroastrian_group
-					religion = messalian
+					#religion_group = zoroastrian_group
+					#religion = messalian
 					has_religion_feature = religion_holy_family 
-					has_religion_feature = religion_feature_zun
+					#has_religion_feature = religion_feature_zun
 				}
 			}
 			add_friend = FROM
@@ -1102,9 +1102,9 @@ character_event = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				culture = saxon
-				culture = english
-				culture = norman
+				culture = british
+				culture = yankee #new england
+				#culture = norman
 			}
 		}
 		modifier = {
@@ -1714,10 +1714,10 @@ character_event = {
 		NOT = { has_global_flag =  VIET_nisemonogatari }
 		NOT = { has_character_flag =  VIET_koyomi }
 		NOR = {
-			religion_group = zoroastrian_group
-			religion = messalian
+			#religion_group = zoroastrian_group
+			#religion = messalian
 			has_religion_feature = religion_holy_family 
-			has_religion_feature = religion_feature_zun
+			#has_religion_feature = religion_feature_zun
 		}
 		OR = {
 			trait = gregarious

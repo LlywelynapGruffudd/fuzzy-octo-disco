@@ -25,24 +25,24 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOR = {
-			culture_group = east_african
-			capital_scope = {
-				region = world_africa_east
-			}
-		}
-		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			capital_scope = {
-				OR = {
-					region = world_africa_north
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia			
-				}
-			}
-		}
+		#NOR = {
+		#	culture_group = east_african
+		#	capital_scope = {
+		#		region = world_africa_east
+		#	}
+		#}
+		#OR = {
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_africa_north
+		#			region = world_asia_minor
+		#			region = world_middle_east
+		#			region = world_persia			
+		#		}
+		#	}
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -83,43 +83,43 @@ character_event = {
 		}
 		piety = -5
 		prestige = 5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 50
-				decadence = 1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 50
+		#		decadence = 1
+		#	}
+		#}
 	}
 	
 	option = { #Coffee as an alternative to alcohol
 		name = "EVTOPTB1000109301"
 		prestige = 5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 50
-				decadence = -1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 50
+		#		decadence = -1
+		#	}
+		#}
 	}
 
 	option = { #Coffee is a drink of sinners
 		name = "EVTOPTC1000109301"
 		piety = 5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 50
-				decadence = -1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 50
+		#		decadence = -1
+		#	}
+		#}
 	}
 }
 
@@ -139,20 +139,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			capital_scope = {
-				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
-				}
-			}
-		}
+		#OR = {
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_africa_north
+		#			region = world_africa_east
+		#			region = world_asia_minor
+		#			region = world_middle_east
+		#			region = world_persia
+		#			region = world_india			
+		#		}
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -204,15 +204,15 @@ character_event = {
 			10 = { change_intrigue = 1 }
 			10 = { change_learning = 1 }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 20
-				decadence = -1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 20
+		#		decadence = -1
+		#	}
+		#}
 	}
 	
 }
@@ -227,7 +227,7 @@ character_event = {
 	
 	is_triggered_only = yes
 	
-	religion_group = muslim
+	#religion_group = muslim
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -285,14 +285,14 @@ character_event = {
 	
 	option = { #Donates
 		name = "EVTOPTA1000109303"
-		decadence = -1
+		#decadence = -1
 		wealth = -20
 		piety = 20
-		random_list = {
-			70 = { }
-			25 = { decadence = -1 }
-			5 = { decadence = -2 }
-		}
+		#random_list = {
+		#	70 = { }
+		#	25 = { decadence = -1 }
+		#	5 = { decadence = -2 }
+		#}
 	}
 	
 	option = { #Doesn't donate
@@ -301,11 +301,11 @@ character_event = {
 			NOT = { trait = charitable }
 		}
 		piety = -10
-		decadence = 1
-		random = {
-			chance = 20
-			decadence = 1
-		}
+		#decadence = 1
+		#random = {
+		#	chance = 20
+		#	decadence = 1
+		#}
 	}
 	
 }
@@ -331,12 +331,12 @@ character_event = {
 			#religion_group = zoroastrian_group
 			capital_scope = {
 				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
+					region = world_south_america
+					region = custom_central_america
+					region = world_caribbean
+					#region = world_middle_east
+					#region = world_persia
+					#region = world_india			
 				}
 			}
 		#}
@@ -372,15 +372,15 @@ character_event = {
 	option = { #Meet them
 		name = "EVTOPTA1000109304"
 		prestige = 30
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 20
-				decadence = -1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 20
+		#		decadence = -1
+		#	}
+		#}
 	}
 }
 
@@ -401,20 +401,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			capital_scope = {
-				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
-				}
-			}
-		}
+		#OR = {
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_africa_north
+		#			region = world_africa_east
+		#			region = world_asia_minor
+		#			region = world_middle_east
+		#			region = world_persia
+		#			region = world_india			
+		#		}
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -440,22 +440,22 @@ character_event = {
 			factor = 0.8
 			trait = shy
 		}
-		modifier = {
-			factor = 0.8
+		#modifier = {
+		#	factor = 0.8
 #			AND = {
-				NOR = {
-					#culture_group = south_semitic
-					#culture_group = east_semitic
+		#		NOR = {
+		#			#culture_group = south_semitic
+		#			#culture_group = east_semitic
 					#culture_group = northwest_semitic
 					#culture_group = central_semitic
-					culture_group = iranian
-					culture_group = byzantine
-					culture_group = arabic
-					culture_group = north_african
-					culture = turkish
-				}
+		#			culture_group = iranian
+		#			culture_group = byzantine
+		#			culture_group = arabic
+		#			culture_group = north_african
+		#			culture = turkish
+		#		}
 #			}
-		}
+		#}
 	}
 	
 	option = { #Thank you
@@ -473,15 +473,15 @@ character_event = {
 			NOT = { trait = envious }
 			NOT = { trait = arbitrary }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				chance = 30
-				decadence = -1
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		chance = 30
+		#		decadence = -1
+		#	}
+		#}
 		prestige = -10
 		random = {
 			add_trait = charitable
@@ -518,18 +518,18 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = { religion_group = christian }
+		#NOT = { religion_group = christian }
 		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
+			#religion_group = muslim
+			#religion_group = zoroastrian_group
 			capital_scope = {
 				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
+					region = world_south_america
+					region = custom_central_america
+					region = world_caribbean
+					#region = world_middle_east
+					#region = world_persia
+					#region = world_india				
 				}
 			}
 		}
@@ -599,20 +599,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			capital_scope = {
-				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
-				}
-			}
-		}
+		#OR = {
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_africa_north
+		#			region = world_africa_east
+		#			region = world_asia_minor
+		#			region = world_middle_east
+		#			region = world_persia
+		#			region = world_india			
+		#		}
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -694,20 +694,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			capital_scope = {
-				OR = {
-					region = world_africa_north
-					region = world_africa_east
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_persia
-					region = world_india				
-				}
-			}
-		}
+		#OR = {
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_africa_north
+		#			region = world_africa_east
+		#			region = world_asia_minor
+		#			region = world_middle_east
+		#			region = world_persia
+		#			region = world_india			
+		#		}
+		#	}
+		#}
 		NOT = { has_character_flag = VIET_pickpocket_event }
 	}
 	
@@ -895,7 +895,8 @@ character_event = {
 				name = VIET_aladdin_street_rat
 				duration = -1
 			}
-			if = {
+		}
+		if = {
 				limit = {
 					has_dlc = "Zeus"
 				}
@@ -904,18 +905,18 @@ character_event = {
 					chance = 33
 				}
 				random = {
-					add_trait = brooding
-					chance = 33
+					add_trait = brooding 
+					chance = 33 
 				}
 				random = {
 					add_trait = idolizer
 					chance = 33
 				}
 				random = {
-					add_trait = affectionate
+					add_trait = affectionate 
 					chance = 33
-				}
-			}
+				} 
+			} 
 			else = {
 				random = {
 					add_trait = just
@@ -927,10 +928,9 @@ character_event = {
 				}
 				random = {
 					add_trait = kind
-					chance = 33
-				}		
+					chance = 33 
+				}
 			}
-		}
 	}
 	
 	option = { #Pray
@@ -1325,12 +1325,12 @@ character_event = {
 			15 = { wealth = -40 }
 			5 = { wealth = -50 }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 	}
 }
 

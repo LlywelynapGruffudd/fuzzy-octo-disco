@@ -181,12 +181,12 @@ character_event = {
 	option = {
 		name = "EVTOPTA1000109510" #whoops
 		prestige = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 2
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 2
+		#}
 	}
 }
 
@@ -264,15 +264,15 @@ character_event = {
 			50 = { piety = -5 }
 			50 = { prestige = -5 }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 75
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 75
+		#	}
+		#}
 	}
 }
 
@@ -826,17 +826,17 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = latin
-			culture_group = east_slavic
-			culture_group = altaic
-			culture_group = central_germanic
+		#OR = {
+		#	culture_group = gallomerican
+		#	culture_group = sibir
+		#	culture_group = plains
+		#	culture_group = amerodeutsch
 			#AND = {
 			#	culture_group = altaic
 			#	NOT = { culture = xiongnu }
 			#	NOT = { culture = uyghur }
 			#}
-		}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -926,10 +926,10 @@ character_event = {
 		in_command = no	
 		capital_scope = {
 			OR = {
-				duchy = { title = d_alexandria }
-				duchy = { title = d_damietta }
-				duchy = { title = d_cairo }
-				duchy = { title = d_aswan }
+				duchy = { title = d_little_egypt }
+				#duchy = { title = d_damietta }
+				#duchy = { title = d_cairo }
+				#duchy = { title = d_aswan }
 			}
 			#WTWSMS region, not in vanilla
 			#region = custom_egypt
@@ -1116,8 +1116,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion_group = christian
-				religion_group = muslim
+				religion_group = latter_day_saints
 				religion_group = jewish_group
+				religion = sacred_heart
 			}
 		}
 		ai_chance = {
@@ -1154,8 +1155,9 @@ character_event = {
 		trigger = {
 			NOR = {
 				religion_group = christian
-				religion_group = muslim
+				religion_group = latter_day_saints
 				religion_group = jewish_group
+				religion = sacred_heart
 			}
 		}
 		ai_chance = {

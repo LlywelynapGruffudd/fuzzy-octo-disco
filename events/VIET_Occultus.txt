@@ -32,17 +32,17 @@ narrative_event = {
 			has_game_rule = { name = supernatural_events value = on }
 			has_game_rule = { name = supernatural_events value = unrestricted }
 		}
-		OR = {
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture_group = west_germanic
-			culture_group = latin
-			culture_group = iberian
-			culture_group = celtic
-			capital_scope = {
-				region = world_europe_west
-			}
-		}
+		#OR = {
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture_group = west_germanic
+		#	culture_group = latin
+		#	culture_group = iberian
+		#	culture_group = celtic
+			#capital_scope = {
+			#	region = world_europe_west
+			#}
+		#}
 		NOT = { has_character_flag = begin_the_dance_of_death }
 	}
 	
@@ -172,17 +172,17 @@ narrative_event = {
 			has_game_rule = { name = supernatural_events value = on }
 			has_game_rule = { name = supernatural_events value = unrestricted }
 		}
-		OR = {
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture_group = west_germanic
-			culture_group = latin
-			culture_group = iberian
-			culture_group = celtic
-			capital_scope = {
-				region = world_europe_west
-			}
-		}
+		#OR = {
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture_group = west_germanic
+		#	culture_group = latin
+		#	culture_group = iberian
+		#	culture_group = celtic
+		#	capital_scope = {
+		#		region = world_europe_west
+		#	}
+		#}
 		NOT = { has_character_flag = begin_the_dance_of_death }
 		location = {
 			ROOT = {

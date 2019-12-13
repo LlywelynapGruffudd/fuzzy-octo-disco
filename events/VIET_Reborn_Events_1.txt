@@ -23,9 +23,6 @@
 # 8249-8251: Constantinople
 # 8252-8265: Fantastical Stories
 # 8266-8276: Daily Work
-# 8277-8315: Generic (inspired by vanilla event pics I've never or rarely used)
-# 8316-8325: Rain
-# 8326-8332: Reading Stories
 # 
 #####################################################################
 
@@ -1922,7 +1919,7 @@ character_event = {
 	}	
 }
 
-# Rumors of a Chinese women playing polo
+# Rumors of a brazilian women playing polo
 character_event = {
 	id = VIETmisc.8018
 	desc = VIETmisc.8018.desc
@@ -1939,37 +1936,34 @@ character_event = {
 	trigger = {
 		in_command = no
 		#Where people play polo
-		OR = {
-			culture_group = serindian # exists in WtWSMS
-			culture_group = altaic
-			culture_group = iranian
-			culture_group = arabic
-			culture_group = byzantine
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			any_demesne_province = {
-				OR = {
-					region = custom_eastern_edge_of_map
-					region = world_himalayas
-					region = world_steppe
-					region = world_india
-					region = world_persia
-					region = world_middle_east
-					region = world_asia_minor				
-				}
-			}		
-		}
-		NOT = { culture_group = chinese_group } #doesn't make sense for Chinese to think about Chinese culture from a foreigner's perspective
+		#OR = {
+		#	culture_group = north_atlantic
+		#	culture_group = laurentian
+		#	culture_group = west_anglo
+		#	culture_group = south_anglo
+		#	culture_group = rockland
+		#	culture_group = californian
+		#	culture_group = north_pacific
+		#	any_demesne_province = {
+		#		OR = {
+		#			region = custom_usa
+		#		}
+		#	}		
+		#}
+		NOR = { 
+			culture_group = portuguese 
+			culture_group = portunhol
+		} #doesn't make sense for brazilian to think about it
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
 	
 	weight_multiplier = {
 		days = 1
-		modifier = { #collapse of Tang
-			factor = 0.05
-			year = 900
-		}
+		#modifier = { #collapse of Tang
+		#	factor = 0.05
+		#	year = 900
+		#}
 		modifier = {
 			factor = 1.2
 			trait = gregarious
@@ -2618,15 +2612,15 @@ character_event = {
 	trigger = {
 		#in_command = no
 		NOT = { religion_group = indian_group }
-		NOT = { culture_group = indo_aryan_group }
-		NOT = { culture_group = dravidian_group }
-		capital_scope = {
-			NOR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim				
-			}
-		}
+		#NOT = { culture_group = indo_aryan_group }
+		#NOT = { culture_group = dravidian_group }
+		#capital_scope = {
+		#	NOR = {
+		#		region = custom_eastern_edge_of_map
+		#		region = world_himalayas
+		#		region = world_steppe_tarim			
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }		
 	}
@@ -2689,7 +2683,7 @@ character_event = {
 		trigger = {
 			OR = {
 				religion_group = jewish_group
-				religion_group = muslim
+				#religion_group = muslim
 			}
 		}
 		piety = 1
@@ -3982,9 +3976,9 @@ character_event = {
 		NOT = { has_character_flag = VIET_spirited_chinese_lady_visits }		
 		capital_scope = {
 			OR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim
+				region = world_south_america
+				region = world_caribbean
+				#region = world_steppe_tarim
 				is_sinosphere_large_trigger = yes
 			}
 		}	
@@ -4066,7 +4060,7 @@ character_event = {
 				}
 				has_religion_feature = religion_matriarchal 
 				has_religion_feature = religion_equal 
-				has_religion_feature = religion_feature_bon 
+				#has_religion_feature = religion_feature_bon 
 			}		
 		}
 		add_character_modifier = {
@@ -4249,12 +4243,12 @@ character_event = {
 		OR = {
 			capital_scope = {
 				OR = {
-					region = world_asia_minor
-					region = world_europe_south_east					
+					region = world_rockies
+					#region = world_europe_south_east
 				}
 			}
-			culture_group = south_slavic
-			culture_group = byzantine
+			culture_group = plateau
+			culture_group = rockland
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -4323,19 +4317,19 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			capital_scope = {
-				OR = {
-					region = world_steppe_east
-					region = world_himalayas
-					region = world_steppe_tarim
-					region = world_persia
-					region = world_india
-					is_sinosphere_large_trigger = yes
-				}
-			}	
-			is_sinosphere_large_trigger = yes
-		}
+		#OR = {
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_steppe_east
+		#			region = world_himalayas
+		#			region = world_steppe_tarim
+		#			region = world_persia
+		#			region = world_india
+		#			is_sinosphere_large_trigger = yes
+		#		}
+		#	}	
+		#	is_sinosphere_large_trigger = yes
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -4566,12 +4560,12 @@ character_event = {
 	}		
 	option = { # abstain from eggs for a while
 		name = VIETmisc.8044.d
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 		if = {
 			limit = {
 				trait = gluttonous
@@ -5029,12 +5023,12 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			religion_group = zoroastrian_group
-			religion = messalian
+			#religion_group = zoroastrian_group
+			#religion = messalian
 			has_religion_feature = religion_holy_family 
-			has_religion_feature = religion_feature_zun
+			#has_religion_feature = religion_feature_zun
 		}
-		NOT = { religion = manichean }
+		#NOT = { religion = manichean }
 		NOT = {
 			has_game_rule = {
 				name = VIET_events_rules
@@ -5468,12 +5462,12 @@ character_event = {
 				chance = 25
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}		
 	option = { # Talk to the commoners
 		name = VIETmisc.8054.c
@@ -5487,12 +5481,12 @@ character_event = {
 			10 = { add_trait = humble }
 			65 = {}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 	}	
 }
 
@@ -5981,15 +5975,15 @@ character_event = {
 			15 = { add_trait = arbitrary }
 			40 = {}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	option = { # Protect and help subjects
 		name = VIETmisc.8059.c
@@ -6000,15 +5994,15 @@ character_event = {
 			15 = { add_trait = brave }
 			40 = {}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 25
+		#	}
+		#}
 	}
 	option = { # Glory
 		name = VIETmisc.8059.d
@@ -7167,10 +7161,10 @@ character_event = {
 	weight_multiplier = {
 		days = 1
 			
-		modifier = { # Bon are far away from the Abrahamics so this would make less sense for them
-			factor = 0.05
-			religion = bon
-		}			
+		#modifier = { # Bon are far away from the Abrahamics so this would make less sense for them
+		#	factor = 0.05
+		#	religion = bon
+		#}			
 		modifier = {
 			factor = 1.2
 			trait = zealous
@@ -7264,37 +7258,37 @@ province_event = {
 		owner = {
 			is_nomadic = no
 			OR = {
-				religion = buddhist
-				religion = taoist
-				is_sinosphere_small_trigger = yes
+				religion = cetic
+				#religion = taoist
+				culture_group = californian
 			}
 		}
-		religion = buddhist
+		religion = cetic
 	}
 	
 	mean_time_to_happen = {
 		months = 12000
-		modifier = {
-			factor = 1.15
-			owner = {
-				NOT = { trait = mahayana_buddhist }
-			}
-		}
-		modifier = { #less likely when China's stable if in non-Indian territory
-			factor = 2
-			NOT = {
-				region = world_india
-			}
-			offmap_china = {
-				NOR = {
-					has_status = china_civil_war
-					has_status = china_plague
-					has_status = china_mongol_invasion
-					has_status = china_jurchen_invasion
-					has_status = china_unrest
-				}			
-			}
-		}
+		#modifier = {
+		#	factor = 1.15
+		#	owner = {
+		#		NOT = { trait = mahayana_buddhist }
+		#	}
+		#}
+		#modifier = { #less likely when reassert imperial power
+			#factor = 2
+			#NOT = {
+			#	region = world_west_coast
+			#}
+			#offmap_china = {
+			#	NOR = {
+			#		has_status = china_civil_war
+			#		has_status = china_plague
+			#		has_status = china_mongol_invasion
+			#		has_status = china_jurchen_invasion
+			#		has_status = china_unrest
+			#	}			
+			#}
+		#}
 		#modifier = {
 		#	factor = 1.5
 		#	NOT = { num_of_max_settlements = 5 }
@@ -8996,21 +8990,21 @@ character_event = {
 	option = { # rest in the shade
 		name = VIETmisc.8092.a
 		prestige = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}	
 	option = { # endure!
 		name = VIETmisc.8092.b
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 		
 		prestige = 10
 		
@@ -11019,12 +11013,12 @@ character_event = {
 			10 = { add_trait = zealous }
 			50 = { }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 		narrative_event = { id = VIETmisc.8113 tooltip = VIETmisc.8113.tooltip days = 2 random = 10 }
 	}	
 	option = { # don't care
@@ -11046,12 +11040,12 @@ character_event = {
 				chance = 25
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 }
 
@@ -11311,10 +11305,7 @@ character_event = {
 	trigger = {
 		in_command = no
 		NAND = {
-			OR = {
-				religion = buddhist
-				religion = jain
-			}
+			religion = gaian
 			OR = {
 				trait = zealous
 				trait = kind
@@ -11325,24 +11316,24 @@ character_event = {
 		health = 4
 		#Wolves aren't found everywhere (based on Wikipedia's page on wolves)
 		capital_scope = {
-			NOR = {
-				region = world_africa
-				#region = region_iceland
-				#region = region_crete
-				#region = region_sardinia_corsica
+			OR = {
+				region = world_canada
+				region = custom_great_lakes
+				region = custom_central_america
+				#region = world_caribbean
 				#region = region_cyprus
 				#region = region_baleares
 				#region = region_canarias
-				duchy = { title = d_lanka }
-				duchy = { title = d_sinhala }
-				duchy = { title = d_nefoud }
-				duchy = { title = d_iceland }
-				duchy = { title = d_krete }
-				duchy = { title = d_sardinia }
-				duchy = { title = d_corsica }
-				duchy = { title = d_cyprus }
-				duchy = { title = d_mallorca }
-				county = { title = c_canarias }
+				duchy = { title = d_apacheria }
+				duchy = { title = d_new_mexico }
+				duchy = { title = d_gadsden }
+				#duchy = { title = d_iceland }
+				#duchy = { title = d_krete }
+				#duchy = { title = d_sardinia }
+				#duchy = { title = d_corsica }
+				#duchy = { title = d_cyprus }
+				#duchy = { title = d_mallorca }
+				#county = { title = c_canarias }
 			}
 		}
 		NOT = { has_artifact = VIET_wolf_pelt }
@@ -12192,7 +12183,7 @@ character_event = {
 }
 
 
-# Scholar offers Chinese chopsticks
+# Scholar offers Japan chopsticks
 character_event = {
 	id = VIETmisc.8125
 	desc = VIETmisc.8125.desc
@@ -12209,16 +12200,17 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOT = { has_artifact = VIET_porcelain_chopsticks }
+		has_global_flag = japan_victorious
 		capital_scope = {
 			OR = {
-				region = world_steppe_east
-				region = world_steppe_tarim
-				region = world_himalayas
-				region = world_india
-				region = world_middle_east			
-				region = world_persia			
-				region = world_africa_east			
-				region = world_asia_minor			
+				region = world_west_coast
+				region = world_central_america_pacific
+				region = custom_mountain_zone
+		#		region = world_india
+		#		region = world_middle_east			
+		#		region = world_persia			
+		#		region = world_africa_east			
+		#		region = world_asia_minor			
 			}
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -12283,7 +12275,12 @@ character_event = {
 	option = { #ok
 		name = VIETmisc.8125.a
 		trigger = {
-			is_sinosphere_small_trigger = yes
+			OR = {
+				culture_group = malay
+				culture_group = canton
+				culture_group = nihonjin
+				culture_group = viet
+			}
 		}
 		add_artifact = VIET_porcelain_chopsticks		
 	}
@@ -12291,7 +12288,12 @@ character_event = {
 	option = { #ok
 		name = VIETmisc.8125.b
 		trigger = {
-			is_sinosphere_small_trigger = no
+			NOR = {
+				culture_group = malay
+				culture_group = canton
+				culture_group = nihonjin
+				culture_group = viet
+			}
 		}
 		add_artifact = VIET_porcelain_chopsticks		
 	}	
@@ -12519,17 +12521,17 @@ character_event = {
 				has_artifact_flag = VIET_clutter_flag
 			}
 		}				
-		modifier = {
-			factor = 0.5
-			location = {
-				NOR = {
-					region = world_africa_central
-					region = world_africa_west
-					region = world_steppe_east
-					region = world_steppe_west
-				}
-			}
-		}
+		#modifier = {
+		#	factor = 0.5
+		#	location = {
+		#		NOR = {
+		#			region = world_africa_central
+		#			region = world_africa_west
+		#			region = world_steppe_east
+		#			region = world_steppe_west
+		#		}
+		#	}
+		#}
 		modifier = {
 			factor = 1.2
 			trait = shy
@@ -12640,8 +12642,8 @@ character_event = {
 		NOT = { has_artifact = VIET_nok_terracotta_figure }
 		capital_scope = {
 			OR = {
-				region = world_africa_central
-				region = world_africa_west
+		#		region = world_africa_central
+				region = world_caribbean
 			}
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -12772,13 +12774,13 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOT = { has_artifact = VIET_cuneiform_tablet }
-		capital_scope = {
-			OR = {
-				region = world_middle_east
-				region = world_asia_minor
-				region = world_persia
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_middle_east
+		#		region = world_asia_minor
+		#		region = world_persia
+		#	}
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -12881,7 +12883,7 @@ character_event = {
 }
 
 
-# Are we barbarians?
+# Are we barbarians?(in view of HCC)
 character_event = {
 	id = VIETmisc.8131
 	desc = VIETmisc.8131.desc
@@ -12899,37 +12901,42 @@ character_event = {
 		in_command = no
 		capital_scope = {
 			NOR = {
-				culture_group = latin
-				culture_group = byzantine
+				#culture_group = californian
+				culture = dixie
+				culture = tuskegean
+				culture = gullah
+				culture = muscogee
+				culture = southron
+				#culture = paiute
 			}
 			OR = {
-				region = world_europe_west
-				region = world_europe_north
-				region = world_europe_east
-				region = world_africa_north
+				region = world_northeast
+				region = world_appalachia
+				region = world_rustlands
+				region = world_gulf_coast
 			}
 		}
 		OR = {
-			culture_group = north_germanic
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = iberian
-			culture_group = magyar
+			#culture_group = north_atlantic
+			culture = appalachian
+			culture = rostmann
+			culture = motowner
+			culture = creole
 			AND = {
-				culture_group = south_slavic
+				culture_group = north_atlantic
 				NOR = {
-					culture = pannonian #exists in WtWSMS
-					culture = romanian
+					#culture = pannonian #exists in WtWSMS
+					culture = hudsonian
 				}
 			}
-			culture_group = east_slavic
-			culture_group = west_slavic
-			culture_group = baltic
-			culture_group = finno_ugric
-			culture_group = altaic
-			culture_group = arabic
-			culture_group = north_african
-			culture_group = celtic
+			culture = melungeon
+			culture = cajun
+			culture = gulfard
+			#culture_group = finno_ugric
+			#culture_group = altaic
+			#culture_group = arabic
+			#culture_group = north_african
+			#culture_group = celtic
 		}
 		NOR = {
 			is_nomadic = yes
@@ -13042,21 +13049,21 @@ character_event = {
 		
 	trigger = {
 		in_command = no
-		capital_scope = {
-			OR = {
-				duchy = { title = d_alexandria }
-				duchy = { title = d_damietta }
-				duchy = { title = d_cairo }
-				duchy = { title = d_aswan }
+		#capital_scope = {
+		#	OR = {
+		#		duchy = { title = d_alexandria }
+		#		duchy = { title = d_damietta }
+		#		duchy = { title = d_cairo }
+		#		duchy = { title = d_aswan }
 				#WTWSMS region, not in vanilla
 				#region = custom_egypt
 				#Other regions with traditions of mummy burials
-				region = world_steppe
-				region = world_africa_north
+		#		region = world_steppe
+		#		region = world_africa_north
 				#region = region_canarias
-				region = world_europe_north
-			}
-		}
+		#		region = world_europe_north
+		#	}
+		#}
 		#Following event can be interpreted as just a dream for your character, so I'm not classifying as supernatural
 		#OR = {
 		#	has_game_rule = {
@@ -13075,17 +13082,17 @@ character_event = {
 	weight_multiplier = {
 		days = 1
 			
-		modifier = {
-			factor = 0.1
-			capital_scope = {
-				NOR = {
-					duchy = { title = d_alexandria }
-					duchy = { title = d_damietta }
-					duchy = { title = d_cairo }
-					duchy = { title = d_aswan }
-				}			
-			}
-		}
+		#modifier = {
+		#	factor = 0.1
+		#	capital_scope = {
+		#		NOR = {
+		#			duchy = { title = d_little_egypt }
+		#			duchy = { title = d_damietta }
+		#			duchy = { title = d_cairo }
+		#			duchy = { title = d_aswan }
+		#		}			
+		#	}
+		#}
 		modifier = {
 			factor = 1.2
 			trait = ambitious
@@ -13172,12 +13179,12 @@ long_character_event = {
 		name = VIETmisc.8133.a
 		remove_trait = brave
 		piety = -5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 		add_character_modifier = {
 			name = VIET_mummys_curse
 			duration = -1
@@ -13203,12 +13210,12 @@ long_character_event = {
 			remove_trait = cynical
 		}
 		piety = 5
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = -1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = -1
+		#}
 		add_character_modifier = {
 			name = VIET_mummys_blessing
 			duration = -1
@@ -13348,17 +13355,17 @@ character_event = {
 	trigger = {
 		in_command = no
 		#NOT = { religion_group = pagan_group }
-		capital_scope = {
-			OR = {
-				region = world_europe_west
-				region = world_europe_south
-				region = world_asia_minor
-				region = world_persia
-				region = world_africa_north
-				region = world_middle_east
-				region = world_india_rajastan
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe_west
+		#		region = world_europe_south
+		#		region = world_asia_minor
+		#		region = world_persia
+		#		region = world_africa_north
+		#		region = world_middle_east
+		#		region = world_india_rajastan
+		#	}
+		#}
 		NOT = { has_artifact = VIET_hellenic_statue_male }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -13477,12 +13484,12 @@ character_event = {
 				chance = 50
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 		add_artifact = VIET_hellenic_statue_male
 		new_artifact = {
 			set_creation_date = 1.1.1
@@ -13493,8 +13500,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion_group = christian
-				religion_group = muslim
+				religion_group = cult_of_saints
 				religion_group = jewish_group
+				religion_group = latter_day_saints
 			}
 		}
 		ai_chance = {
@@ -13741,13 +13749,19 @@ character_event = {
 		#in_command = no
 		#NOT = { has_character_flag = VIET_what_do_when_grown_up }
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			culture_group = caribeno
+			culture_group = caribbanglo
+			culture_group = antillais
+			culture_group = antilliaanse
+			religion_group = afro_syncretic
 			capital_scope = {
 				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					region = world_india
+					culture_group = caribeno
+					culture_group = caribbanglo
+					culture_group = antillais
+					culture_group = antilliaanse
+					religion_group = afro_syncretic
+					region = world_caribbean
 				}
 			}
 		}
@@ -13812,30 +13826,31 @@ character_event = {
 	trigger = {
 		#in_command = no
 		OR = {
-			culture_group = latin
-			culture_group = byzantine
-			culture_group = iberian
-			culture_group = north_african
-			culture = maghreb_arabic
-			culture = andalusian_arabic
-			culture = egyptian_arabic
-			culture = levantine_arabic
+			culture = southron
+			culture = dixie
+			culture = tuskegean
+			culture = gullah
+			culture = muscogee
+			#culture = andalusian_arabic
+			#culture = egyptian_arabic
+			#culture = levantine_arabic
 			capital_scope = {
 				OR = {
-					culture_group = latin
-					culture_group = byzantine
-					culture_group = iberian
-					culture_group = north_african
-					culture = maghreb_arabic
-					culture = andalusian_arabic
-					culture = egyptian_arabic
-					culture = levantine_arabic
-					region = world_europe_south
-					region = world_europe_west_iberia
-					region = world_europe_west_francia
-					region = world_africa_north
-					region = world_asia_minor
-					region = world_middle_east_jerusalem
+					culture = southron
+					culture = dixie
+					culture = tuskegean
+					culture = gullah
+					culture = muscogee
+					#culture = maghreb_arabic
+					#culture = andalusian_arabic
+					#culture = egyptian_arabic
+					#culture = levantine_arabic
+					region = world_southeast
+					#region = world_europe_west_iberia
+					#region = world_europe_west_francia
+					#region = world_africa_north
+					#region = world_asia_minor
+					#region = world_middle_east_jerusalem
 				}
 			}
 		}
@@ -13904,10 +13919,11 @@ character_event = {
 			culture_group = serindian # exists in WtWSMS
 			capital_scope = {
 				OR = {
-					culture_group = iranian
-					culture_group = serindian # exists in WtWSMS
-					region = world_persia
-					region = world_middle_east_arabia
+					culture_group = californian
+					culture = cascadian
+					culture = paiute
+					region = world_west_coast
+					#region = world_middle_east_arabia
 				}
 			}
 		}
@@ -16190,13 +16206,13 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	#war = no
-	culture_group = latin
+	#culture_group = latin
 	
 	trigger = {
 		#in_command = no
-		capital_scope = {
-			region = world_europe_south_italy
-		}
+		#capital_scope = {
+		#	region = world_europe_south_italy
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -16710,11 +16726,11 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = { religion_group = muslim }
-		NOT = { religion_group = zoroastrian_group }
-		capital_scope = {
-			region = world_europe
-		}
+		#NOT = { religion_group = muslim }
+		#NOT = { religion_group = zoroastrian_group }
+		#capital_scope = {
+		#	region = world_europe
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -16799,15 +16815,15 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			religion_group = indian_group
+			#culture_group = dravidian_group
 			capital_scope = {
 				OR = {
-					region = world_india
-					region = world_persia
-					region = world_himalayas
-					region = world_middle_east_arabia
-					region = world_africa_east				
+					region = world_south_america_caribbean
+					#region = world_persia
+					#region = world_himalayas
+					#region = world_middle_east_arabia
+					#region = world_africa_east
 				}
 			}
 		}
@@ -16914,10 +16930,10 @@ character_event = {
 	trigger = {
 		#in_command = no
 		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
+			religion_group = indian_group
+			#culture_group = dravidian_group
 			capital_scope = {
-				region = world_india
+				region = world_south_america_caribbean
 			}
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -16959,16 +16975,16 @@ character_event = {
 			factor = 0.8
 			trait = paranoid
 		}
-		modifier = {
-			factor = 0.5
-			NOT = { culture_group = dravidian_group }
-			capital_scope = {
-				OR = {
-					region = world_india_rajastan				
-					region = world_india_bengal				
-				}
-			}
-		}
+		#modifier = {
+		#	factor = 0.5
+		#	NOT = { culture_group = dravidian_group }
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_india_rajastan			
+		#			region = world_india_bengal				
+		#		}
+		#	}
+		#}
 	}
 	
 	option = {
@@ -16997,21 +17013,21 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			culture_group = iranian
-			culture_group = serindian # exists in WtWSMS
-			culture_group = arabic
-			culture_group = byzantine
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				region = world_steppe_tarim
-				region = world_persia
-				region = world_middle_east
-				region = world_india
-				region = world_africa_north
-				region = world_europe_south
-				region = world_asia_minor
-			}
+			#culture = deitsch
+			#culture_group = serindian # exists in WtWSMS
+			#culture_group = arabic
+			#culture_group = byzantine
+			#culture_group = indo_aryan_group
+			#culture_group = dravidian_group
+			#capital_scope = {
+			#	region = world_steppe_tarim
+			#	region = world_persia
+			#	region = world_middle_east
+			#	region = world_india
+			#	region = world_africa_north
+			#	region = world_europe_south
+			#	region = world_asia_minor
+			#}
 		}
 		OR = {
 			trait = depressed
@@ -17081,15 +17097,15 @@ character_event = {
 				chance = 50
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 25
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 25
+		#	}
+		#}
 	}
 	
 	option = {
@@ -17132,25 +17148,25 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = iranian
-			culture_group = serindian # exists in WtWSMS
-			culture_group = arabic
-			culture_group = byzantine
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				OR = {
-					region = world_steppe_tarim
-					region = world_persia
-					region = world_middle_east
-					region = world_india
-					region = world_africa_north
-					region = world_europe_south
-					region = world_asia_minor				
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = iranian
+		#	culture_group = serindian # exists in WtWSMS
+		#	culture_group = arabic
+		#	culture_group = byzantine
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_steppe_tarim
+		#			region = world_persia
+		#			region = world_middle_east
+		#			region = world_india
+		#			region = world_africa_north
+		#			region = world_europe_south
+		#			region = world_asia_minor				
+		#		}
+		#	}
+		#}
 		NOT = { trait = eunuch }
 		NOT = { trait = celibate }
 		wealth = 20
@@ -17244,12 +17260,12 @@ character_event = {
 			name = VIET_saffron_bath
 			duration = 365
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 	
 	option = {
@@ -17288,12 +17304,12 @@ character_event = {
 			name = VIET_saffron_bath
 			duration = 365
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 	
 	option = {
@@ -17329,12 +17345,12 @@ character_event = {
 				chance = 66
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 	
 	option = {
@@ -17370,12 +17386,12 @@ character_event = {
 				chance = 66
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 	}
 	
 	option = {
@@ -17416,34 +17432,34 @@ character_event = {
 	trigger = {
 		in_command = no
 		#Typical used in India and Eastern Iranian regions for food
-		NOR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			culture_group = iranian
-			capital_scope = {
-				region = world_india
-			}
-		}
+		#NOR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	culture_group = iranian
+		#	capital_scope = {
+		#		region = world_india
+		#	}
+		#}
 		#Rarely found in Europe
-		OR = {
-			culture_group = arabic
-			culture_group = byzantine
-			culture_group = east_african
-			culture_group = north_african
-			culture_group = altaic
-			is_sinosphere_large_trigger = yes
-			capital_scope = {
-				OR = {
-					region = world_persia
-					region = world_middle_east
-					region = world_asia_minor
-					region = world_steppe_tarim
-					region = world_himalayas
-					region = world_africa_east
-					region = world_africa_north
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = arabic
+		#	culture_group = byzantine
+		#	culture_group = east_african
+		#	culture_group = north_african
+		#	culture_group = altaic
+		#	is_sinosphere_large_trigger = yes
+		#	capital_scope = {
+		#		OR = {
+		##			region = world_persia
+		#			region = world_middle_east
+		#			region = world_asia_minor
+		#			region = world_steppe_tarim
+		#			region = world_himalayas
+		#			region = world_africa_east
+		#			region = world_africa_north
+		#		}
+		#	}
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -17565,14 +17581,14 @@ character_event = {
 	trigger = {
 		in_command = no
 		#Found in Europe and parts of the Middle East
-		capital_scope = {
-			OR = {
-				region = world_europe
-				region = world_middle_east
-				region = world_asia_minor
-				region = world_africa_north
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_europe
+		#		region = world_middle_east
+		#		region = world_asia_minor
+		#		region = world_africa_north
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -17801,7 +17817,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture_group = north_germanic
+	culture_group = centrolatino
 	
 	trigger = {
 		in_command = no
@@ -18121,12 +18137,12 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		OR = {
-			culture_group = central_germanic
-			culture_group = west_slavic
-			culture_group = east_slavic
-			culture_group = baltic
-		}
+		#OR = {
+		#	culture_group = central_germanic
+		#	culture_group = west_slavic
+		#	culture_group = east_slavic
+		#	culture_group = baltic
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -18211,13 +18227,13 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		capital_scope = {
-			NOR = {
-				region = world_africa
-				region = world_india
-				region = world_middle_east_arabia
-			}
-		}
+		#capital_scope = {
+		#	NOR = {
+		#		region = world_africa
+		#		region = world_india
+		#		region = world_middle_east_arabia
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -18369,18 +18385,18 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = iberian
-			culture_group = latin
-			culture_group = byzantine
-			culture_group = north_african
-			culture_group = arabic
-			culture_group = iranian
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			culture_group = serindian # exists in WtWSMS
-			culture = turkish
-		}
+		#OR = {
+		#	culture_group = iberian
+		#	culture_group = latin
+		#	culture_group = byzantine
+		#	culture_group = north_african
+		#	culture_group = arabic
+		#	culture_group = iranian
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	culture_group = serindian # exists in WtWSMS
+		#	culture = turkish
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -18540,10 +18556,10 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture = frisian
-			culture = dutch
-		}
+		#OR = {
+		#	culture = frisian
+		#	culture = dutch
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -18663,12 +18679,12 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			culture_group = iranian
-			culture_group = serindian # exists in WtWSMS
-		}
+		#OR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	culture_group = iranian
+		#	culture_group = serindian # exists in WtWSMS
+		#}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -18843,19 +18859,19 @@ character_event = {
 				trait = trusting
 			}
 		}
-		OR = {
-			culture_group = iberian
-			culture_group = latin
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = north_germanic
-			culture_group = byzantine
-			culture_group = south_slavic
-			culture_group = east_slavic
-			culture_group = west_slavic
-			culture_group = baltic
-			culture_group = finno_ugric
-		}
+		#OR = {
+		#	culture_group = iberian
+		#	culture_group = latin
+		#	culture_group = west_germanic
+		#	culture_group = central_germanic
+		#	culture_group = north_germanic
+		#	culture_group = byzantine
+		#	culture_group = south_slavic
+		#	culture_group = east_slavic
+		#	culture_group = west_slavic
+		#	culture_group = baltic
+		#	culture_group = finno_ugric
+		#}
 		capital_scope = {
 			region = world_europe
 		}
@@ -18993,15 +19009,15 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture_group = magyar
-			culture_group = baltic
-			culture_group = west_slavic
-			culture_group = east_slavic
-			culture_group = finno_ugric
-		}
+		#OR = {
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture_group = magyar
+		#	culture_group = baltic
+		#	culture_group = west_slavic
+		#	culture_group = east_slavic
+		#	culture_group = finno_ugric
+		#}
 		capital_scope = {
 			region = world_europe
 		}
@@ -19158,15 +19174,15 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = north_germanic
-			culture_group = central_germanic
-			culture_group = magyar
-			culture_group = baltic
-			culture_group = west_slavic
-			culture_group = east_slavic
-			culture_group = finno_ugric
-		}
+		#OR = {
+		#	culture_group = north_germanic
+		#	culture_group = central_germanic
+		#	culture_group = magyar
+		#	culture_group = baltic
+		#	culture_group = west_slavic
+		#	culture_group = east_slavic
+		#	culture_group = finno_ugric
+		#}
 		capital_scope = {
 			region = world_europe
 		}
@@ -19323,12 +19339,12 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = iberian
-			capital_scope = {
-				region = world_europe_west_iberia
-			}		
-		}
+		#OR = {
+		#	culture_group = iberian
+		#	capital_scope = {
+		#		region = world_europe_west_iberia
+		#	}		
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -19478,15 +19494,15 @@ character_event = {
 			15 = { add_trait = charitable }
 			10 = { add_trait = humble }
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 33
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 33
+		#	}
+		#}
 	}	
 	option = {
 		name = VIETmisc.8185.b # Don't help them
@@ -19513,15 +19529,15 @@ character_event = {
 				chance = 40
 			}
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 66
-			}
-		}		
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 66
+		#	}
+		#}		
 	}
 }
 
@@ -19541,7 +19557,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	culture_group = east_african
+	#culture_group = east_african
 	
 	trigger = {
 		in_command = no
@@ -19666,15 +19682,15 @@ character_event = {
 			name = eating_good_food
 			duration = 60
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 15
-			}
-		}	
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 15
+		#	}
+		#}	
 	}
 	
 	option = {
@@ -19700,13 +19716,13 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		OR = {
-			culture_group = indo_aryan_group
-			culture_group = dravidian_group
-			capital_scope = {
-				region = world_india
-			}
-		}
+		#OR = {
+		#	culture_group = indo_aryan_group
+		#	culture_group = dravidian_group
+		#	capital_scope = {
+		#		region = world_india
+		#	}
+		#}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -20050,28 +20066,28 @@ character_event = {
 		in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			culture_group = iberian
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = west_slavic
-			culture_group = east_slavic
-			culture_group = south_slavic
-			culture_group = latin
-			culture_group = celtic
-			culture_group = north_germanic
-			culture_group = byzantine
-			culture_group = baltic
-			culture_group = magyar
-			culture_group = arabic
-			culture_group = north_african
-			culture_group = iranian
-			culture_group = israelite
-			religion_group = christian
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			religion_group = jewish_group
-		}
+		#OR = {
+		#	culture_group = iberian
+		#	culture_group = west_germanic
+		#	culture_group = central_germanic
+		#	culture_group = west_slavic
+		#	culture_group = east_slavic
+		#	culture_group = south_slavic
+		#	culture_group = latin
+		#	culture_group = celtic
+		#	culture_group = north_germanic
+		#	culture_group = byzantine
+		#	culture_group = baltic
+		#	culture_group = magyar
+		#	culture_group = arabic
+		#	culture_group = north_african
+		#	culture_group = iranian
+		#	culture_group = israelite
+		#	religion_group = christian
+		#	religion_group = muslim
+		#	religion_group = zoroastrian_group
+		#	religion_group = jewish_group
+		#}
 	}
 	
 	weight_multiplier = {
@@ -20185,18 +20201,18 @@ character_event = {
 
 		modifier = {
 			factor = 0.7
-			NOR = {
-				is_sinosphere_large_trigger = yes
-				culture_group = arabic
-				culture_group = iranian
-				culture_group = indo_aryan_group
-				culture_group = dravidian_group
-				culture_group = byzantine
-				culture_group = north_african
-				religion_group = muslim
-				religion_group = zoroastrian_group
-				religion_group = indian_group
-			}
+			#NOR = {
+			#	is_sinosphere_large_trigger = yes
+			#	culture_group = arabic
+			#	culture_group = iranian
+			#	culture_group = indo_aryan_group
+			#	culture_group = dravidian_group
+			#	culture_group = byzantine
+			#	culture_group = north_african
+			#	religion_group = muslim
+			#	religion_group = zoroastrian_group
+			#	religion_group = indian_group
+			#}
 		}
 		modifier = {
 			factor = 1.2
@@ -20247,15 +20263,15 @@ character_event = {
 			name = VIET_rosewater_ointment
 			duration = 730
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 33
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 33
+		#	}
+		#}
 	}	
 	option = {
 		name = VIETmisc.8194.b # buy for self and spouse
@@ -20278,15 +20294,15 @@ character_event = {
 				years = 1
 			}		
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 66
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 66
+		#	}
+		#}
 	}	
 	option = {
 		name = VIETmisc.8194.c # buy for self and lover
@@ -20309,15 +20325,15 @@ character_event = {
 				years = 1
 			}		
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = 1
-				chance = 66
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = 1
+		#		chance = 66
+		#	}
+		#}
 	}
 	option = {
 		name = VIETmisc.8194.d # No
@@ -20367,18 +20383,18 @@ character_event = {
 
 		modifier = {
 			factor = 0.7
-			NOR = {
-				is_sinosphere_large_trigger = yes
-				culture_group = arabic
-				culture_group = iranian
-				culture_group = indo_aryan_group
-				culture_group = dravidian_group
-				culture_group = byzantine
-				culture_group = north_african
-				religion_group = muslim
-				religion_group = zoroastrian_group
-				religion_group = indian_group
-			}
+			#NOR = {
+			#	is_sinosphere_large_trigger = yes
+			#	culture_group = arabic
+			#	culture_group = iranian
+			#	culture_group = indo_aryan_group
+			#	culture_group = dravidian_group
+			#	culture_group = byzantine
+			#	culture_group = north_african
+			#	religion_group = muslim
+			#	religion_group = zoroastrian_group
+			#	religion_group = indian_group
+			#}
 		}
 		modifier = {
 			factor = 1.2
@@ -20991,15 +21007,15 @@ character_event = {
 			add_trait = kind
 			chance = 25
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 66
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 66
+		#	}
+		#}
 	}
 	
 	option = {
@@ -21010,15 +21026,15 @@ character_event = {
 		tooltip_info = kind
 		wealth = -10
 		piety = 10
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			random = {
-				decadence = -1
-				chance = 66
-			}
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	random = {
+		#		decadence = -1
+		#		chance = 66
+		#	}
+		#}
 	}
 	
 	option = {
@@ -21033,12 +21049,12 @@ character_event = {
 			name = VIET_heartless_villain
 			duration = 1000
 		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			decadence = 1
-		}
+		#if = {
+		#	limit = {
+		#		religion_group = muslim
+		#	}
+		#	decadence = 1
+		#}
 		if = {
 			limit = {
 				has_character_flag = VIET_ugly_jerk_exists
@@ -21560,13 +21576,13 @@ province_event = {
 	
 	trigger = {
 		NOT = { has_province_modifier = VIET_province_musk_deer }
-		OR = {
-			region = world_india_bengal
-			region = world_india_rajastan
-			region = world_steppe_east
-			region = world_steppe_tarim
-			region = world_himalayas
-		}
+		#OR = {
+		#	region = world_india_bengal
+		#	region = world_india_rajastan
+		#	region = world_steppe_east
+		#	region = world_steppe_tarim
+		#	region = world_himalayas
+		#}
 		OR = {
 			terrain = hills
 			terrain = mountain
@@ -21617,13 +21633,13 @@ character_event = {
 	trigger = {
 		#in_command = no
 		capital_scope = {
-			OR = {
-				region = world_india_bengal
-				region = world_india_rajastan
-				region = world_steppe_east
-				region = world_steppe_tarim
-				region = world_himalayas
-			}
+			#OR = {
+			#	region = world_india_bengal
+			#	region = world_india_rajastan
+			#	region = world_steppe_east
+			#	region = world_steppe_tarim
+			#	region = world_himalayas
+			#}
 			OR = {
 				terrain = hills
 				terrain = mountain
@@ -22852,24 +22868,24 @@ character_event = {
 		#in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		capital_scope = {
-			NOR = {
-				region = world_europe_south
-				region = world_europe_south_east
-				region = world_africa_north
-				region = world_asia_minor
-			}
-			NOR = {
-				culture_group = latin
-				culture_group = iberian
-				culture_group = byzantine
-			}
-		}
-		NOR = {
-			culture_group = latin
-			culture_group = iberian
-			culture_group = byzantine
-		}
+		#capital_scope = {
+		#	NOR = {
+		#		region = world_europe_south
+		#		region = world_europe_south_east
+		#		region = world_africa_north
+		#		region = world_asia_minor
+		#	}
+		#	NOR = {
+		#		culture_group = latin
+		#		culture_group = iberian
+		#		culture_group = byzantine
+		#	}
+		#}
+		#NOR = {
+		#	culture_group = latin
+		#	culture_group = iberian
+		#	culture_group = byzantine
+		#}
 	}
 	
 	weight_multiplier = {
@@ -22945,22 +22961,22 @@ character_event = {
 		#in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			culture_group = latin
-			culture_group = iberian
-			culture_group = byzantine
-			capital_scope = {
-				OR = {
-					region = world_europe_south
-					region = world_europe_south_east
-					region = world_africa_north
-					region = world_asia_minor
-					culture_group = latin
-					culture_group = iberian
-					culture_group = byzantine
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = latin
+		#	culture_group = iberian
+		#	culture_group = byzantine
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_europe_south
+		#			region = world_europe_south_east
+		#			region = world_africa_north
+		#			region = world_asia_minor
+		#			culture_group = latin
+		#			culture_group = iberian
+		#			culture_group = byzantine
+		#		}
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -23038,22 +23054,22 @@ character_event = {
 		in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			culture_group = latin
-			culture_group = iberian
-			culture_group = byzantine
-			capital_scope = {
-				OR = {
-					region = world_europe_south
-					region = world_europe_south_east
-					region = world_africa_north
-					region = world_asia_minor
-					culture_group = latin
-					culture_group = iberian
-					culture_group = byzantine
-				}
-			}
-		}
+		#OR = {
+		#	culture_group = latin
+		#	culture_group = iberian
+		#	culture_group = byzantine
+		#	capital_scope = {
+		#		OR = {
+		#			region = world_europe_south
+		#			region = world_europe_south_east
+		#			region = world_africa_north
+		#			region = world_asia_minor
+		#			culture_group = latin
+		#			culture_group = iberian
+		#			culture_group = byzantine
+		#		}
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -23908,7 +23924,7 @@ character_event = {
 				trait = scholar
 				trait = theologian
 				trait = lunatic
-				religion = taoist #Zhuangzi
+				#religion = taoist #Zhuangzi
 			}
 		}
 		add_character_modifier = {
@@ -23929,7 +23945,7 @@ character_event = {
 				trait = scholar
 				trait = theologian
 				trait = lunatic
-				religion = taoist #Zhuangzi
+				#religion = taoist #Zhuangzi
 			}
 		}
 		add_character_modifier = {
@@ -24731,657 +24747,22 @@ character_event = {
 }
 
 
-# Chinese poet recites poetry inspired by the Three Caos
-character_event = {
-	id = VIETmisc.8242
-	desc = VIETmisc.8242.desc
-	picture = GFX_evt_asian_calligraphy
-	
-	is_triggered_only = yes
+# Chinese poet recites poetry inspired by the Three Caos remove
 
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		in_command = no			
-		capital_scope = {
-			OR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim
-				is_sinosphere_large_trigger = yes
-			}
-		}	
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }	
-	}
-	
-	weight_multiplier = {
-		days = 1				
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = poet
-		}
-		modifier = {
-			factor = 0.8
-			trait = hedonist
-		}
-		modifier = {
-			factor = 1.2
-			trait = scholar
-		}
-		modifier = {
-			factor = 0.8
-			trait = hunter
-		}
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = lustful
-		}
-		modifier = {
-			factor = 0.8
-			trait = chaste
-		}
-	}
-
-	option = { # Don't like poetry
-		name = VIETmisc.8242.a
-		add_character_modifier = {
-			name = VIET_dislikes_hipsters
-			duration = 365
-		}
-	}
-	option = { # Like poetry
-		name = VIETmisc.8242.b
-		add_character_modifier = {
-			name = VIET_appreciates_fine_art
-			duration = 365
-		}
-	}
-	option = { # Recruit poet
-		name = VIETmisc.8242.c
-		trigger = {
-			NOT = { has_character_flag = VIET_cao_cao_poetry_option }
-			NOT = {
-				any_courtier = {
-					has_character_flag = VIET_cao_cao_poet
-				}
-			}
-		}
-		wealth = -20	
-		prestige = -20
-		create_character = {
-			dynasty = random
-			religion = ROOT
-			culture = han
-			female = no
-			health = 5
-			random_traits = no
-			historical = yes
-			attributes = {
-				diplomacy = 7
-				learning = 8
-			}
-		}
-		new_character = {
-			#Education & other basic stuff
-			set_character_flag = VIET_cao_cao_poet
-			set_character_flag = no_court_invites
-			random_list = {
-				25 = { add_trait = charismatic_negotiator }
-				25 = { add_trait = grey_eminence }
-				25 = { add_trait = scholarly_theologian }
-				25 = { add_trait = mastermind_theologian }
-			}	
-			#Guaranteed Traits
-			add_trait = poet
-			#Clutter Artifact					
-			random = {
-				VIET_give_clutter_artifact_effect = yes
-				chance = 10
-			}
-			#Randomize appearance
-			random_list = {
-				20 = { set_graphical_culture = bodpa }
-				35 = { set_graphical_culture = mongol }
-				50 = { }
-			}
-			#Flavor
-			random_list = {
-				800 = { } #Nothing
-				100 = { add_scarred_tiered_effect = yes }
-				20 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_eyed
-				}
-				20 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_handed
-				}
-				20 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_legged
-				}
-				5 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_legged
-					add_trait = one_handed
-				}
-				5 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_legged
-					add_trait = one_eyed
-				}
-				5 = { 
-					trigger = { has_dlc = Reapers }
-					add_trait = one_eyed
-					add_trait = one_handed
-				}
-			}
-			opinion = {
-				modifier = opinion_loyal_servant
-				who = ROOT
-				years = 100
-			}			
-			if = {
-				limit = { has_dlc = "Way of Life" }
-				random_list = {
-					50 = { add_trait = scholar }
-					25 = { add_trait = socializer }
-					10 = { add_trait = administrator }
-					10 = { add_trait = hunter }
-					10 = { add_trait = duelist }
-					10 = { add_trait = gardener }
-					300 = {}
-				}
-			}
-			#Personality Archetypes
-			random_list = {
-				20 = { # Noble and virtuous
-					set_character_flag = VIET_cao_cao_poet_nobleman
-					add_trait = humble
-					add_trait = kind
-					add_trait = chaste
-					add_trait = just
-					add_trait = charitable
-				}
-				20 = { # Cunning and realistic
-					set_character_flag = VIET_cao_cao_poet_pragmatist
-					add_trait = cynical
-					add_trait = patient
-					add_trait = erudite
-					add_trait = deceitful
-					add_trait = paranoid
-				}
-				20 = { # Brave and ambitious
-					set_character_flag = VIET_cao_cao_poet_risktaker
-					add_trait = ambitious
-					add_trait = brave
-					add_trait = proud
-					add_trait = stubborn
-					add_trait = diligent
-				}
-				20 = { # Taoist hermit
-					set_character_flag = VIET_cao_cao_poet_hermit
-					religion = taoist
-					add_trait = celibate
-					add_trait = mystic
-					add_trait = patient
-					add_trait = temperate
-					add_trait = content
-					add_trait = honest
-					add_trait = brave
-				}
-				20 = { # Cultured and roguish
-					set_character_flag = VIET_cao_cao_poet_suave
-					add_trait = erudite
-					add_trait = lustful
-					add_trait = slothful
-					add_trait = patient
-					add_trait = gregarious
-				}
-				20 = { # Drunken fool
-					set_character_flag = VIET_cao_cao_poet_li_bai
-					add_trait = drunkard
-					add_trait = erudite
-					add_trait = lustful
-					add_trait = slothful
-					add_trait = patient
-					add_trait = gregarious
-				}
-			}
-		}
-	}
-}
-
-
-# Hear a Chinese proverb about siblings
-character_event = {
-	id = VIETmisc.8243
-	desc = VIETmisc.8243.desc
-	picture = GFX_evt_maiden_chinese_group
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		in_command = no			
-		capital_scope = {
-			OR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim
-				is_sinosphere_large_trigger = yes
-			}
-		}	
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }	
-		NOT = { culture_group = chinese_group }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-		modifier = {
-			factor = 0.5
-			NOR = {
-				capital_scope = {
-					OR = {
-						region = custom_eastern_edge_of_map
-						region = world_himalayas
-						region = world_steppe_tarim
-						is_sinosphere_large_trigger = yes
-					}
-				}			
-			}
-		}				
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-		modifier = {
-			factor = 1.2
-			trait = trusting
-		}
-		modifier = {
-			factor = 0.8
-			trait = paranoid
-		}
-	}
-
-	option = { # Siblings are most important
-		name = VIETmisc.8243.a
-		any_sibling = {
-			opinion = {
-				modifier = VIET_opinion_values_our_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		any_spouse = {
-			opinion = {
-				modifier = VIET_opinion_doesnt_value_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		any_child = {
-			opinion = {
-				modifier = VIET_opinion_doesnt_value_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		add_character_modifier = {
-			name = VIET_sexist_against_women
-			duration = 365
-		}
-	}
-
-	option = { # Children are our future
-		name = VIETmisc.8243.b
-		any_sibling = {
-			opinion = {
-				modifier = VIET_opinion_doesnt_value_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		any_child = {
-			opinion = {
-				modifier = VIET_opinion_values_our_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-	}
-
-	option = { # Wives are important
-		name = VIETmisc.8243.c
-		any_sibling = {
-			opinion = {
-				modifier = VIET_opinion_doesnt_value_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		any_spouse = {
-			opinion = {
-				modifier = VIET_opinion_values_our_relationship
-				who = ROOT
-				years = 3
-			}			
-		}
-		add_character_modifier = {
-			name = VIET_respects_women
-			duration = 365
-		}
-	}
-}
+# Hear a Chinese proverb about siblings remove
 
 
 
-
-# Who is your favorite Three Kingdoms character?
-character_event = {
-	id = VIETmisc.8244
-	desc = VIETmisc.8244.desc
-	picture = GFX_evt_siege_chinese_group
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no			
-		capital_scope = {
-			OR = {
-				region = custom_eastern_edge_of_map
-				region = world_himalayas
-				region = world_steppe_tarim
-				region = world_steppe_east
-				is_sinosphere_large_trigger = yes
-			}
-		}	
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }	
-		NOT = { has_character_flag = VIET_three_kingdoms_inspiration }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-		modifier = {
-			factor = 0.5
-			NOT = {
-				is_sinosphere_small_trigger = yes			
-			}
-		}				
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = just
-		}
-		modifier = {
-			factor = 0.8
-			trait = arbitrary
-		}
-		modifier = {
-			factor = 1.2
-			trait = poet
-		}
-		modifier = {
-			factor = 0.8
-			trait = hedonist
-		}
-		modifier = {
-			factor = 1.2
-			trait = scholar
-		}
-		modifier = {
-			factor = 0.8
-			trait = theologian
-		}
-	}
-	
-	immediate = {
-		set_character_flag = VIET_three_kingdoms_inspiration
-	}
-
-	option = { # Warlord
-		name = VIETmisc.8244.a
-		hidden_tooltip = {
-			character_event = { id = VIETmisc.8245 }
-		}
-	}
-
-	option = { # General
-		name = VIETmisc.8244.b
-		hidden_tooltip = {
-			character_event = { id = VIETmisc.8246 }
-		}
-	}
-
-	option = { # Strategist
-		name = VIETmisc.8244.c
-		hidden_tooltip = {
-			character_event = { id = VIETmisc.8247 }
-		}
-	}
-
-	option = { # Women
-		name = VIETmisc.8244.d
-		hidden_tooltip = {
-			character_event = { id = VIETmisc.8248 }
-		}
-	}
-}
+# Who is your favorite Three Kingdoms character?remove
 
 
+# Three Kingdoms - warlord remove
 
-# Three Kingdoms - warlord
-character_event = {
-	id = VIETmisc.8245
-	desc = VIETmisc.8245.desc
-	picture = GFX_evt_chinese_prince
-	
-	is_triggered_only = yes
+# Three Kingdoms - general remove
 
-	option = { # Warlord
-		name = VIETmisc.8245.a
-		add_character_modifier = {
-			name = VIET_three_kingdoms_cao_cao
-			duration = -1
-		}
-	}
-	option = { # Warlord
-		name = VIETmisc.8245.b
-		add_character_modifier = {
-			name = VIET_three_kingdoms_liu_bei
-			duration = -1
-		}
-	}
-	option = { # Warlord
-		name = VIETmisc.8245.c
-		add_character_modifier = {
-			name = VIET_three_kingdoms_sun_quan
-			duration = -1
-		}
-	}
-	option = { # Warlord
-		name = VIETmisc.8245.d
-		add_character_modifier = {
-			name = VIET_three_kingdoms_dong_zhuo
-			duration = -1
-		}
-	}
-}
+# Three Kingdoms - strategist remove
 
-# Three Kingdoms - general
-character_event = {
-	id = VIETmisc.8246
-	desc = VIETmisc.8246.desc
-	picture = GFX_evt_battle_chinese_group
-	
-	is_triggered_only = yes
-
-	option = { # General
-		name = VIETmisc.8246.a
-		add_character_modifier = {
-			name = VIET_three_kingdoms_guan_yu
-		}
-	}
-	option = { # General
-		name = VIETmisc.8246.b
-		add_character_modifier = {
-			name = VIET_three_kingdoms_zhang_fei
-			duration = -1
-		}
-	}
-	option = { # General
-		name = VIETmisc.8246.c
-		add_character_modifier = {
-			name = VIET_three_kingdoms_xiahou_dun
-			duration = -1
-		}
-	}
-	option = { # General
-		name = VIETmisc.8246.d
-		add_character_modifier = {
-			name = VIET_three_kingdoms_lu_bu
-			duration = -1
-		}
-	}
-}
-
-# Three Kingdoms - strategist
-character_event = {
-	id = VIETmisc.8247
-	desc = VIETmisc.8247.desc
-	picture = GFX_evt_council_chinese_group
-	
-	is_triggered_only = yes
-
-	option = { # Strategist
-		name = VIETmisc.8247.a
-		add_character_modifier = {
-			name = VIET_three_kingdoms_zhuge_liang
-		}
-	}
-	option = { # Strategist
-		name = VIETmisc.8247.b
-		add_character_modifier = {
-			name = VIET_three_kingdoms_sima_yi
-		}
-	}
-	option = { # Strategist
-		name = VIETmisc.8247.c
-		add_character_modifier = {
-			name = VIET_three_kingdoms_zhou_yu
-		}
-	}
-	option = { # Strategist
-		name = VIETmisc.8247.d
-		add_character_modifier = {
-			name = VIET_three_kingdoms_chen_gong
-		}
-	}
-}
-
-# Three Kingdoms - Ladies
-character_event = {
-	id = VIETmisc.8248
-	desc = VIETmisc.8248.desc
-	picture = GFX_evt_chinese_princess
-	
-	is_triggered_only = yes
-
-	option = { # Ladies
-		name = VIETmisc.8248.a
-		add_character_modifier = {
-			name = VIET_three_kingdoms_diaochan
-		}
-	}
-	option = { # Ladies
-		name = VIETmisc.8248.b
-		add_character_modifier = {
-			name = VIET_three_kingdoms_sun_shangxiang
-		}
-	}
-	option = { # Ladies
-		name = VIETmisc.8248.c
-		add_character_modifier = {
-			name = VIET_three_kingdoms_qiao_sisters
-		}
-	}
-	option = { # Ladies
-		name = VIETmisc.8248.d
-		add_character_modifier = {
-			name = VIET_three_kingdoms_huang_yueying
-		}
-	}
-}
+# Three Kingdoms - Ladies remove
 
 ###############################################################
 # CONSTANTINOPLE
@@ -25402,21 +24783,21 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	#war = no
-	religion_group = muslim
+	religion = consumerist
 	
 	trigger = {
 		#in_command = no
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		NOT = {
-			496 = {
+			3 = {
 				OR = {
 					owner = {
-						religion_group = muslim
+						religion = consumerist
 					}
 					owner = {
 						any_liege = {
-							religion_group = muslim
+							religion = consumerist
 						}
 					}				
 				}
@@ -25431,12 +24812,12 @@ character_event = {
 			factor = 0.6
 			capital_scope = {
 				NOR = {
-					region = world_asia_minor
-					region = world_europe_south
-					region = world_steppe_west
-					region = world_middle_east
-					region = world_persia
-					region = world_africa_north
+					region = custom_usa
+					#region = world_europe_south
+					#region = world_steppe_west
+					#region = world_middle_east
+					#region = world_persia
+					#region = world_africa_north
 				}
 			}
 		}		
@@ -25529,14 +24910,20 @@ character_event = {
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		OR = {
 			top_liege = {
-				has_landed_title = e_byzantium
+				has_landed_title = e_dixie
 			}
 			AND = {
-				culture_group = byzantine
+				OR={
+					culture = southron
+					culture = tuskegean
+					culture = dixie
+					culture = gullah
+					culture = muscogee
+				}
 				capital_scope = {
 					OR = {
-						region = world_asia_minor
-						region = world_europe_south_east
+						region = world_southeast
+						region = world_gulf_coast
 					}
 				}			
 			}
@@ -25549,7 +24936,7 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			NOT = {
-				has_landed_title = c_byzantion
+				has_landed_title = c_charleston
 			}
 		}		
 		modifier = {
@@ -25630,8 +25017,8 @@ character_event = {
 		}
 		create_random_steward = {
 			dynasty = actually_culture
-			religion = catholic
-			culture = italian
+			religion = americanist
+			culture = gothamite
 			female = no
 			random_traits = yes
 			historical = yes
@@ -25664,24 +25051,32 @@ character_event = {
 				name = VIET_italian_merchant_negotiator
 				duration = -1
 			}
-			#Randomize appearance
-			random_list = {
-				5 = { set_graphical_culture = german }
-				5 = { set_graphical_culture = frankish }
-				5 = { set_graphical_culture = dalmatian }
-				5 = { set_graphical_culture = levantine_arabic }
-				5 = { set_graphical_culture = castillan }
-				5 = { set_graphical_culture = greek }
-				5 = { set_graphical_culture = outremer }
-				5 = { set_graphical_culture = serbian }
-				5 = { set_graphical_culture = polish }
-				55 = { }
-			}	
+			#Randomize appearance,I use all Reference cultures just for cool 
+			random_list = { 
+				5 = { set_graphical_culture = white } 
+				5 = { set_graphical_culture = black } 
+				5 = { set_graphical_culture = brown } 
+				5 = { set_graphical_culture = chinese } 
+				5 = { set_graphical_culture = native } 
+				5 = { set_graphical_culture = norse } 
+				5 = { set_graphical_culture = celtic } 
+				5 = { set_graphical_culture = ugric } 
+				5 = { set_graphical_culture = mediterranean } 
+				5 = { set_graphical_culture = indian } 
+				5 = { set_graphical_culture = slavic } 
+				5 = { set_graphical_culture = west_slavic } 
+				5 = { set_graphical_culture = german } 
+				5 = { set_graphical_culture = english } 
+				5 = { set_graphical_culture = persian } 
+				5 = { set_graphical_culture = italian } 
+				5 = { set_graphical_culture = french } 
+				15 = { } 
+			}
 		}
 	}
 }
 
-# Hearing stories about Constantinople
+# Hearing stories about Sacramento
 character_event = {
 	id = VIETmisc.8251
 	desc = VIETmisc.8251.desc
@@ -25702,29 +25097,36 @@ character_event = {
 		NOR = {
 			top_liege = {
 				OR = {
-					has_landed_title = e_byzantium
-					has_landed_title = e_roman_empire
-					has_landed_title = c_byzantion
+					has_landed_title = e_california
+					#has_landed_title = e_roman_empire
+					has_landed_title = c_sacramento
 				}
 			}
 			AND = {
-				culture_group = byzantine
+				OR = {
+					culture_group = californian
+					culture = cascadian
+					culture = paiute
+				}
 				capital_scope = {
 					OR = {
-						region = world_asia_minor
-						region = world_europe_south_east
+						region = world_west_coast
+						#region = world_europe_south_east
 					}
 				}			
 			}
-			has_landed_title = c_byzantion
+			has_landed_title = c_sacramento
 		}
 		capital_scope = {
 			NOR = {
-				region = world_steppe_east
-				#region = world_steppe_tarim
-				region = world_africa_central
-				region = world_himalayas
-				#region = world_india
+				region = world_south_america
+				region = world_caribbean
+				region = custom_greater_southeast_usa
+				region = world_northeast
+				region = world_eastern_canada
+				region = world_great_plains
+				region = custom_great_lake
+				region = world_central_america_caribbean
 			}
 		}
 	}
@@ -25736,9 +25138,8 @@ character_event = {
 			factor = 0.1
 			capital_scope = {
 				OR = {
-					region = world_steppe_tarim
-					region = world_india
-					region = world_africa_east
+					region = world_western_canada
+					region = world_central_america_pacific
 				}
 			}
 		}		
@@ -25903,13 +25304,13 @@ character_event = {
 		name = VIETmisc.8252.a
 		trigger = {
 			NOR = {
-				AND = {
-					religion_group = zoroastrian_group
-					NOT = { religion = manichean }	
-				}
-				religion = messalian
+				#AND = {
+				#	religion_group = zoroastrian_group
+				#	NOT = { religion = manichean }	
+				#}
+				#religion = messalian
 				has_religion_feature = religion_holy_family 
-				has_religion_feature = religion_feature_zun
+				#has_religion_feature = religion_feature_zun
 			}	
 		}
 		piety = 3
@@ -25918,13 +25319,13 @@ character_event = {
 		name = VIETmisc.8252.b
 		trigger = {
 			NOR = {
-				AND = {
-					religion_group = zoroastrian_group
-					NOT = { religion = manichean }	
-				}
-				religion = messalian
+				#AND = {
+				#	religion_group = zoroastrian_group
+				#	NOT = { religion = manichean }	
+				#}
+				#religion = messalian
 				has_religion_feature = religion_holy_family 
-				has_religion_feature = religion_feature_zun
+				#has_religion_feature = religion_feature_zun
 			}	
 		}
 		piety = -3
@@ -25939,12 +25340,12 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					religion_group = zoroastrian_group
-					religion = messalian
+					#religion_group = zoroastrian_group
+					#religion = messalian
 					has_religion_feature = religion_holy_family 
-					has_religion_feature = religion_feature_zun
+					#has_religion_feature = religion_feature_zun
 				}
-				NOT = { religion = manichean }
+				#NOT = { religion = manichean }
 			}
 			piety = -5
 			prestige = -5
@@ -25981,12 +25382,12 @@ character_event = {
 		name = VIETmisc.8252.e
 		trigger = {
 			OR = {
-				religion_group = zoroastrian_group
-				religion = messalian
+				#religion_group = zoroastrian_group
+				#religion = messalian
 				has_religion_feature = religion_holy_family 
-				has_religion_feature = religion_feature_zun
+				#has_religion_feature = religion_feature_zun
 			}
-			NOT = { religion = manichean }
+			#NOT = { religion = manichean }
 		}
 		piety = 5
 	}
@@ -26085,95 +25486,7 @@ character_event = {
 }
 
 
-# Traveler tells of the lost village in the deserts of Egypt
-long_character_event = {
-	id = VIETmisc.8254
-	desc = VIETmisc.8254.desc
-	picture = GFX_evt_ancient_egypt
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	war = no
-	
-	trigger = {
-		in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		#NOR = {
-		#	culture = egyptian_arabic
-		#}
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = trusting
-		}
-		modifier = {
-			factor = 0.8
-			trait = paranoid
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-		modifier = {
-			factor = 1.2
-			trait = content
-		}
-		modifier = {
-			factor = 0.8
-			trait = ambitious
-		}
-	}
-
-	option = { # Amazing
-		name = VIETmisc.8254.a
-		prestige = 5
-		add_character_modifier = {
-			name = VIET_interesting_talk_with_stranger
-			duration = 365
-		}
-	}
-	option = { # Bah!
-		name = VIETmisc.8254.b
-		random_list = {
-			65 = { }
-			25 = { add_trait = proud }
-			10 = { add_trait = cynical }
-		}
-		add_character_modifier = {
-			name = VIET_interesting_talk_with_stranger
-			duration = 365
-		}
-	}
-	option = { # Still around?
-		name = VIETmisc.8254.c
-		piety = 5
-		add_character_modifier = {
-			name = VIET_interesting_talk_with_stranger
-			duration = 365
-		}
-	}
-}
+# Traveler tells of the lost village in the deserts of Egypt remove
 
 
 
@@ -26206,12 +25519,12 @@ long_character_event = {
 				is_sinosphere_large_trigger = yes
 				capital_scope = {
 					OR = {
-						region = world_steppe_east
-						region = world_steppe_tarim
-						region = world_india
-						region = world_persia
-						region = world_middle_east
-						region = world_africa_east
+						region = world_south_america
+						#region = world_steppe_tarim
+						#region = world_india
+						#region = world_persia
+						#region = world_middle_east
+						#region = world_africa_east
 					}
 				}
 			}
@@ -26665,13 +25978,13 @@ character_event = {
 		#in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		capital_scope = {
-			NOR = {
-				region = world_africa
-				region = world_europe_west
-				region = world_india_deccan
-			}
-		}
+		#capital_scope = {
+		#	NOR = {
+		#		region = world_africa
+		#		region = world_europe_west
+		#		region = world_india_deccan
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -26681,13 +25994,13 @@ character_event = {
 			factor = 0.5
 			NOR = {
 				is_nomadic = yes
-				culture_group = altaic
-				culture_group = magyar
-				culture_group = finno_ugric
-				culture_group = chinese_group
-				culture_group = tibetan_group
-				culture_group = iranian
-				culture_group = east_slavic
+				culture_group = plains
+				culture = llanero
+				#culture_group = finno_ugric
+				#culture_group = chinese_group
+				#culture_group = tibetan_group
+				#culture_group = iranian
+				#culture_group = east_slavic
 				#culture_group = south_slavic
 				#culture_group = west_slavic
 				#culture_group = byzantine
@@ -28137,9 +27450,6 @@ character_event = {
 	}
 }
 
-
-
-
 ############################################################################
 # GENERIC 8277-8315: (inspired by vanilla event pics I've never or rarely used)
 ############################################################################
@@ -28617,7 +27927,7 @@ province_event = {
 				has_dlc = "Reapers"
 			}
 			custom_tooltip = {
-				text = increase_prosperity_custom_tooltip
+				text = decrease_prosperity_custom_tooltip
 				hidden_tooltip = {
 					change_variable = { which = prosperity_value value = 8 }
 				}
@@ -28772,7 +28082,7 @@ character_event = {
 }
 
 
-# Is China the greatest?
+# Is Bazilia the greatest?
 character_event = {
 	id = VIETmisc.8285
 	desc = VIETmisc.8285.desc
@@ -28787,8 +28097,9 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		NOT = {
-			culture_group = chinese_group
+		NOR = {
+			culture_group = portuguese
+			culture_group = portunhol
 		}
 		#in_command = no
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -28798,23 +28109,23 @@ character_event = {
 	weight_multiplier = {
 		days = 1				
 	
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = muslim #historically the Muslims thought China was super cool, which is why they didn't mind the Khitan so much
-				culture_group = altaic
-				culture_group = tibetan_group
-			}
-		}
+		#modifier = {
+		#	factor = 2
+		#	OR = {
+		#		religion_group = muslim #historically the Muslims thought China was super cool, which is why they didn't mind the Khitan so much
+		#		culture_group = altaic
+		#		culture_group = tibetan_group
+		#	}
+		#}
 		modifier = {
 			factor = 0.5
 			OR = {
 				capital_scope = {
-					region = world_africa_west
-					region = world_africa_north
-					region = world_europe_east
-					region = world_europe_north
-					region = world_europe_west
+					region = custom_canada
+					region = custom_usa
+					region = custom_central_america
+					#region = world_europe_north
+					#region = world_europe_west
 				}
 			}
 		}	
@@ -29588,121 +28899,7 @@ character_event = {
 }
 
 
-# Hearing about the barbarian invasions of Rome
-character_event = {
-	id = VIETmisc.8294
-	desc = VIETmisc.8294.desc
-	picture = GFX_evt_rome_falls
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-		OR = {
-			capital_scope = {
-				OR = {
-					region = world_europe
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_africa_north
-					#region = world_persia
-					#region = world_steppe_west
-				}
-			}
-			culture_group = byzantine
-			culture_group = latin
-			culture_group = iberian
-			culture_group = north_african
-			culture_group = arabic
-			culture_group = celtic
-			culture_group = west_germanic
-			culture_group = central_germanic
-			culture_group = south_slavic
-		}
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = scholar
-		}
-		modifier = {
-			factor = 0.8
-			trait = hedonist
-		}
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = slothful
-		}
-		modifier = {
-			factor = 1.2
-			trait = cruel
-		}
-		modifier = {
-			factor = 0.8
-			trait = kind
-		}
-	}
-
-	option = { # Attila
-		name = VIETmisc.8294.a		
-		random = {
-			change_martial = 1
-			chance = 20
-		}
-	}
-	option = { # Alaric
-		name = VIETmisc.8294.b		
-		random = {
-			change_stewardship = 1
-			chance = 20
-		}
-	}
-	option = { # Genseric
-		name = VIETmisc.8294.c
-		random = {
-			change_diplomacy = 1
-			chance = 20
-		}
-	}
-	option = { # Odoacer
-		name = VIETmisc.8294.d
-		random = {
-			change_intrigue = 1
-			chance = 20
-		}
-	}
-}
+# Hearing about the barbarian invasions of Rome remove
 
 
 # Could there be even wealthier kingdoms south of West Africa?
@@ -29726,25 +28923,25 @@ character_event = {
 		OR = {
 			capital_scope = {
 				OR = {
-					region = world_africa
-					region = world_asia_minor
-					region = world_middle_east
-					region = world_africa_north
-					region = world_africa_central
-					region = world_persia
-					region = world_europe_south
-					region = world_europe_south_east
+					region = world_south_america
+					#region = world_asia_minor
+					#region = world_middle_east
+					#region = world_africa_north
+					#region = world_africa_central
+					#region = world_persia
+					#region = world_europe_south
+					#region = world_europe_south_east
 				}
 			}
-			culture_group = byzantine
-			culture_group = latin
-			culture_group = iberian
-			culture_group = north_african
-			culture_group = east_african
-			culture_group = west_african
-			culture_group = central_african
-			culture_group = arabic
-			culture_group = iranian
+			culture_group = portuguese
+			culture_group = portunhol
+			culture_group = venezolano
+			culture_group = andean
+			culture_group = arawak
+			culture_group = colombiano
+			#culture_group = central_african
+			#culture_group = arabic
+			#culture_group = iranian
 		}
 	}
 	
@@ -30390,11 +29587,11 @@ character_event = {
 		capital_scope = {
 			OR = {
 				terrain = desert
-				region = world_middle_east
-				region = world_persia
-				region = world_africa
-				region = world_india_rajastan
-				region = world_steppe_tarim
+				#region = world_middle_east
+				#region = world_persia
+				#region = world_africa
+				#region = world_india_rajastan
+				#region = world_steppe_tarim
 			}
 			NOT = { terrain = mountain }
 		}
@@ -30503,13 +29700,13 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOT = { has_artifact = VIET_celtic_stone_head }
-		capital_scope = {
-			OR = {
-				region = world_europe
-				region = world_asia_minor
-				region = world_steppe_west
-			}
-		}
+		#capital_scope = {
+		#	OR = {
+		#		region = world_eastern_canada
+				#region = world_asia_minor
+				#region = world_steppe_west
+		#	}
+		#}
 	}
 	
 	weight_multiplier = {
@@ -30528,7 +29725,7 @@ character_event = {
 		modifier = {
 			factor = 1.2
 			capital_scope = {
-				region = world_europe_west
+				region = world_eastern_canada
 			}
 		}
 		modifier = {
@@ -30538,8 +29735,8 @@ character_event = {
 				is_nomadic = yes
 				capital_scope = {
 					OR = {
-						region = world_europe_west_brittania
-						region = world_europe_west_francia
+						region = world_eastern_canada
+						#region = world_europe_west_francia
 					}
 				}
 			}
@@ -31678,1379 +30875,6 @@ province_event = {
 		add_province_modifier = {
 			name = VIET_province_perfect_marriage
 			duration = 888
-		}
-	}
-}
-
-
-###########################################################
-# RAIN 8316-8325
-###########################################################
-
-
-
-# Playing in the rain with another child/childhood crush
-character_event = {
-	id = VIETmisc.8316
-	desc = VIETmisc.8316.desc
-	picture = GFX_evt_skyrim_forest
-	
-	is_triggered_only = yes
-	
-	min_age = 4
-	max_age = 14
-	
-	trigger = {
-		capital_scope = {
-			NOT = { terrain = desert }
-			NOT = { terrain = arctic }
-		}
-	}
-
-#	min_age = 16
-#	only_rulers = yes
-#	capable_only = yes
-#	prisoner = no
-#	#war = no
-#	
-#	trigger = {
-#		in_command = no
-#		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-#		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-#	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = envious
-		}
-		modifier = {
-			factor = 1.2
-			trait = content
-		}
-		modifier = {
-			factor = 0.8
-			trait = ambitious
-		}
-		modifier = {
-			factor = 1.2
-			trait = affectionate
-		}
-		modifier = {
-			factor = 0.8
-			trait = indolent
-		}
-		modifier = {
-			factor = 1.2
-			trait = playful
-		}
-		modifier = {
-			factor = 0.8
-			trait = rowdy
-		}
-		modifier = {
-			factor = 1.2
-			trait = curious
-		}
-		modifier = {
-			factor = 0.8
-			trait = timid
-		}
-	}
-
-	option = { # Rain?
-		name = VIETmisc.8316.a
-		character_event = { id = VIETmisc.8317 tooltip = VIETmisc.8317.tooltip }
-	}
-}
-
-# Playing in the rain with another child/childhood crush
-character_event = {
-	id = VIETmisc.8317
-	desc = VIETmisc.8317.desc
-	picture = GFX_evt_rainstorm
-	
-	is_triggered_only = yes
-
-	option = { # Hide from the rain
-		name = VIETmisc.8317.a
-		character_event = { id = VIETmisc.8318 tooltip = VIETmisc.8318.tooltip }
-	}
-}
-
-# Friend falls asleep on shoulder
-character_event = {
-	id = VIETmisc.8318
-	desc = VIETmisc.8318.desc
-	picture = GFX_evt_apollo_sun
-	
-	is_triggered_only = yes
-
-	option = { # Let them sleep
-		name = VIETmisc.8318.a
-		if = {
-			limit = {
-				has_dlc = "Zeus"
-			}
-			random_list = {
-				10 = { add_trait = conscientious }
-				10 = { add_trait = affectionate }
-				10 = { add_trait = indolent }
-				10 = { add_trait = timid }
-				20 = { }
-			}
-		}
-		else = {
-			random_list = {
-				10 = { add_trait = kind }
-				10 = { add_trait = patient }
-				10 = { add_trait = shy }
-				10 = { add_trait = slothful }
-				20 = { }
-			}	
-		}
-	}
-	option = { # Gently wake them up
-		name = VIETmisc.8318.b
-		if = {
-			limit = {
-				has_dlc = "Zeus"
-			}
-			random_list = {
-				10 = { add_trait = conscientious }
-				10 = { add_trait = affectionate }
-				10 = { add_trait = brooding }
-				10 = { add_trait = fussy }
-				20 = { }
-			}
-		}
-		else = {
-			random_list = {
-				10 = { add_trait = kind }
-				10 = { add_trait = patient }
-				10 = { add_trait = humble }
-				10 = { add_trait = trusting }
-				20 = { }
-			}	
-		}
-	}
-	option = { # Prank them
-		name = VIETmisc.8318.c
-		if = {
-			limit = {
-				has_dlc = "Zeus"
-			}
-			random_list = {
-				10 = { add_trait = curious }
-				10 = { add_trait = haughty }
-				10 = { add_trait = playful }
-				10 = { add_trait = affectionate }
-				20 = { }
-			}
-		}
-		else = {
-			random_list = {
-				10 = { add_trait = arbitrary }
-				10 = { add_trait = gregarious }
-				10 = { add_trait = proud }
-				10 = { add_trait = deceitful }
-				20 = { }
-			}	
-		}
-	}
-}
-
-
-# Courtier plays in rain puddles
-character_event = {
-	id = VIETmisc.8319
-	desc = VIETmisc.8319.desc
-	picture = GFX_evt_garden
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		in_command = no		
-		capital_scope = {
-			NOT = { terrain = desert }
-			NOT = { terrain = arctic }
-		}
-		any_courtier = {
-			NOT = { trait = incapable }
-			is_adult = yes
-			in_command = no
-			is_abroad = no
-			NOR = {
-				trait = diligent
-				trait = depressed
-				trait = cynical
-				trait = paranoid
-				trait = shy
-			}
-		}
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = brave
-		}
-		modifier = {
-			factor = 0.8
-			trait = craven
-		}
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-	}
-	
-	immediate = {
-		random_courtier = {
-			limit = {
-				NOT = { trait = incapable }
-				is_adult = yes
-				in_command = no
-				is_abroad = no
-				NOR = {
-					trait = diligent
-					trait = depressed
-					trait = cynical
-					trait = paranoid
-					trait = shy
-				}
-			}
-			save_event_target_as = target_VIET_rain_puddle_dancer
-		}	
-	}
-
-	option = { # Immature!
-		name = VIETmisc.8319.a
-		event_target:target_VIET_rain_puddle_dancer = {
-			opinion = {
-				modifier = VIET_opinion_publically_chastised_me
-				who = ROOT
-				years = 1
-			}
-			reverse_opinion = {
-				modifier = VIET_opinion_disappointed
-				who = ROOT
-				years = 1
-			}
-		}
-	}
-
-	option = { # Whatever
-		name = VIETmisc.8319.b
-	}
-
-	option = { # Join in!
-		name = VIETmisc.8319.c
-		prestige = -5
-		event_target:target_VIET_rain_puddle_dancer = {
-			opinion = {
-				modifier = VIET_opinion_likes_to_be_silly_with_me
-				who = ROOT
-				years = 1
-			}
-			reverse_opinion = {
-				modifier = VIET_opinion_likes_to_be_silly_with_me
-				who = ROOT
-				years = 1
-			}
-		}
-		if = {
-			limit = {
-				trait = shy
-			}
-			random = {
-				remove_trait = shy
-				chance = 33
-			}
-		}
-	}
-}
-
-
-# Staring outside a rainy window
-character_event = {
-	id = VIETmisc.8320
-	desc = VIETmisc.8320.desc
-	picture = GFX_evt_rainstorm
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		in_command = no		
-		capital_scope = {
-			NOT = { terrain = desert }
-			NOT = { terrain = arctic }
-		}
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = shy
-		}
-		modifier = {
-			factor = 0.8
-			trait = gregarious
-		}
-		modifier = {
-			factor = 1.2
-			trait = patient
-		}
-		modifier = {
-			factor = 0.8
-			trait = wroth
-		}
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = content
-		}
-		modifier = {
-			factor = 0.8
-			trait = ambitious
-		}
-	}
-
-	option = { # Depressing
-		name = VIETmisc.8320.a
-		if = {
-			limit = {
-				trait = content
-			}
-			random = {
-				remove_trait = content
-				chance = 33
-			}
-		}
-		else = {
-			random = {
-				add_trait = cynical
-				chance = 33
-			}
-		}
-	}
-	option = { # Healing
-		name = VIETmisc.8320.b
-		piety = 3
-		random_list = {
-			15 = { add_trait = humble }
-			15 = { add_trait = content }
-			70 = { }
-		}
-	}
-}
-
-
-
-# Ancient cistern found
-province_event = {
-	id = VIETmisc.8321
-	desc = VIETmisc.8321.desc
-	picture = GFX_evt_skyrim_forest
-	
-	trigger = {
-		NOT = { has_province_modifier = VIET_province_ancient_cistern_restored }
-		NOR = {
-			region = world_steppe_east
-			region = world_steppe_west
-			region = world_europe_north
-			region = world_europe_east
-			region = world_himalayas
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 7500
-		modifier = {
-			factor = 1.2
-			NOT = { num_of_max_settlements = 5 }
-		}
-		modifier = {
-			factor = 1.1
-			NOT = { num_of_max_settlements = 3 }
-		}
-		modifier = {
-			factor = 2
-			OR = {
-				region = world_europe_west_brittania
-				region = world_europe_west_germania
-			}
-		}
-	}
-	
-
-	option = { # Lend financial support
-		name = VIETmisc.8321.a
-		trigger = {
-			owner = {
-				wealth = 30
-			}
-		}
-		add_province_modifier = {
-			name = VIET_province_ancient_cistern_restored
-			duration = 3650
-		}
-		if = {
-			limit = {
-				has_dlc = "Reapers"
-			}
-			custom_tooltip = {
-				text = increase_prosperity_custom_tooltip
-				hidden_tooltip = {					
-					change_variable = { which = prosperity_value value = 2 }
-				}
-			}
-		}
-		owner = {
-			wealth = -30
-			add_character_modifier = {
-				name = VIET_leader_who_cares
-				duration = 730
-			}
-			random = {
-				add_trait = charitable
-				chance = 20
-			}
-		}
-	}
-	option = { # Lend lots of financial support
-		name = VIETmisc.8321.b
-		trigger = {
-			owner = {
-				wealth = 60
-			}
-		}
-		add_province_modifier = {
-			name = VIET_province_ancient_cistern_restored
-			duration = 7300
-		}
-		if = {
-			limit = {
-				has_dlc = "Reapers"
-			}
-			custom_tooltip = {
-				text = increase_prosperity_custom_tooltip
-				hidden_tooltip = {					
-					change_variable = { which = prosperity_value value = 4 }
-				}
-			}
-		}
-		owner = {
-			wealth = -60
-			add_character_modifier = {
-				name = VIET_leader_who_cares
-				duration = 1460
-			}
-			random = {
-				add_trait = charitable
-				chance = 40
-			}
-		}
-	}
-	option = { # Don't do anything
-		name = VIETmisc.8321.c
-	}
-}
-
-# It is raining despite being also sunny
-character_event = {
-	id = VIETmisc.8322
-	desc = VIETmisc.8322.desc
-	picture = GFX_evt_apollo_sun
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no		
-		capital_scope = {
-			NOT = { terrain = desert }
-			NOT = { terrain = arctic }
-		}
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = shy
-		}
-		modifier = {
-			factor = 0.8
-			trait = gregarious
-		}
-		modifier = {
-			factor = 1.2
-			trait = patient
-		}
-		modifier = {
-			factor = 0.8
-			trait = wroth
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = trusting
-		}
-		modifier = {
-			factor = 0.8
-			trait = paranoid
-		}
-	}
-
-	option = { # Cool
-		name = VIETmisc.8322.a
-		piety = 1
-	}
-}
-
-# Part of residence collapses from rain
-character_event = {
-	id = VIETmisc.8323
-	desc = VIETmisc.8323.desc
-	picture = GFX_evt_castle_construction
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no		
-		capital_scope = {
-			NOT = { terrain = desert }
-			NOT = { terrain = arctic }
-		}
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = charitable
-		}
-		modifier = {
-			factor = 0.8
-			trait = greedy
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = trusting
-		}
-		modifier = {
-			factor = 0.8
-			trait = paranoid
-		}
-	}
-
-	option = { # Boo
-		name = VIETmisc.8323.a
-		wealth = -10
-	}
-}
-
-
-
-# Colorful rain is good omen
-province_event = {
-	id = VIETmisc.8324
-	desc = VIETmisc.8324.desc
-	picture = GFX_evt_rainstorm
-	
-	trigger = {
-		NOT = { has_province_modifier = VIET_province_colorful_rain_good }
-		NOT = { has_province_modifier = VIET_province_colorful_rain_bad }
-		NOR = {
-			terrain = desert
-			terrain = arctic
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 6500
-	}
-	
-
-	option = { # Ok
-		name = VIETmisc.8324.a
-		add_province_modifier = {
-			name = VIET_province_colorful_rain_good
-			duration = 730
-		}
-	}
-}
-
-
-# Colorful rain is bad omen
-province_event = {
-	id = VIETmisc.8325
-	desc = VIETmisc.8325.desc
-	picture = GFX_evt_rainstorm
-	
-	trigger = {
-		NOT = { has_province_modifier = VIET_province_colorful_rain_good }
-		NOT = { has_province_modifier = VIET_province_colorful_rain_bad }
-		NOR = {
-			terrain = desert
-			terrain = arctic
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 6500
-	}
-	
-
-	option = { # Ok
-		name = VIETmisc.8325.a
-		add_province_modifier = {
-			name = VIET_province_colorful_rain_bad
-			duration = 730
-		}
-	}
-}
-
-###########################################################
-# READING STORIES 8326-8332
-###########################################################
-
-
-# Read Hotel Del Luna - i.e., what happens when cybrxkhan watches a K-Drama on a whim and finds it's actually great
-character_event = {
-	id = VIETmisc.8326
-	desc = VIETmisc.8326.desc
-	picture = GFX_evt_artemis_moon
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = cynical
-		}
-		modifier = {
-			factor = 0.8
-			trait = zealous
-		}
-		modifier = {
-			factor = 1.2
-			trait = patient
-		}
-		modifier = {
-			factor = 0.8
-			trait = wroth
-		}
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = chaste
-		}
-		modifier = {
-			factor = 0.8
-			trait = lustful
-		}
-	}
-
-	option = { # Good story!
-		name = VIETmisc.8326.a
-		add_character_modifier = {
-			name = VIET_read_book_hotel_del_luna
-			duration = 365
-		}
-	}
-}
-
-
-# Watched entertaining slice of life play about love
-character_event = {
-	id = VIETmisc.8327
-	desc = VIETmisc.8327.desc
-	picture = GFX_evt_jugglers
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = lustful
-		}
-		modifier = {
-			factor = 0.8
-			trait = chaste
-		}
-	}
-
-	option = { # Bad story!
-		name = VIETmisc.8327.a
-		prestige = 3
-		if = {
-			limit = {
-				NOT = { trait = cynical }
-			}
-			random = {
-				add_trait = cynical
-				chance = 33
-			}
-		}
-	}
-	option = { # Good story!
-		name = VIETmisc.8327.b
-		piety = 3
-		if = {
-			limit = {
-				NOT = { trait = humble }
-			}
-			random = {
-				add_trait = humble
-				chance = 33
-			}
-		}
-	}
-}
-
-
-# Poet tells historical story with inaccuracy
-character_event = {
-	id = VIETmisc.8328
-	desc = VIETmisc.8328.desc
-	picture = GFX_evt_feast
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = gregarious
-		}
-		modifier = {
-			factor = 0.8
-			trait = shy
-		}
-		modifier = {
-			factor = 1.2
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.8
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.2
-			trait = charitable
-		}
-		modifier = {
-			factor = 0.8
-			trait = greedy
-		}
-		modifier = {
-			factor = 1.2
-			trait = trusting
-		}
-		modifier = {
-			factor = 0.8
-			trait = paranoid
-		}
-		modifier = {
-			factor = 1.2
-			learning = 14
-		}
-		modifier = {
-			factor = 0.8
-			NOT = { learning = 9 }
-		}
-	}
-
-	option = { # Don't say anything
-		name = VIETmisc.8328.a
-		prestige = 5
-		random_list = {
-			60 = { }
-			10 = { add_trait = content }
-			10 = { add_trait = humble }
-			10 = { add_trait = slothful }
-			10 = { add_trait = shy }
-		}
-	}
-
-	option = { # Correct him - history should not be lies
-		name = VIETmisc.8328.b
-		prestige = -5
-		random_list = {
-			70 = { }
-			10 = { add_trait = proud }
-			10 = { add_trait = diligent }
-			10 = { add_trait = honest }
-		}
-	}
-
-	option = { # Correct him - true history is more interesting
-		name = VIETmisc.8328.c
-		prestige = -5
-		random_list = {
-			70 = { }
-			10 = { add_trait = lustful }
-			10 = { add_trait = gregarious }
-			10 = { add_trait = honest }
-		}
-	}
-
-	option = { # Correct him - show off knowledge
-		name = VIETmisc.8328.d
-		piety = -5
-		random_list = {
-			60 = { }
-			10 = { add_trait = envious }
-			30 = { add_trait = proud }
-		}
-	}
-}
-
-
-# Read a book that is 3deep5me
-character_event = {
-	id = VIETmisc.8329
-	desc = VIETmisc.8329.desc
-	picture = GFX_evt_upsetting_letter
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = shy
-		}
-		modifier = {
-			factor = 0.8
-			trait = gregarious
-		}
-		modifier = {
-			factor = 1.2
-			trait = wroth
-		}
-		modifier = {
-			factor = 0.8
-			trait = patient
-		}
-		modifier = {
-			factor = 1.2
-			trait = proud
-		}
-		modifier = {
-			factor = 0.8
-			trait = humble
-		}
-		modifier = {
-			factor = 1.2
-			NOT = { learning = 9 }
-		}
-		modifier = {
-			factor = 0.8
-			learning = 14
-		}
-	}
-
-	option = { # Read it
-		name = VIETmisc.8329.a
-		random_list = {
-			50 = { }
-			10 = { change_diplomacy = 1 }
-			10 = { change_martial = 1 }
-			10 = { change_stewardship = 1 }
-			10 = { change_intrigue = 1 }
-			10 = { change_learning = 1 }
-		}
-		random_list = {
-			20 = { }
-			40 = {
-				add_character_modifier = {
-					name = stressed_life
-					duration = 365
-				}
-			}
-			30 = { add_trait = stressed }
-			10 = { add_trait = depressed }
-		}
-	}
-
-	option = { # Give up on it
-		name = VIETmisc.8329.b
-		random_list = {
-			50 = { }
-			30 = { add_trait = content }
-			10 = { add_trait = slothful }
-			10 = { add_trait = humble }
-		}
-	}
-}
-
-
-# Saw a vision of the past while reading a book
-character_event = {
-	id = VIETmisc.8330
-	desc = VIETmisc.8330.desc
-	picture = GFX_evt_ancient_cairn
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = lunatic
-		}
-		modifier = {
-			factor = 0.8
-			trait = cynical
-		}
-		modifier = {
-			factor = 1.2
-			trait = shy
-		}
-		modifier = {
-			factor = 0.8
-			trait = gregarious
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = just
-		}
-		modifier = {
-			factor = 0.8
-			trait = arbitrary
-		}
-	}
-
-	option = { # Whoa
-		name = VIETmisc.8330.a
-		add_character_modifier = {
-			name = VIET_mysterious_vision_past
-			duration = 888
-		}
-		random = {
-			add_trait = lunatic
-			chance = 5
-		}
-	}
-}
-
-
-# Reading about ancient warriors
-character_event = {
-	id = VIETmisc.8331
-	desc = VIETmisc.8331.desc
-	picture = GFX_evt_battle_hellenic_pagan
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = brave
-		}
-		modifier = {
-			factor = 0.8
-			trait = craven
-		}
-		modifier = {
-			factor = 1.2
-			trait = ambitious
-		}
-		modifier = {
-			factor = 0.8
-			trait = content
-		}
-		modifier = {
-			factor = 1.2
-			trait = erudite
-		}
-		modifier = {
-			factor = 0.8
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.2
-			trait = diligent
-		}
-		modifier = {
-			factor = 0.8
-			trait = patient
-		}
-	}
-
-	option = { # Tactics and strategies
-		name = VIETmisc.8331.a
-		random = {
-			change_martial = 1
-			chance = 25
-		}
-	}
-
-	option = { # Becoming brave
-		name = VIETmisc.8331.b
-		random_list = {
-			70 = { }
-			20 = { add_trait = brave }
-			10 = { add_trait = stubborn }
-		}
-	}
-
-	option = { # Being just
-		name = VIETmisc.8331.c
-		random_list = {
-			70 = { }
-			20 = { add_trait = just }
-			10 = { add_trait = proud }
-		}
-	}
-}
-
-
-
-# Read a cute love story
-character_event = {
-	id = VIETmisc.8332
-	desc = VIETmisc.8332.desc
-	picture = GFX_evt_maiden
-	
-	is_triggered_only = yes
-
-	min_age = 16
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	#war = no
-	
-	#trigger = {
-		#in_command = no
-		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		#NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
-	#}
-	
-	weight_multiplier = {
-		days = 1				
-	
-		modifier = {
-			factor = 1.2
-			trait = chaste
-		}
-		modifier = {
-			factor = 0.8
-			trait = lustful
-		}
-		modifier = {
-			factor = 1.2
-			trait = content
-		}
-		modifier = {
-			factor = 0.8
-			trait = ambitious
-		}
-		modifier = {
-			factor = 1.2
-			trait = humble
-		}
-		modifier = {
-			factor = 0.8
-			trait = proud
-		}
-		modifier = {
-			factor = 1.2
-			trait = kind
-		}
-		modifier = {
-			factor = 0.8
-			trait = cruel
-		}
-	}
-
-	option = { # Hate love stories
-		name = VIETmisc.8332.a
-		random = {
-			add_trait = cynical
-			chance = 40
-		}
-		add_character_modifier = {
-			name = VIET_read_book_cute_love_story
-			duration = 365
-		}
-	}
-	option = { # Love love stories
-		name = VIETmisc.8332.b
-		if = {
-			limit = {
-				trait = cynical
-			}
-			random = {
-				remove_trait = cynical
-				chance = 60
-			}
-		}
-		random_list = {
-			50 = { }
-			20 = { add_trait = trusting }
-			10 = { add_trait = humble }
-			10 = { add_trait = kind }
-		}
-		add_character_modifier = {
-			name = VIET_read_book_cute_love_story
-			duration = 365
 		}
 	}
 }
