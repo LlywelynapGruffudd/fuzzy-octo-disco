@@ -159,6 +159,14 @@ character_event = {
 	
 	weight_multiplier = {
 		days = 1
+		modifier = { #less likely as more red and yellow carrots appear
+			factor = 0.5
+			year = 1200
+		}
+		modifier = { #less likely as more red and yellow carrots appear
+			factor = 0.3
+			year = 1350
+		}
 		modifier = {
 			factor = 1.2
 			trait = gregarious
@@ -201,11 +209,11 @@ character_event = {
 		}
 	}
 	option = {
-		name = VIETmisc.2001.a
-		add_character_modifier = {
-				name = highly_amused_ruler
-				duration = 365
-		}
+			name = VIETmisc.2001.a
+			add_character_modifier = {
+					name = highly_amused_ruler
+					duration = 365
+			}
 	}
 }
 
@@ -473,10 +481,13 @@ character_event = {
 		trigger = {		
 			in_command = no
 			OR = {
-					culture_group = north_atlantic
-					culture_group = south_anglo
-					culture_group = west_anglo
-					culture_group = afroanglo
+					culture_group = central_germanic
+					culture_group = west_slavic
+					culture_group = south_slavic
+					culture_group = baltic
+					culture_group = east_slavic
+					culture_group = magyar
+					culture_group = latin
 			}
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -572,9 +583,8 @@ character_event = {
 		trigger = {
 			in_command = no
 			OR = {
-				culture_group = caribbanglo
-				culture_group = caribeno
-				culture_group = guinean
+				culture_group = west_african
+				culture_group = central_african
 			}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -642,6 +652,12 @@ character_event = {
 		trigger = {
 			in_command = no
 			is_abroad = no
+			OR = {
+				culture_group = byzantine
+				capital_scope = {
+					culture_group = byzantine
+				}
+			}
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		}
@@ -1042,6 +1058,12 @@ character_event = {
 	
 	trigger = {
 		in_command = no
+		NOT = {
+			culture_group = byzantine
+		}
+		any_demesne_province = {
+			culture_group = byzantine
+		}
 		NOT = { has_character_flag = VIET_learning_bitter_greek_greens }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -1134,6 +1156,28 @@ character_event = {
 	#war = no
 	
 	trigger = {
+		#in_command = no
+		OR = {
+			#culture_group = south_semitic
+			culture_group = east_african
+			#culture_group = central_semitic
+			culture_group = arabic
+			culture_group = north_african
+			AND = {
+				OR = {
+					is_patrician = yes
+					is_merchant_republic = yes
+					capital_scope = {
+						port = yes
+					}
+				}
+				OR = {
+					religion_group = muslim
+					religion_group = zoroastrian_group
+				}
+			}
+		}
+		year = 1000
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1180,10 +1224,10 @@ character_event = {
 						factor = 0.8
 						trait = hedonist
 				}
-				#modifier = {
-				#		factor = 0.25
-				#		NOT = { year = 1285 }
-				#}
+				modifier = {
+						factor = 0.25
+						NOT = { year = 1285 }
+				}
 		}
 		
 		option = {
@@ -1211,10 +1255,15 @@ character_event = {
 		
 		trigger = {
 			in_command = no
-			#OR = {
-			#	culture_group = californian
-			#	culture = bermudian
-			#}
+			OR = {
+				culture_group = byzantine
+				#culture_group = central_semitic
+				culture_group = latin
+				culture_group = iberian
+				#culture_group = central_african
+				culture_group = north_african
+				culture_group = arabic
+			}
 			#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 			NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		}
@@ -1277,16 +1326,16 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		#capital_scope = {
-		#	OR = {
-		#		region = world_europe_south
-		#		region = world_europe_west_iberia
-		#		region = world_europe_west_francia
-		#		region = world_asia_minor
-		#		region = world_middle_east
-		#		region = world_africa_north
-		#	}
-		#}
+		capital_scope = {
+			OR = {
+				region = world_europe_south
+				region = world_europe_west_iberia
+				region = world_europe_west_francia
+				region = world_asia_minor
+				region = world_middle_east
+				region = world_africa_north
+			}
+		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1468,6 +1517,21 @@ character_event = {
 	trigger = {
 		in_command = no
 		is_abroad = no
+		OR = {
+			#culture = hebrew
+			#culture = berber
+			#culture_group = south_semitic
+			#culture_group = east_semitic
+			#culture_group = northwest_semitic
+			#culture_group = central_semitic
+			culture_group = byzantine
+			culture_group = latin
+			culture_group = iberian
+			culture_group = arabic
+			culture_group = north_african
+			culture_group = israelite
+			culture_group = iranian
+		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -1672,9 +1736,17 @@ character_event = {
 	trigger = {
 		in_command = no
 		is_abroad = no
+		location = {
+			OR = {
+				region = world_europe
+				region = world_africa_north
+				region = world_middle_east
+				region = world_steppe_west				
+			}
+		}
 		is_nomadic = no
 		OR = {
-			NOT = { religion_group = latter_day_saints }
+			NOT = { religion_group = muslim }
 			AND = {
 				OR = {
 					trait = drunkard
@@ -2062,8 +2134,8 @@ character_event = {
 		in_command = no
 		OR = {
 			religion_group = christian
-			religion_group = latter_day_saints
-			religion_group = cult_of_saints
+			religion_group = muslim
+			religion_group = zoroastrian_group
 			religion_group = jewish_group
 			AND = {
 				religion_group = indian_group
@@ -2076,10 +2148,7 @@ character_event = {
 				}
 			}
 			AND = {
-				#OR ={
 				religion_group = pagan_group
-				#religion = espiritista
-				#}
 				OR = {
 					trait = zealous
 					AND  = {
@@ -2333,13 +2402,13 @@ character_event = {
 		is_abroad = no
 		OR = {
 			#religion = antinomianism
-			religion = antinomian
-			religion = jeffersonian
-			#religion = fraticelli
-			#religion = kharijite
-			#religion = mazdaki
+			religion = bogomilist
+			religion = cathar
+			religion = fraticelli
+			religion = kharijite
+			religion = mazdaki
 			#religion = taoist
-			#religion = waldensian
+			religion = waldensian
 		}
 		any_vassal = {
 			is_adult = yes
@@ -2575,24 +2644,24 @@ character_event = {
 		is_abroad = no
 		OR = {
 			#religion = antinomianism
-			religion = antinomian
-			religion = jeffersonian
-			#religion = fraticelli
-			#religion = kharijite
-			#religion = mazdaki
+			religion = bogomilist
+			religion = cathar
+			religion = fraticelli
+			religion = kharijite
+			religion = mazdaki
 			#religion = taoist
-			#religion = waldensian
+			religion = waldensian
 		}
 		any_demesne_province = {
 			OR = {
 				#religion = antinomianism
-				religion = antinomian
-				religion = jeffersonian
-				#religion = fraticelli
-				#religion = kharijite
-				#religion = mazdaki
+				religion = bogomilist
+				religion = cathar
+				religion = fraticelli
+				religion = kharijite
+				religion = mazdaki
 				#religion = taoist
-				#religion = waldensian
+				religion = waldensian
 			}
 		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -2671,6 +2740,1706 @@ character_event = {
 }
 
 
+################################
+# HUMMUS
+################################
+
+
+# Nice huge (falafel) balls
+character_event = {
+	id = VIETmisc.2140
+	desc = VIETmisc.2140.desc
+	picture = GFX_evt_small_town
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	#war = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+		has_game_rule = {
+			name = VIET_events_rules
+			value = silly
+		}	
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			trait = just
+		}
+		modifier = {
+			factor = 0.8
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.2
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2140.a
+		add_character_modifier = {
+			name = VIET_having_a_good_time
+			duration = 400
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = VIET_huge_falafel_balls
+				duration = 365
+			}
+		}
+	}
+}
+
+# New hummus in town
+character_event = {
+	id = VIETmisc.2141
+	desc = VIETmisc.2141.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = just
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2141.a
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 444
+		}
+	}
+}
+
+# Hummus varieties
+character_event = {
+	id = VIETmisc.2142
+	desc = VIETmisc.2142.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = just
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2142.a
+		piety = 2
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 365
+		}
+	}
+	option = { #ok
+		name = VIETmisc.2142.b
+		trigger = {
+			has_global_flag = aztec_food #Peppers
+		}
+		prestige = 1
+		piety = 1
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 365
+		}
+	}
+	option = { #ok
+		name = VIETmisc.2142.c
+		random_list = {
+			50 = { piety = 2 }
+			50 = { prestige = 2 }
+		}
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 365
+		}
+	}
+	option = { #ok
+		name = VIETmisc.2142.d
+		prestige = 2
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 365
+		}
+	}
+}
+
+# Foreigner who never knew hummus
+character_event = {
+	id = VIETmisc.2143
+	desc = VIETmisc.2143.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			higher_tier_than = duke
+		}
+		modifier = {
+			factor = 0.8
+			lower_tier_than = duke
+		}
+		modifier = {
+			factor = 1.2
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2143.a
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 234
+		}
+	}
+}
+
+# Who invented hummus?
+character_event = {
+	id = VIETmisc.2144
+	desc = VIETmisc.2144.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		NOT = { trait = deaf }
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			lower_tier_than = duke
+		}
+		modifier = {
+			factor = 0.8
+			higher_tier_than = duke
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = just
+		}
+		modifier = {
+			factor = 0.8
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.2
+			trait = brave
+		}
+		modifier = {
+			factor = 0.8
+			trait = craven
+		}
+		modifier = {
+			factor = 1.2
+			OR = {
+				is_merchant_republic = yes
+				is_patrician = yes
+			}
+		}
+		modifier = {
+			factor = 0.8
+			trait = imbecile
+		}
+	}
+	
+	option = { #egypt
+		name = VIETmisc.2144.a
+		piety = 3
+	}
+	option = { #israel
+		name = VIETmisc.2144.b
+		random_list = {
+			50 = { prestige = 3 }
+			50 = { piety = 3 }
+		}
+	}
+	option = { #levantine
+		name = VIETmisc.2144.c
+		prestige = 3
+	}
+}
+
+# Not enough hummus makes the throat sore
+character_event = {
+	id = VIETmisc.2145
+	desc = VIETmisc.2145.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+		modifier = {
+			factor = 1.2
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.8
+			trait = patient
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.2
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2145.a
+		prestige = -1
+	}
+}
+
+# Too much hummus on bread
+character_event = {
+	id = VIETmisc.2146
+	desc = VIETmisc.2146.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+		modifier = {
+			factor = 1.2
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.8
+			trait = patient
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.2
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2146.a
+		prestige = -1
+	}
+}
+
+# Character is a hummus addict
+character_event = {
+	id = VIETmisc.2147
+	desc = VIETmisc.2147.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+		NOT = { has_character_flag = VIET_hummus_addict }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.8
+			trait = cynical
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2147.a
+		health = 0.3
+		set_character_flag = VIET_hummus_addict
+	}
+}
+
+# Merchant commits fraud by mixing sawdust in hummus
+character_event = {
+	id = VIETmisc.2148
+	desc = VIETmisc.2148.desc
+	picture = GFX_evt_travel
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.8
+			trait = cynical
+		}
+	}
+	
+	option = { #ok
+		name = VIETmisc.2148.a
+		add_character_modifier = {
+			name = VIET_ate_bad_food
+			duration = 365
+		}
+	}
+}
+
+# Too many spices in hummus
+character_event = {
+	id = VIETmisc.2149
+	desc = VIETmisc.2149.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.8
+			trait = patient
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = content
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.2
+			trait = shy
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2149.a
+		prestige = 2
+	}
+	option = { #ok
+		name = VIETmisc.2149.b
+		random_list = {
+			65 = { }
+			35 = { add_trait = content }
+		}
+	}
+}
+
+# Msbababababa Msabbaha - hummus made with whole chickpeas
+character_event = {
+	id = VIETmisc.2150
+	desc = VIETmisc.2150.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		#in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = brave
+		}
+		modifier = {
+			factor = 0.8
+			trait = craven
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 1.2
+			trait = shy
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2150.a
+		add_character_modifier = {
+			name = eating_good_food
+			duration = 480
+		}
+	}
+}
+
+# Someone don't like hummus
+character_event = {
+	id = VIETmisc.2151
+	desc = VIETmisc.2151.desc
+	picture = GFX_evt_scandal
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+		any_vassal = {
+			is_adult = yes
+			NOT = { trait = incapable }
+			NOT = { trait = gluttonous }
+			NOT = { has_character_modifier = VIET_hummus_hater }
+			ai = yes
+		}
+		NOT = {
+			any_vassal = {
+				has_character_modifier = VIET_hummus_hater
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = brave
+		}
+		modifier = {
+			factor = 0.8
+			trait = craven
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 1.2
+			trait = shy
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = humble
+		}
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2151.a
+		random_vassal = {
+			limit = {
+				is_adult = yes
+				NOT = { trait = incapable }
+				NOT = { trait = gluttonous }
+				NOT = { has_character_modifier = VIET_hummus_hater }
+				ai = yes
+			}
+			add_character_modifier = {
+				name = VIET_hummus_hater
+				duration = -1
+			}
+		}
+	}
+}
+
+# Fine hummus region rising
+province_event = {
+	id = VIETmisc.2152
+	desc = VIETmisc.2152.desc
+	picture = GFX_evt_hummus
+	
+	trigger = {
+		is_hummus_culture_trigger = yes
+		NOT = { has_province_modifier = VIET_hummus_producing_region }
+		NOT = { has_province_flag = VIET_hummus_producing_region_counter }
+		NOT = {
+			kingdom = {
+				ROOT = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								kingdom = {
+									PREVPREV = {
+										any_realm_province = {
+											kingdom = {
+												title = PREVPREVPREV
+											}
+											has_province_modifier = VIET_hummus_producing_region
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5000
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2152.a
+		add_province_modifier = {
+			name = VIET_hummus_producing_region
+			duration = -1
+		}
+		set_province_flag = VIET_hummus_producing_region_counter
+	}
+}
+
+# Fine hummus region declining
+province_event = {
+	id = VIETmisc.2153
+	desc = VIETmisc.2153.desc
+	picture = GFX_evt_hummus
+	
+	trigger = {
+		has_province_modifier = VIET_hummus_producing_region
+		had_province_flag = { flag = VIET_hummus_producing_region_counter days = 7300 }
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2153.a
+		remove_province_modifier = VIET_hummus_producing_region
+		clr_province_flag = VIET_hummus_producing_region_counter
+	}
+}
+
+
+
+# The great hummus debate - how much hummus on bread?
+character_event = {
+	id = VIETmisc.2154
+	desc = VIETmisc.2154.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = honest
+		}
+		modifier = {
+			factor = 0.8
+			trait = deceitful
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+	}
+	
+	option = { #MOAR
+		name = VIETmisc.2154.a
+		prestige = 1
+	}
+	option = { #less
+		name = VIETmisc.2154.b
+		piety = 1
+	}
+	option = { #middle way
+		name = VIETmisc.2154.c
+		random_list = {
+			50 = { piety = 1 }
+			50 = { prestige = 1 }
+		}
+	}
+	option = { #HATE
+		name = VIETmisc.2154.d
+		trigger = {
+			OR = {
+				ai = no
+				trait = lunatic
+				trait = inbred
+				trait = imbecile
+				trait = temperate
+				trait = ambitious
+				trait = arbitrary
+				trait = paranoid
+			}
+		}
+		add_character_modifier = {
+			name = VIET_hummus_hater
+			duration = -1
+		}
+	}
+}
+
+# Baklava or hummus?
+character_event = {
+	id = VIETmisc.2155
+	desc = VIETmisc.2155.desc
+	picture = GFX_evt_tropicana
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		is_hummus_culture_trigger = yes
+		is_baklava_culture_trigger = yes
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.2
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = just
+		}
+	}
+	
+	option = { #Hummus
+		name = VIETmisc.2155.a
+		piety = 1
+	}
+	option = { #Baklava
+		name = VIETmisc.2155.b
+		prestige = 1
+	}
+}
+
+# What is this "hummus" you speak of?
+character_event = {
+	id = VIETmisc.2156
+	desc = VIETmisc.2156.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	#war = no
+	
+	trigger = {
+		in_command = no
+		NOR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			OR = {
+				is_merchant_republic = yes
+				is_patrician = yes
+			}
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { diplomacy = 6 }
+		}
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 1.2
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.2
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+	}
+	
+	option = { #Hummus
+		name = VIETmisc.2156.a
+		add_character_modifier = {
+			name = VIET_great_hummus
+			duration = 365
+		}
+		wealth = -5
+	}
+	option = { #Baklava
+		name = VIETmisc.2156.b
+	}
+}
+
+# Ful medames and hummus
+character_event = {
+	id = VIETmisc.2157
+	desc = VIETmisc.2157.desc
+	picture = GFX_evt_hummus
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2
+			OR = {
+				culture = egyptian_arabic
+				capital_scope = {
+					OR = {
+						duchy = { title = d_alexandria }
+						duchy = { title = d_aswan }
+						duchy = { title = d_cairo }
+						duchy = { title = d_damietta }					
+						duchy = { title = d_sinai }					
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOR = {
+				culture = egyptian_arabic
+				capital_scope = {
+					OR = {
+						duchy = { title = d_alexandria }
+						duchy = { title = d_aswan }
+						duchy = { title = d_cairo }
+						duchy = { title = d_damietta }					
+						duchy = { title = d_sinai }					
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = shy
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.2
+			trait = content
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.2
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.2
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 1.2
+			culture = egyptian_arabic
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1000
+		}
+	}
+	
+	option = { #Hummus
+		name = VIETmisc.2157.a
+		add_character_modifier = {
+			name = eating_good_food
+			duration = 365
+		}
+	}
+}
+
+# Meze with hummus
+character_event = {
+	id = VIETmisc.2158
+	desc = VIETmisc.2158.desc
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	only_rulers = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		in_command = no
+		OR = {
+			is_hummus_culture_trigger = yes
+			capital_scope = {
+				is_hummus_culture_trigger = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2
+			culture = turkish
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				culture_group = south_slavic
+				culture_group = iranian
+				culture_group = byzantine
+			}
+		}
+		modifier = {
+			factor = 1.2
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.2
+			trait = content
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.2
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.2
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+	}
+	
+	option = { #Hummus
+		name = VIETmisc.2158.a
+		add_character_modifier = {
+			name = eating_good_food
+			duration = 365
+		}
+	}
+}
+
+
+
+# Hummus gift from locals
+province_event = {
+	id = VIETmisc.2159
+	desc = VIETmisc.2159.desc
+	picture = GFX_evt_hummus
+	
+	trigger = {
+		has_province_modifier = VIET_hummus_producing_region
+		owner = {
+			NOT = { has_character_flag = VIET_given_hummus_gift }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	option = { #not ok
+		name = VIETmisc.2159.a
+		owner = {
+			set_character_flag = VIET_given_hummus_gift
+			prestige = 10
+			add_character_modifier = {
+				name = VIET_great_hummus
+				duration = 365
+			}
+		}
+	}
+}
+
+
 
 ###################################
 # BREAD
@@ -2693,21 +4462,21 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		#OR = {
-		#	religion_group = christian
-		#	culture_group = north_germanic
-		#	culture_group = central_germanic
-		#	culture_group = west_germanic
-		#	culture_group = west_slavic
-		#	culture_group = south_slavic
-		#	culture_group = baltic
-		#	culture_group = east_slavic
-		#	culture_group = magyar
-		#	culture_group = latin
-		#	culture_group = celtic
-		#	culture_group = iberian
-		#	culture_group = byzantine
-		#}
+		OR = {
+			religion_group = christian
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			culture_group = west_slavic
+			culture_group = south_slavic
+			culture_group = baltic
+			culture_group = east_slavic
+			culture_group = magyar
+			culture_group = latin
+			culture_group = celtic
+			culture_group = iberian
+			culture_group = byzantine
+		}
 	}
 	
 	weight_multiplier = {
@@ -3069,16 +4838,16 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		#OR = {
-		#	culture_group = iranian
-		#	culture_group = serindian
-		#	capital_scope = {
-		#		OR = {
-		#			culture_group = iranian
-		#			culture_group = serindian
-		#		}
-		#	}
-		#}
+		OR = {
+			culture_group = iranian
+			culture_group = serindian
+			capital_scope = {
+				OR = {
+					culture_group = iranian
+					culture_group = serindian
+				}
+			}
+		}
 		OR = {
 			trait = misguided_warrior
 			trait = tough_soldier
@@ -3593,7 +5362,7 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		#has_global_flag = aztec_food
+		has_global_flag = aztec_food
 	}
 	
 	weight_multiplier = {
@@ -3662,8 +5431,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		in_command = no
-		#has_global_flag = aztec_food
+		has_global_flag = aztec_food
 	}
 	
 	weight_multiplier = {
@@ -4387,8 +6155,8 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		religion = gracia_divina
-		NOT = { has_global_flag = libertador_descendant }
+		religion_group = zoroastrian_group
+		NOT = { has_global_flag = saoshyant_appears }
 		NOT = {
 			has_game_rule = {
 				name = VIET_events_rules
@@ -5301,10 +7069,10 @@ character_event = {
 	trigger = {
 		in_command = no
 		NOR = {
-			#religion_group = zoroastrian_group
-			#religion = messalian
+			religion_group = zoroastrian_group
+			religion = messalian
 			has_religion_feature = religion_holy_family 
-			#has_religion_feature = religion_feature_zun
+			has_religion_feature = religion_feature_zun
 		}
 		#NOT = { religion = manichean }
 		NOT = {
@@ -7177,7 +8945,7 @@ character_event = {
 	trigger = {
 		in_command = no
 		any_demesne_province = {
-			culture_group = amerodeutsch
+			culture_group = central_germanic
 			NOT = { has_province_modifier = VIET_kobold_infestation }
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
@@ -7216,7 +8984,7 @@ character_event = {
 		name = VIETmisc.2276.a
 		random_demesne_province = {
 			limit = {
-				culture_group = amerodeutsch
+				culture_group = central_germanic
 			}
 			add_province_modifier = {
 				name = VIET_kobold_infestation
@@ -7242,13 +9010,13 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		#any_demesne_province = {
-		#	NOR = {
-		#		culture_group = iranian
-		#		region = world_persia
-		#	}
-		#}
-		#NOT = { culture_group = iranian }
+		any_demesne_province = {
+			NOR = {
+				culture_group = iranian
+				region = world_persia
+			}
+		}
+		NOT = { culture_group = iranian }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7423,17 +9191,17 @@ character_event = {
 	#war = no
 	
 	trigger = {
-		#OR = {
-		#	culture_group = indo_aryan_group
-		#	culture_group = dravidian_group
-		#	capital_scope = {
-		#		OR = {
-		#			culture_group = indo_aryan_group
-		#			culture_group = dravidian_group
-		#			region = world_india
-		#		}
-		#	}
-		#}
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+			capital_scope = {
+				OR = {
+					culture_group = indo_aryan_group
+					culture_group = dravidian_group
+					region = world_india
+				}
+			}
+		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7523,17 +9291,17 @@ character_event = {
 	#war = no
 	
 	trigger = {
-	#	OR = {
-	#		culture_group = indo_aryan_group
-	#		culture_group = dravidian_group
-	#		capital_scope = {
-	#			OR = {
-	#				culture_group = indo_aryan_group
-	#				culture_group = dravidian_group
-	#				region = world_india
-	#			}
-	#		}
-	#	}		
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+			capital_scope = {
+				OR = {
+					culture_group = indo_aryan_group
+					culture_group = dravidian_group
+					region = world_india
+				}
+			}
+		}		
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7615,17 +9383,17 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-	#	OR = {
-	#		culture_group = indo_aryan_group
-	#		culture_group = dravidian_group
-	#		capital_scope = {
-	#			OR = {
-	#				culture_group = indo_aryan_group
-	#				culture_group = dravidian_group
-	#				region = world_india
-	#			}
-	#		}
-	#	}
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+			capital_scope = {
+				OR = {
+					culture_group = indo_aryan_group
+					culture_group = dravidian_group
+					region = world_india
+				}
+			}
+		}
 		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -7713,19 +9481,19 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-	#	OR = {
-	#		culture_group = indo_aryan_group
-	#		culture_group = dravidian_group
-	#	}
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+		}
 		any_courtier = {
 			is_adult = yes
 			NOT = { trait = incapable }
 			NOT = { trait = craven }
 			NOT = { trait = temperate }
-	#		OR = {
-	#			culture_group = indo_aryan_group
-	#			culture_group = dravidian_group
-	#		}
+			OR = {
+				culture_group = indo_aryan_group
+				culture_group = dravidian_group
+			}
 			OR = {
 				trait = brave
 				trait = gregarious
@@ -7964,11 +9732,11 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		#OR = {
-		#	culture_group = indo_aryan_group
-		#	culture_group = dravidian_group
-		#}
-		#year = 900
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+		}
+		year = 900
 		capital_scope = {
 			region = world_india
 			#OR = {
@@ -8019,15 +9787,15 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.2
-			NOT = { year = 2600 }
+			NOT = { year = 900 }
 		}
 		modifier = {
 			factor = 0.5
-			NOT = { year = 2700 }
+			NOT = { year = 1000 }
 		}
 		modifier = {
 			factor = 0.9
-			NOT = { year = 2800 }
+			NOT = { year = 1100 }
 		}
 	}
 	
@@ -8677,15 +10445,15 @@ character_event = {
 				chance = 30
 			}
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = -1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = -1
+				chance = 25
+			}
+		}
 		add_character_modifier = {
 			name = VIET_good_exercise
 			duration = 456
@@ -8732,11 +10500,10 @@ character_event = {
 			}
 		}
 		OR = {
-			culture_group = subarctic
-			culture_group = north_pacific
-			culture_group = north_atlantic
-			culture_group = northwest_coast
-			culture_group = sibir
+			culture_group = finno_ugric
+			culture_group = north_germanic
+			culture_group = east_slavic
+			culture_group = siberian_group #used in WtWSMS
 		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -8920,13 +10687,13 @@ character_event = {
 		in_command = no
 		location = { #partly based on WtWSMS, excluding region where turtles don't live
 			NOR = {
-				region = custom_mountain_zone
-				region = world_great_plains
-				region = world_appalachia
+				region = world_steppe
+				region = world_europe_north
+				region = world_europe_east
 				#region = world_europe_west_brittania
 				#region = custom_diocese_gallia
 				#region = custom_diocese_germania_magna
-				#region = world_middle_east_arabia
+				region = world_middle_east_arabia
 			}
 		}
 	}
@@ -9437,16 +11204,16 @@ character_event = {
 	
 	trigger = {
 		#in_command = no
-		#NOR = {
-		#	culture_group = indo_aryan_group
-		#	culture_group = dravidian_group
-		#	any_realm_province = {
-		#		OR = {
-		#			region = world_india
-		#			region = world_himalayas
-		#		}
-		#	}		
-		#}
+		NOR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+			any_realm_province = {
+				OR = {
+					region = world_india
+					region = world_himalayas
+				}
+			}		
+		}
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 	}
@@ -9520,16 +11287,16 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		#capital_scope = {
-		#	OR = {
-		#		region = world_europe_south
-		#		region = world_europe_west_iberia
-		#		region = world_asia_minor
-		#		region = world_persia
-		#		region = world_africa
-		#		region = world_middle_east
-		#	}
-		#}
+		capital_scope = {
+			OR = {
+				region = world_europe_south
+				region = world_europe_west_iberia
+				region = world_asia_minor
+				region = world_persia
+				region = world_africa
+				region = world_middle_east
+			}
+		}
 		NOT = { has_character_flag = VIET_geckos_removed }
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
@@ -10296,9 +12063,9 @@ character_event = {
 		name = VIETmisc.2307.b
 		trigger = {
 			OR = {
-				culture_group = canton
-				culture_group = nihonjin
-				#culture = jurchen
+				culture_group = chinese_group
+				culture = khitan
+				culture = jurchen
 			}
 			OR = {
 				AND = {
@@ -10634,15 +12401,15 @@ character_event = {
 				duration = 365
 			}
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = -1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = -1
+				chance = 25
+			}
+		}
 		set_character_flag = VIET_ear_christian_sailor
 	}
 	option = { #yes
