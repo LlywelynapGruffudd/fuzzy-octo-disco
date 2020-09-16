@@ -11,7 +11,7 @@
 namespace = VIETnam
 # VIETnam.111
 
-# From the Byzantine POV, are Americanists or Muslims better?
+# From the Byzantine POV, are Catholics or Muslims better?
 character_event = {
 	id = VIETnam.112
 	desc = "EVTDESC1000109161"
@@ -91,7 +91,7 @@ character_event = {
 		prestige = 3
 	}
 	
-	option = { #Americanists
+	option = { #Muslims
 		name = "EVTOPTB1000109161"
 		piety = 3
 	}
@@ -117,7 +117,7 @@ character_event = {
 	}
 }
 
-# Old monuments from Old world
+# Old monuments from antiquity
 character_event = {
 	id = VIETnam.113
 	desc = "EVTDESC1000109162"
@@ -130,7 +130,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	war = no
-	#culture_group = byzantine
+	culture_group = byzantine
 	
 	trigger = {
 		in_command = no
@@ -142,27 +142,18 @@ character_event = {
 		#	}
 		#}
 		religion_group = christian
-		#OR = {
-		#	location = { province_id = 475 }
-		#	location = { province_id = 476 }
-		#	location = { province_id = 477 }
-		#	location = { province_id = 478 }
-		#	location = { province_id = 479 }
-		#	location = { province_id = 480 }
-		#	location = { province_id = 481 }
-		#	location = { province_id = 482 }
-		#	location = { province_id = 483 }
-		#	location = { province_id = 484 }
-		#	location = { province_id = 485 }
-		#	location = { province_id = 486 }
-		#	location = { province_id = 487 }
-		#	location = { province_id = 488 }
-		#	location = { province_id = 489 }
-		#	location = { province_id = 490 }
-		#	location = { province_id = 491 }
-		#	location = { province_id = 493 }
-		#	location = { province_id = 494 }
-		#}
+		OR = {
+			duchy = { title = d_minnesota }
+			duchy = { title = d_pembina }
+			duchy = { title = d_yankton }
+			duchy = { title = d_coteau }
+			duchy = { title = d_wichiyena }
+			duchy = { title = d_brule }
+			duchy = { title = d_badlands }
+			duchy = { title = d_sheyenne }
+			duchy = { title = d_bismarck }
+			duchy = { title = d_roosevelt }
+		}
 	}
 	
 	weight_multiplier = {
@@ -252,20 +243,20 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		#OR = {
-		#	culture_group = byzantine
-		#	has_landed_title = e_dixie
-		#	liege = { has_landed_title = e_dixie }
-		#	top_liege = { has_landed_title = e_dixie }
-		#}
-		#any_demesne_province = {
-		#	OR = {
-		#		region = world_asia_minor
-		#		region = world_europe_south
-		#		region = world_middle_east_jerusalem
-		#		is_baklava_culture_trigger = yes
-		#	}
-		#}
+		OR = {
+			culture_group = byzantine
+			has_landed_title = e_byzantium
+			liege = { has_landed_title = e_byzantium }
+			top_liege = { has_landed_title = e_byzantium }
+		}
+		any_demesne_province = {
+			OR = {
+				region = world_asia_minor
+				region = world_europe_south
+				region = world_middle_east_jerusalem
+				is_baklava_culture_trigger = yes
+			}
+		}
 	}
 	
 	weight_multiplier = {
@@ -357,7 +348,6 @@ character_event = {
 	}
 }
 
-# Courtier interested in North fashion
 character_event = {
 	id = VIETnam.115
 	desc = "EVTDESC1000109164"
@@ -1025,10 +1015,10 @@ character_event = {
 		in_command = no
 		NOT = { has_character_flag = VIET_olive_garden }
 		any_demesne_province = {
-			OR = {
-				duchy = { title = d_bermuda }
-				region = world_west_coast
-			}
+			#OR = {
+			#	duchy = { title = c_bermuda }
+			#	region = world_west_coast
+			#}
 			NOR = {
 				terrain = desert
 				terrain = mountain
@@ -1203,10 +1193,10 @@ character_event = {
 	trigger = {
 		in_command = no
 		OR = {
-			liege = { has_landed_title = e_dixie }
-			top_liege = { has_landed_title = e_dixie }
+			liege = { has_landed_title = e_byzantium }
+			top_liege = { has_landed_title = e_byzantium }
 		}
-		NOT = { has_landed_title = e_dixie }
+		NOT = { has_landed_title = e_byzantium }
 	}
 	
 	weight_multiplier = {
@@ -1373,71 +1363,52 @@ character_event = {
 					random_traits = yes
 					dynasty = actually_culture
 					religion = catholic
-					culture = riverlander
+					culture = frankish
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
-					}
+					#Appearance randomizer
+					random_list = {
+						10 = { set_graphical_culture = outremer }
+						10 = { set_graphical_culture = german }
+						10 = { set_graphical_culture = italian }
+						10 = { set_graphical_culture = castillan }
+						5 = { set_graphical_culture = english }
+						5 = { set_graphical_culture = irish }
+						5 = { set_graphical_culture = norse }
+						45 = { }
+					}							
 				}
 			}
 			10 = { #2
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = americanist
-					culture = gothamite
+					religion = sunni
+					culture = levantine_arabic
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
-					}
+					#Appearance randomizer
+					random_list = {
+						15 = { set_graphical_culture = persian }
+						10 = { set_graphical_culture = greek }
+						5 = { set_graphical_culture = ethiopian }
+						5 = { set_graphical_culture = turkish }
+						5 = { set_graphical_culture = cuman }
+						5 = { set_graphical_culture = italian }
+						5 = { set_graphical_culture = dalmatian }
+						5 = { set_graphical_culture = serbian }
+						45 = { }
+					}				
 				}
 			}
 			10 = { #3
@@ -1445,106 +1416,78 @@ character_event = {
 					random_traits = yes
 					dynasty = actually_culture
 					religion = catholic
-					culture = texan
+					culture = italian
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
-					}
+					#Appearance randomizer
+					random_list = {
+						10 = { set_graphical_culture = levantine_arabic }
+						10 = { set_graphical_culture = greek }
+						5 = { set_graphical_culture = castillan }
+						5 = { set_graphical_culture = dalmatian }
+						5 = { set_graphical_culture = german }
+						5 = { set_graphical_culture = frankish }
+						5 = { set_graphical_culture = outremer }
+						5 = { set_graphical_culture = serbian }
+						50 = { }
+					}					
 				}
 			}
 			10 = { #4
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = voodoo
-					culture = creole
+					religion = zoroastrian
+					culture = persian
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
-					}
+					#Appearance randomizer
+					random_list = {
+						15 = { set_graphical_culture = levantine_arabic }
+						15 = { set_graphical_culture = greek }
+						5 = { set_graphical_culture = turkish }
+						5 = { set_graphical_culture = cuman }
+						5 = { set_graphical_culture = serbian }
+						5 = { set_graphical_culture = polish }
+						5 = { set_graphical_culture = russian }
+						5 = { set_graphical_culture = hindustani }
+						40 = { }
+					}	
 				}
 			}
 			10 = { #5
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = santeria
-					culture = cubano
+					religion = miaphysite
+					culture = armenian
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
+					#Appearance randomizer
+					random_list = {
+						15 = { set_graphical_culture = persian }
+						10 = { set_graphical_culture = levantine_arabic }
+						5 = { set_graphical_culture = turkish }
+						5 = { set_graphical_culture = cuman }
+						5 = { set_graphical_culture = russian }
+						5 = { set_graphical_culture = polish }
+						5 = { set_graphical_culture = serbian }
+						50 = { }
 					}
 				}
 			}
@@ -1552,35 +1495,27 @@ character_event = {
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = jewish
-					culture = yiddish
+					religion = sunni
+					culture = maghreb_arabic
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
+					#Appearance randomizer
+					random_list = {
+						10 = { set_graphical_culture = manden }
+						10 = { set_graphical_culture = ethiopian }
+						5 = { set_graphical_culture = castillan }
+						5 = { set_graphical_culture = italian }
+						5 = { set_graphical_culture = greek }
+						5 = { set_graphical_culture = dalmatian }
+						5 = { set_graphical_culture = serbian }
+						5 = { set_graphical_culture = frankish }
+						5 = { set_graphical_culture = outremer }
+						45 = { }
 					}
 				}
 			}
@@ -1588,35 +1523,20 @@ character_event = {
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = americanist
-					culture = gulfard
+					religion = miaphysite
+					culture = ethiopian
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
+					#Appearance randomizer
 					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
+						10 = { set_graphical_culture = levantine_arabic }
+						30 = { set_graphical_culture = manden }
+						60 = {}
 					}
 				}
 			}
@@ -1624,35 +1544,25 @@ character_event = {
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = anabaptist
-					culture = deitsch
+					religion = miaphysite
+					culture = coptic
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
+					#Appearance randomizer
+					random_list = {
+						20 = { set_graphical_culture = ethiopian }
+						30 = { set_graphical_culture = levantine_arabic }
+						10 = { set_graphical_culture = persian }
+						5 = { set_graphical_culture = castillan }
+						5 = { set_graphical_culture = italian }
+						5 = { set_graphical_culture = dalmatian }
+						5 = { set_graphical_culture = manden }
+						30 = { }
 					}
 				}
 			}
@@ -1660,35 +1570,31 @@ character_event = {
 				create_random_steward = {
 					random_traits = yes
 					dynasty = actually_culture
-					religion = revelationist
-					culture = appalachian
+					religion = tengri_pagan
+					culture = cuman
 					female = no
 					attributes = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
+					#Appearance randomizer
+					random_list = {
+						10 = { set_graphical_culture = turkish }
+						10 = { set_graphical_culture = mongol }
+						5 = { set_graphical_culture = persian }
+						5 = { set_graphical_culture = han }
+						5 = { set_graphical_culture = bodpa }
+						5 = { set_graphical_culture = hungarian }
+						5 = { set_graphical_culture = serbian }
+						5 = { set_graphical_culture = polish }
+						5 = { set_graphical_culture = russian }
+						5 = { set_graphical_culture = bodpa }
+						5 = { set_graphical_culture = levantine_arabic }
+						5 = { set_graphical_culture = hindustani }
+						5 = { set_graphical_culture = finnish }
+						30 = { }
 					}
 				}
 			}
@@ -1703,29 +1609,21 @@ character_event = {
 						stewardship = 7
 					}
 				}
-				new_viet_character_setup_byzantine = yes 
+				new_viet_character_setup_byzantine = yes
 				new_character = {
-					#Randomize appearance,I use all Reference cultures just for cool 
-					random_list = { 
-						5 = { set_graphical_culture = white } 
-						5 = { set_graphical_culture = black } 
-						5 = { set_graphical_culture = brown } 
-						5 = { set_graphical_culture = chinese } 
-						5 = { set_graphical_culture = native } 
-						5 = { set_graphical_culture = norse } 
-						5 = { set_graphical_culture = celtic } 
-						5 = { set_graphical_culture = ugric } 
-						5 = { set_graphical_culture = mediterranean } 
-						5 = { set_graphical_culture = indian } 
-						5 = { set_graphical_culture = slavic } 
-						5 = { set_graphical_culture = west_slavic } 
-						5 = { set_graphical_culture = german } 
-						5 = { set_graphical_culture = english } 
-						5 = { set_graphical_culture = persian } 
-						5 = { set_graphical_culture = italian } 
-						5 = { set_graphical_culture = french } 
-						15 = { } 
-					}
+					#Appearance randomizer
+					random_list = {
+						5 = { set_graphical_culture = mongol }
+						5 = { set_graphical_culture = finnish }
+						5 = { set_graphical_culture = levantine_arabic }
+						5 = { set_graphical_culture = hungarian }
+						5 = { set_graphical_culture = serbian }
+						10 = { set_graphical_culture = russian }
+						10 = { set_graphical_culture = cuman }
+						10 = { set_graphical_culture = greek }
+						10 = { set_graphical_culture = persian }
+						25 = { }
+					}	
 				}
 			}
 		}

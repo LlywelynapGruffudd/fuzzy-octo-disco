@@ -192,7 +192,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 3000
+		months = 8000
 		modifier = {
 			factor = 3
 			OR = {
@@ -329,7 +329,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 4000
+		months = 8000
 		modifier = {
 			owner = {
 				war = yes
@@ -1741,12 +1741,12 @@ character_event = {
 			name = VIET_leader_angered_peasants
 			duration = 911
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	decadence = 1
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			decadence = 1
+		}
 	}
 }
 
@@ -1900,15 +1900,15 @@ character_event = {
 			20 = { add_trait = diligent }
 			40 = { }
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = -1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = -1
+				chance = 25
+			}
+		}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.24.b
@@ -1921,15 +1921,15 @@ character_event = {
 			30 = { add_trait = proud }
 			50 = { }
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = 1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = 1
+				chance = 25
+			}
+		}
 	}
 }
 
@@ -2316,7 +2316,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 6000
+		months = 10000
 		modifier = {
 			OR = {
 			#	culture_group = serindian # exists in WtWSMS
@@ -2396,7 +2396,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 6000
+		months = 10000
 	}
 
 	option = {#yes
@@ -2449,7 +2449,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 5000
+		months = 10000
 	}
 
 	immediate = {
@@ -2870,15 +2870,15 @@ character_event = {
 			name = VIET_new_expensive_cosmetics
 			duration = 777
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = 1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = 1
+				chance = 25
+			}
+		}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.40.b
@@ -2886,15 +2886,15 @@ character_event = {
 			name = the_prude
 			duration = 365
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	random = {
-		#		decadence = -1
-		#		chance = 25
-		#	}
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			random = {
+				decadence = -1
+				chance = 25
+			}
+		}
 	}
 	option = {#yes
 		name = VIETScarboroughFair.40.c
@@ -3279,12 +3279,12 @@ character_event = {
 			name = VIET_good_exercise
 			duration = 365
 		}
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	decadence = 2
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			decadence = 2
+		}
 	}
 }
 
@@ -3434,11 +3434,9 @@ character_event = {
 		#NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		NOT = { has_alternate_start_parameter = { key = culture_names value = random } }
 		#Doesn't make sense for Africans
-		NOT = { culture_group = 
-caribbanglo }
-		NOT = { culture_group = caribeno }
-		NOT = { culture_group = antillais }
-		NOT = { culture_group = antilliaanse }
+		culture_group = west_african
+		culture_group = east_african
+		culture_group = central_african
 	}
 
 	weight_multiplier = {
@@ -3532,15 +3530,15 @@ province_event = {
 		#NOT = { has_religion_feature = religion_holy_family }
 		#NOT = { has_religion_feature = religion_feature_zun }
 		owner = {
-			NOT = { religion_group = zoroastrian_group }
-			NOT = { religion = messalian }
+			#NOT = { religion_group = zoroastrian_group }
+			#NOT = { religion = messalian }
 			NOT = { has_religion_feature = religion_holy_family }
-			NOT = { has_religion_feature = religion_feature_zun }
+			#NOT = { has_religion_feature = religion_feature_zun }
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 10000
+		months = 15000
 	}
 
 	option = {#yes
@@ -3669,20 +3667,20 @@ character_event = {
 			factor = 2
 			trait = poet
 		}
-		#modifier = {
-		#	factor = 0.5
-		#	NOT = {
-		#		OR = {
-		#			culture_group = west_germanic
-		#			culture = norman
-		#			culture = scottish
-		#			culture = welsh
-		#			any_realm_province = {
-		#				province_id = 57
-		#			}
-		#		}
-		#	}
-		#}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				OR = {
+					culture_group = west_germanic
+					culture = norman
+					culture = scottish
+					culture = welsh
+					any_realm_province = {
+						province_id = 57
+					}
+				}
+			}
+		}
 		modifier = {
 			factor = 1.2
 			year = 1300
@@ -3727,12 +3725,12 @@ narrative_event = {
 	option = {#yes
 		name = VIETScarboroughFair.49.b
 		set_global_flag = VIET_Scarborough_Fair_blessing_given
-		#if = {
-		#	limit = {
-		#		religion_group = muslim
-		#	}
-		#	decadence = -8
-		#}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			decadence = -8
+		}
 		add_character_modifier = {
 			name = VIET_going_to_Scarborough_Fair
 			duration = -1

@@ -1921,6 +1921,7 @@ character_event = {
 			religion_group = christian
 			religion_group = muslim
 			religion_group = jewish_group
+			religion_group = latter_day_saints
 		}
 		OR = {
 			OR = {
@@ -3150,7 +3151,7 @@ character_event = {
 }
 
 ################################
-# Buddhist Events
+# Cetic Events
 ################################
 
 # TO hunt or not?
@@ -3161,7 +3162,7 @@ character_event = {
 	
 	is_triggered_only = yes
 	
-	religion = buddhist
+	religion = gaian
 	only_rulers = yes
 	min_age = 16
 	capable_only = yes
@@ -3301,7 +3302,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -3436,7 +3437,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -3518,7 +3519,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -3633,7 +3634,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -3738,7 +3739,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -3820,7 +3821,7 @@ character_event = {
 	}
 }
 
-# Begging monks
+# Begging monks  ---not sure cetic guru will begging
 character_event = {
 	id = VIETnam.321
 	desc = "EVTDESC1000109499"
@@ -3829,7 +3830,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_rulers = yes
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -4015,7 +4016,7 @@ character_event = {
 	
 	is_triggered_only = yes
 	
-	religion = buddhist
+	religion = cetic
 	min_age = 16
 	capable_only = yes
 	prisoner = no
@@ -4029,7 +4030,7 @@ character_event = {
 		in_command = no
 		prisoner = no
 		spouse = {
-			religion = buddhist
+			religion = cetic
 			prisoner = no
 			is_alive = yes
 			OR = {
